@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /*
- * Implement an algorith to determine if a string has all unique characters
+ * Implement an algorithm to determine if a string has all unique characters
  */
 
 public class Q1_AllUniqueCharacters_WithAdditionalDataStructure{

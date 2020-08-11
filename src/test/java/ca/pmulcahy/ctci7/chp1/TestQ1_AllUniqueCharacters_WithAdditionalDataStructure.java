@@ -6,25 +6,24 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class TestQ1_AllUniqueCharacters_WithAdditionalDataStructure {
 
-	private static final String UNIQUE_CHAR_STRING = "abcdefg";
-	private static final String NON_UNIQUE_CHAR_STRING = "abcdefa";
-	private static final String EMPTY_STRING = "";
-
 	@Test
 	public void stringWithUniqueCharacters() {
-		boolean result = Q1_AllUniqueCharacters_WithAdditionalDataStructure.isAllUniqueCharacters(UNIQUE_CHAR_STRING);
-		assertTrue(result, UNIQUE_CHAR_STRING + " has unique characters.");
+		final String uniqueCharacterString = "abcdefg";
+		boolean result = Q1_AllUniqueCharacters_WithAdditionalDataStructure.isAllUniqueCharacters(uniqueCharacterString);
+		assertTrue(result, uniqueCharacterString + " has unique characters.");
 	}	
 
 	@Test
 	public void stringWithNonUniqueCharacters() {
-		boolean result = Q1_AllUniqueCharacters_WithAdditionalDataStructure.isAllUniqueCharacters(NON_UNIQUE_CHAR_STRING);
-		assertFalse(result, NON_UNIQUE_CHAR_STRING + " has non unique characters.");
+		final String nonUniqueCharacterString = "abcdefa";
+		boolean result = Q1_AllUniqueCharacters_WithAdditionalDataStructure.isAllUniqueCharacters(nonUniqueCharacterString);
+		assertFalse(result, nonUniqueCharacterString + " has non unique characters.");
 	}	
 
 	@Test
 	public void stringWithNoCharacters() {
-		boolean result = Q1_AllUniqueCharacters_WithAdditionalDataStructure.isAllUniqueCharacters(EMPTY_STRING);
-		assertTrue(result, "The empty String + " + EMPTY_STRING + " has unique characters.");
+		final String emptyString = "";
+		boolean result = Q1_AllUniqueCharacters_WithAdditionalDataStructure.isAllUniqueCharacters(emptyString);
+		assertTrue(result, "The empty String + " + emptyString + " has unique characters.");
 	}	
 }
