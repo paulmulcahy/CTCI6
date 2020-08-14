@@ -11,8 +11,8 @@ public class Q1_AllUniqueCharacters_WithAdditionalDataStructure{
 	public static boolean isAllUniqueCharacters(String str) {
 		Set<Character> charsUsed = new HashSet<>();
 		for(int i=0; i<str.length(); i++) {
-			boolean nonUniqueChar = charsUsed.add(str.charAt(i));
-			if(!nonUniqueChar) {
+			boolean uniqueChar = charsUsed.add(str.charAt(i));
+			if(!uniqueChar) {
 				return false;
 			}
 		}
