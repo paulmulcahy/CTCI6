@@ -54,8 +54,7 @@ public class SinglyLinkedList<E> {
             head = node;    
             tail = node;    
         } else {
-			//tail.setNext(node);
-			tail.next = node;
+			tail.setNext(node);
 			tail = node;
 		}
     }
