@@ -1,4 +1,4 @@
-package ca.pmulcahy.ctci7.chp1;
+package ca.pmulcahy.ctci6.chp1;
 
 /*
  * Implement a method to perform basic string compression using the counts of repeated characters. For

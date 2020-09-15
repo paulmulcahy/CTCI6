@@ -1,5 +1,4 @@
-package ca.pmulcahy.ctci7.chp1;
-
+package ca.pmulcahy.ctci6.chp1;
 
 /*
  * Assume you have a method isSubString which checks if one word is a substring of another. Given two strins, s1 and s2, write code to check if s2 is a rotation of s1 using only one call to isSubString (eg., waterbottle is a rotation of erbottlewat)

@@ -1,4 +1,4 @@
-package ca.pmulcahy.ctci7.chp1;
+package ca.pmulcahy.ctci6.chp1;
 
 import java.util.HashMap;
 import java.util.Map;

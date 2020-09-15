@@ -1,3 +1,3 @@
-# CTCI7
+# CTCI6
 
-From CTCI7 directory (directory that contains pom.xml), run "mvn test" to test CTCI7 implementations.
+From CTCI6 directory (directory that contains pom.xml), run "mvn test" to test CTCI6 implementations.

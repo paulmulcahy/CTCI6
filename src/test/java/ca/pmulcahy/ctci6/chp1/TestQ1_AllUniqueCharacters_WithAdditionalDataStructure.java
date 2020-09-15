@@ -1,4 +1,4 @@
-package ca.pmulcahy.ctci7.chp1;
+package ca.pmulcahy.ctci6.chp1;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;

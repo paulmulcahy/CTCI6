@@ -1,4 +1,4 @@
-package ca.pmulcahy.ctci7.chp1;
+package ca.pmulcahy.ctci6.chp1;
 
 /*
  * Write a method to replace all spaces in a string with '%20'. You may assume that the string has
