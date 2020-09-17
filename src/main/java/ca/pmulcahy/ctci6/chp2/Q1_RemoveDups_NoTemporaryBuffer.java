@@ -1,8 +1,5 @@
 package ca.pmulcahy.ctci6.chp2;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /*
  * Write code to remove duplicates form an unsorted linked list
  * FOLLOW UP
@@ -11,19 +8,19 @@ import java.util.Set;
 public class Q1_RemoveDups_NoTemporaryBuffer{
 	
 	public static <E> SinglyLinkedList<E> removeDuplicates(SinglyLinkedList<E> singlyLinkedList) {
-		SinglyLinkedList.Node<E> i = singlyLinkedList.getHead();
-		while(i!=null) {
-			SinglyLinkedList.Node<E> jPrev = i;			
-			SinglyLinkedList.Node<E> j = i.getNext();
-			while(j!=null) {
-				if(j.getData().equals(i.getData())) {
-					jPrev.setNext(j.getNext());
+		SinglyLinkedList.Node<E> nodeToCompare = singlyLinkedList.getHead();
+		while(nodeToCompare!=null) {
+			SinglyLinkedList.Node<E> previousNode = nodeToCompare;			
+			SinglyLinkedList.Node<E> currentNode = nodeToCompare.getNext();
+			while(currentNode!=null) {
+				if(currentNode.equals(nodeToCompare)) {
+					previousNode.setNext(currentNode.getNext());
 				} else {
-					jPrev = j;
+					previousNode = currentNode;
 				}
-				j = j.getNext();
+				currentNode = currentNode.getNext();
 			}
-			i = i.getNext();
+			nodeToCompare = nodeToCompare.getNext();
 		}
 		return singlyLinkedList;
 	}

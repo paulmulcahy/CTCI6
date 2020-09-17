@@ -41,6 +41,17 @@ public class TestQ2_ReturnKthToTheLast {
 	}
 
 	@Test
+	public void singleNullValue() {
+		Integer singleInt = null;
+		
+		final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();	
+		sList.add(singleInt);
+								
+		final Integer actual = Q2_ReturnKthToTheLast.returnKthToTheLast(sList, 1);
+		assertEquals(singleInt, actual,  "The list: " + sList + " contains 1 element (1) and the 1st to the last element should return the same element.");
+	}
+
+	@Test
 	public void twoValuesReturnFirst() {
 		Integer firstInt = 1;
 		Integer secondInt = 2;
@@ -77,6 +88,51 @@ public class TestQ2_ReturnKthToTheLast {
 								
 		final Integer actual = Q2_ReturnKthToTheLast.returnKthToTheLast(sList, 3);
 		assertEquals(null, actual,  "The list: " + sList + " contains less elements than the requested k and should return null.");
+	}
+	
+	@Test
+	public void threeValuesReturnFirst() {
+		Integer firstInt = 1;
+		Integer secondInt = null;
+		Integer thirdInt = 3;
+		
+		final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();	
+		sList.add(firstInt);
+		sList.add(secondInt);
+		sList.add(thirdInt);
+								
+		final Integer actual = Q2_ReturnKthToTheLast.returnKthToTheLast(sList, 3);
+		assertEquals(firstInt, actual,  "The list: " + sList + " contains 3 elements and the 3rd to the last element should return the first element.");
+	}
+
+	@Test
+	public void threeValuesReturnMiddle() {
+		Integer firstInt = 1;
+		Integer secondInt = null;
+		Integer thirdInt = 3;
+		
+		final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();	
+		sList.add(firstInt);
+		sList.add(secondInt);
+		sList.add(thirdInt);
+								
+		final Integer actual = Q2_ReturnKthToTheLast.returnKthToTheLast(sList, 2);
+		assertEquals(secondInt, actual,  "The list: " + sList + " contains 3 elements and the 2nd to the last element should return the second element.");
+	}
+
+	@Test
+	public void threeValuesReturnLast() {
+		Integer firstInt = 1;
+		Integer secondInt = null;
+		Integer thirdInt = 3;
+		
+		final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();	
+		sList.add(firstInt);
+		sList.add(secondInt);
+		sList.add(thirdInt);
+								
+		final Integer actual = Q2_ReturnKthToTheLast.returnKthToTheLast(sList, 1);
+		assertEquals(thirdInt, actual,  "The list: " + sList + " contains 3 elements and the 1st to the last element should return the third element.");
 	}
 	
 }

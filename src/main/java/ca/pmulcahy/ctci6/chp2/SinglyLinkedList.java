@@ -1,10 +1,12 @@
 package ca.pmulcahy.ctci6.chp2;
 
+import java.util.Collection;
+
 public class SinglyLinkedList<E> {
 	
     static class Node<E>{    
         private E data;    
-        private Node next;    
+        private Node<E> next;    
             
         Node(E data) {    
             this.data = data;    
@@ -19,36 +21,58 @@ public class SinglyLinkedList<E> {
 			this.data = data;
 		}
 		
-		Node getNext() {
+		Node<E> getNext() {
 			return next;
 		}
 		
-		void setNext(Node next) {
+		void setNext(Node<E> next) {
 			this.next = next;
+		}
+		
+		@Override
+		public boolean equals(Object o) {
+			if (o == this) { 
+				return true; 
+			} 
+	  
+			if (!(o instanceof Node)) { 
+				return false; 
+			} 
+			Node<?> node = (Node<?>)o;
+			if(node.getData() == null) {
+				if(this.getData() == null) {
+					return true;
+				}
+				return false;
+			}
+			if(node.getData().equals(this.getData())) {
+				return true;
+			}
+			return false;
 		}
 	}
   
-    private Node head = null;
-    private Node tail = null;
+    private Node<E> head = null;
+    private Node<E> tail = null;
 	
-	public Node getHead() {
+	public Node<E> getHead() {
 		return head;
 	}
 	
-	public void setHead(Node head) {
+	public void setHead(Node<E> head) {
 		this.head = head;
 	}
 	
-	public Node getTail() {
+	public Node<E> getTail() {
 		return tail;
 	}
 	
-	public void setTail(Node tail) {
+	public void setTail(Node<E> tail) {
 		this.tail = tail;
 	}	
 	
-    public void add(E data) { 
-	    Node node = new Node(data); 
+    public boolean add(E data) { 
+	    Node<E> node = new Node<>(data); 
 
 		if(head == null) {    
             head = node;    
@@ -57,12 +81,20 @@ public class SinglyLinkedList<E> {
 			tail.setNext(node);
 			tail = node;
 		}
+		return true;
+    }
+    
+    public boolean addAll(Collection<E> data) {
+    	for(E e: data) {
+    		add(e);
+    	}
+    	return true;
     }
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		Node current = head;
+		Node<E> current = head;
 		sb.append("[");
 		if(current!=null) {
 			sb.append(current.getData());
@@ -86,22 +118,22 @@ public class SinglyLinkedList<E> {
         if (!(o instanceof SinglyLinkedList)) { 
             return false; 
         } 
-		SinglyLinkedList singlyLinkedList = (SinglyLinkedList)o;
+		SinglyLinkedList<?> singlyLinkedList = (SinglyLinkedList<?>)o;
 		
-		Node tHead = this.getHead();
-		Node oHead = singlyLinkedList.getHead();
+		Node<?> tNode = this.getHead();
+		Node<?> oNode = singlyLinkedList.getHead();
 
-		while(tHead!=null && oHead!=null) {
+		while(tNode!=null && oNode!=null) {
 			
-			if(!tHead.getData().equals(oHead.getData())) {
+			if(!tNode.equals(oNode)) {
 				return false;
 			}
 			
-			tHead = tHead.getNext();
-			oHead = oHead.getNext();
+			tNode = tNode.getNext();
+			oNode = oNode.getNext();
 		}
 
-		if(tHead==null && oHead==null) {
+		if(tNode==null && oNode==null) {
 			return true;
 		}
 		return false;
