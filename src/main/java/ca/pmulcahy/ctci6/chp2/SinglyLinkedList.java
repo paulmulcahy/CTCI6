@@ -151,5 +151,17 @@ public class SinglyLinkedList<E> {
 		}
 		return false;
 	}
+	
+	public SinglyLinkedList<E> getReverse() {
+		SinglyLinkedList<E> reversed = new SinglyLinkedList<E>();
+		SinglyLinkedList.Node<E> current = this.getHead();
+		while(current!=null) {
+			reversed.addToStart(current.getData());
+			current = current.getNext();
+		}
+		
+		return reversed;
+		
+	}
 
 }

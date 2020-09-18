@@ -47,8 +47,8 @@ public class Q5_SumLists{
 
 	public static <E extends Number> SinglyLinkedList<Integer> sumForward(SinglyLinkedList<E> s1, SinglyLinkedList<E> s2) {	
 		SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<Integer>();
-		SinglyLinkedList<E> s1Reversed = reverse(s1);
-		SinglyLinkedList<E> s2Reversed = reverse(s2);
+		SinglyLinkedList<E> s1Reversed = s1.getReverse();
+		SinglyLinkedList<E> s2Reversed = s2.getReverse();
 		SinglyLinkedList.Node<E> node1 = s1Reversed.getHead();
 		SinglyLinkedList.Node<E> node2 = s2Reversed.getHead();
 		int carry=0;
@@ -76,17 +76,5 @@ public class Q5_SumLists{
 		}
 
 		return singlyLinkedList;
-	}
-	
-	public static <E> SinglyLinkedList<E> reverse(SinglyLinkedList<E> singlyLinkedList) {
-		SinglyLinkedList<E> reversed = new SinglyLinkedList<E>();
-		SinglyLinkedList.Node<E> current = singlyLinkedList.getHead();
-		while(current!=null) {
-			reversed.addToStart(current.getData());
-			current = current.getNext();
-		}
-		
-		return reversed;
-	}
-	
+	}	
 }
