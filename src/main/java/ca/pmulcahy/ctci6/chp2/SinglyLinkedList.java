@@ -83,8 +83,21 @@ public class SinglyLinkedList<E> {
 		}
 		return true;
     }
+	
+	public boolean addToStart(E data) { 
+	    Node<E> node = new Node<>(data); 
+
+		if(head == null) {
+			tail = node;
+		} else {
+			node.setNext(head);
+		}
+		head = node;
+		
+		return true;
+    }
     
-    public boolean addAll(Collection<E> data) {
+    public boolean addAll(Collection<? extends E> data) {
     	for(E e: data) {
     		add(e);
     	}
