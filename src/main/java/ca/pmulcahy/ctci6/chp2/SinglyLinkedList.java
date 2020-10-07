@@ -1,24 +1,29 @@
 package ca.pmulcahy.ctci6.chp2;
 
 import java.util.Collection;
+import java.util.Optional;
 
 public class SinglyLinkedList<E> {
 	
     static class Node<E>{    
-        private E data;    
+        private Optional<E> data;    
         private Node<E> next;    
             
         Node(E data) {    
-            this.data = data;    
+            this.data = Optional.ofNullable(data);    
             this.next = null;    
         }
 		
 		E getData() {
+			return data.orElse(null);
+		}
+		
+		Optional<E> getOptionalData() {
 			return data;
 		}
 		
 		void setData(E data) {
-			this.data = data;
+			this.data = Optional.ofNullable(data);
 		}
 		
 		Node<E> getNext() {
@@ -30,25 +35,11 @@ public class SinglyLinkedList<E> {
 		}
 		
 		@Override
-		public boolean equals(Object o) {
-			if (o == this) { 
-				return true; 
+		public String toString() {
+			if(data.isPresent()) {
+				return data.get().toString();
 			} 
-	  
-			if (!(o instanceof Node)) { 
-				return false; 
-			} 
-			Node<?> node = (Node<?>)o;
-			if(node.getData() == null) {
-				if(this.getData() == null) {
-					return true;
-				}
-				return false;
-			}
-			if(node.getData().equals(this.getData())) {
-				return true;
-			}
-			return false;
+			return "null";
 		}
 	}
   
@@ -125,7 +116,7 @@ public class SinglyLinkedList<E> {
 			current = current.getNext();
 		}
 		while(current!=null) {
-			sb.append("," + current.data);
+			sb.append("," + current.getData());
 			current = current.getNext();
 		}
 		
@@ -149,7 +140,7 @@ public class SinglyLinkedList<E> {
 
 		while(tNode!=null && oNode!=null) {
 			
-			if(!tNode.equals(oNode)) {
+			if(!tNode.getOptionalData().equals(oNode.getOptionalData())) {
 				return false;
 			}
 			

@@ -3,7 +3,8 @@ package ca.pmulcahy.ctci6.chp2;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class TestQ7_Intersection {
 	
@@ -14,7 +15,7 @@ public class TestQ7_Intersection {
 		final SinglyLinkedList.Node<Integer> expected = null;
 		
 		final SinglyLinkedList.Node<Integer> actual = Q7_Intersection.getIntersection(sList, sList);
-		assertTrue(expected==actual,  "The lists: " + sList + " and " + sList + " are empty and therefore " + expected + " equals " + actual);
+		assertEquals(expected, actual,  "The lists: " + sList + " and " + sList + " are empty and therefore " + expected + " equals " + actual);
 	}
 	
 	@Test
@@ -24,7 +25,7 @@ public class TestQ7_Intersection {
 		sList.addNode(expected);
 		
 		final SinglyLinkedList.Node<Integer> actual = Q7_Intersection.getIntersection(sList, sList);
-		assertTrue(expected==actual,  "The lists: " + sList + " and " + sList + " have a single intersecting node and so the returning node " + actual + " should equals the expected node " + expected + ".");
+		assertEquals(expected, actual,  "The lists: " + sList + " and " + sList + " have a single intersecting node and so the returning node " + actual + " should equals the expected node " + expected + ".");
 	}
 	
 	@Test
@@ -35,7 +36,7 @@ public class TestQ7_Intersection {
 		sList2.add(2);
 		
 		final SinglyLinkedList.Node<Integer> actual = Q7_Intersection.getIntersection(sList1, sList2);
-		assertTrue(null==actual,  "The lists: " + sList1 + " and " + sList2 + " have no intersecting nodes and so should return null.");
+		assertNull(actual,  "The lists: " + sList1 + " and " + sList2 + " have no intersecting nodes and so should return null.");
 	}
 	
 	@Test
@@ -46,7 +47,7 @@ public class TestQ7_Intersection {
 		sList2.add(1);
 		
 		final SinglyLinkedList.Node<Integer> actual = Q7_Intersection.getIntersection(sList1, sList2);
-		assertTrue(null==actual,  "The lists: " + sList1 + " and " + sList2 + " have no intersecting nodes and so should return null.");
+		assertNull(actual,  "The lists: " + sList1 + " and " + sList2 + " have no intersecting nodes and so should return null.");
 	}
 	
 	@Test
@@ -59,7 +60,7 @@ public class TestQ7_Intersection {
 		sList2.addNode(expected);
 		sList2.add(3);	
 		final SinglyLinkedList.Node<Integer> actual = Q7_Intersection.getIntersection(sList1, sList2);
-		assertTrue(expected==actual,  "The lists: " + sList1 + " and " + sList2 + " have a single intersecting node and so the expected value of " + expected + " should matched the actual value of " + actual + ".");
+		assertEquals(expected, actual,  "The lists: " + sList1 + " and " + sList2 + " have a single intersecting node and so the expected value of " + expected + " should matched the actual value of " + actual + ".");
 	}
 	
 	@Test
@@ -72,7 +73,7 @@ public class TestQ7_Intersection {
 		sList2.add(3);	
 		sList2.addNode(expected);
 		final SinglyLinkedList.Node<Integer> actual = Q7_Intersection.getIntersection(sList1, sList2);
-		assertTrue(expected==actual,  "The lists: " + sList1 + " and " + sList2 + " have a single intersecting node and so the expected value of " + expected + " should matched the actual value of " + actual + ".");
+		assertEquals(expected, actual,  "The lists: " + sList1 + " and " + sList2 + " have a single intersecting node and so the expected value of " + expected + " should matched the actual value of " + actual + ".");
 	}
 	
 	@Test
@@ -87,6 +88,6 @@ public class TestQ7_Intersection {
 		sList2.addNode(expected);
 		sList2.add(5);
 		final SinglyLinkedList.Node<Integer> actual = Q7_Intersection.getIntersection(sList1, sList2);
-		assertTrue(expected==actual,  "The lists: " + sList1 + " and " + sList2 + " have a single intersecting node and so the expected value of " + expected + " should matched the actual value of " + actual + ".");
+		assertEquals(expected, actual,  "The lists: " + sList1 + " and " + sList2 + " have a single intersecting node and so the expected value of " + expected + " should matched the actual value of " + actual + ".");
 	}
 }

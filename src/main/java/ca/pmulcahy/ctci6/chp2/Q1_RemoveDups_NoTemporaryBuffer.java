@@ -13,7 +13,7 @@ public class Q1_RemoveDups_NoTemporaryBuffer{
 			SinglyLinkedList.Node<E> previousNode = nodeToCompare;			
 			SinglyLinkedList.Node<E> currentNode = nodeToCompare.getNext();
 			while(currentNode!=null) {
-				if(currentNode.equals(nodeToCompare)) {
+				if(currentNode.getOptionalData().equals(nodeToCompare.getOptionalData())) {
 					previousNode.setNext(currentNode.getNext());
 				} else {
 					previousNode = currentNode;
