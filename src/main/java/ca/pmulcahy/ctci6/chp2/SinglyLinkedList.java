@@ -104,6 +104,17 @@ public class SinglyLinkedList<E> {
     	return true;
     }
 
+    public boolean addNode(Node<E> node) { 
+		if(head == null) {    
+            head = node;    
+            tail = node;    
+        } else {
+			tail.setNext(node);
+			tail = node;
+		}
+		return true;
+    }
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
