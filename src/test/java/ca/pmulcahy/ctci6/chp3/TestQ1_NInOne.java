@@ -58,21 +58,21 @@ public class TestQ1_NInOne {
 
 	@Test
 	public void isNotEmpty0() {
-		final Q1_NInOne tripleStack = new Q1_NInOne(3);
+		final Q1_NInOne<Integer> tripleStack = new Q1_NInOne<>(3);
 		tripleStack.push(0,1);
 		assertFalse(tripleStack.isEmpty(0));
 	}
 	
 	@Test
 	public void isNotEmpty1() {
-		final Q1_NInOne tripleStack = new Q1_NInOne(3);
+		final Q1_NInOne<Integer> tripleStack = new Q1_NInOne<>(3);
 		tripleStack.push(1,2);
 		assertFalse(tripleStack.isEmpty(1));
 	}
 
 	@Test
 	public void isNotEmpty2() {
-		final Q1_NInOne tripleStack = new Q1_NInOne(3);
+		final Q1_NInOne<Integer> tripleStack = new Q1_NInOne<>(3);
 		tripleStack.push(2, 3);
 		assertFalse(tripleStack.isEmpty(2));
 	}
@@ -86,7 +86,7 @@ public class TestQ1_NInOne {
 
 	@Test
 	public void isNotEmptyQuadruple() {
-		final Q1_NInOne quadrupleStack = new Q1_NInOne(4);
+		final Q1_NInOne<Integer> quadrupleStack = new Q1_NInOne<>(4);
 		quadrupleStack.push(3,4);
 		assertFalse(quadrupleStack.isEmpty(3));
 	}
