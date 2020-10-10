@@ -18,6 +18,7 @@ public class Q1_NInOne<T> {
 		this(numStacks, numStacks);
 	}
 	
+	@SuppressWarnings("unchecked")
 	public Q1_NInOne(int numStacks, int startingArraySize) {
 		if(numStacks<1) {
 			throw new IllegalArgumentException(ILLEGAL_NUM_STACKS);
@@ -33,7 +34,8 @@ public class Q1_NInOne<T> {
 			stackSize[i] = 0;
 		}
 	}
-	
+
+	@SuppressWarnings("unchecked")
 	private void increaseArraySize() {
 		int largerStackMaxSize = stackMaxSize * 2;
 		T[] largerInternalArray = (T[])new Object[largerStackMaxSize*numStacks];

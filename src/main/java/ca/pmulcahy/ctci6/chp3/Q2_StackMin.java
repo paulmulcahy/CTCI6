@@ -9,12 +9,12 @@ public class Q2_StackMin<T extends Comparable<T>> {
 	private T[] internalArray;
 	private T[] minArray;
 	private int stackSize;
-	private T min;
 
 	public Q2_StackMin() {
 		this(1);
 	}
 	
+	@SuppressWarnings("unchecked")
 	public Q2_StackMin(int startingArraySize) {
 		if(startingArraySize<0) {
 			startingArraySize = 1;
@@ -24,6 +24,7 @@ public class Q2_StackMin<T extends Comparable<T>> {
 		stackSize = 0;
 	}
 
+	@SuppressWarnings("unchecked")
 	private void increaseArraySize() {
 		T[] largerInternalArray = (T[])new Comparable[internalArray.length*2];
 		T[] largerMinArray = (T[])new Comparable[internalArray.length*2];
