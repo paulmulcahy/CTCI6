@@ -225,5 +225,26 @@ public class TestQ3_SetOfStacks {
 		stack.push(3);
 		assertEquals(3, stack.popAt(0));
 	}
+	
+	@Test
+	public void increaseStackSize() {
+		final Q3_SetOfStacks<Integer> stack = new Q3_SetOfStacks<>(3);
+		stack.push(9);
+		stack.push(8);
+		stack.push(7);
+		stack.push(6);
+		stack.push(5);
+		stack.push(4);
+		stack.push(3);
+		stack.push(2);
+		stack.push(1);
+		stack.push(0);
+		
+		StringBuilder sb = new StringBuilder();
+		while(!stack.isEmpty()) {
+			sb.append(stack.pop());		
+		}
+		assertEquals("0123456789", sb.toString());
+	}
 
 }

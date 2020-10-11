@@ -2,7 +2,6 @@ package ca.pmulcahy.ctci6.chp3;
 
 import java.util.NoSuchElementException;
 
-
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -82,5 +81,26 @@ public class TestQ4_QueueViaStacks {
 		queue.add(2);
 		queue.remove();
 		assertEquals(2, queue.peek());
+	}
+	
+	@Test
+	public void increaseStackSize() {
+		final Q4_QueueViaStacks<Integer> queue = new Q4_QueueViaStacks<>(3);
+		queue.add(0);
+		queue.add(1);
+		queue.add(2);
+		queue.add(3);
+		queue.add(4);
+		queue.add(5);
+		queue.add(6);
+		queue.add(7);
+		queue.add(8);
+		queue.add(9);
+		
+		StringBuilder sb = new StringBuilder();
+		while(!queue.isEmpty()) {
+			sb.append(queue.remove());		
+		}
+		assertEquals("0123456789", sb.toString());
 	}
 }

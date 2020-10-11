@@ -35,7 +35,7 @@ public class Q4_QueueViaStacks<T> {
 		}
 		
 		private void push(T item) {
-			if(stackSize <= internalArray.length) {
+			if(stackSize == internalArray.length) {
 				increaseArraySize();
 			}
 			internalArray[stackSize++] = item;

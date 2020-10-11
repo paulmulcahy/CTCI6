@@ -38,6 +38,27 @@ public class TestQ2_StackMin {
 	}
 
 	@Test
+	public void increaseStackSize() {
+		final Q2_StackMin<Integer> stack = new Q2_StackMin<>(3);
+		stack.push(9);
+		stack.push(8);
+		stack.push(7);
+		stack.push(6);
+		stack.push(5);
+		stack.push(4);
+		stack.push(3);
+		stack.push(2);
+		stack.push(1);
+		stack.push(0);
+		
+		StringBuilder sb = new StringBuilder();
+		while(!stack.isEmpty()) {
+			sb.append(stack.pop());		
+		}
+		assertEquals("0123456789", sb.toString());
+	}
+
+	@Test
 	public void pushMin() {
 		final Q2_StackMin<Integer> stack = new Q2_StackMin<>();
 		stack.push(1);

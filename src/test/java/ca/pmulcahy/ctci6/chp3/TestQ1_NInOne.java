@@ -289,4 +289,25 @@ public class TestQ1_NInOne {
 		assertThrows(EmptyStackException.class, () -> quadrupleStack.peek(3));
 	}
 	
+	@Test
+	public void increaseStackSize() {
+		final Q1_NInOne<Integer> tripleStack = new Q1_NInOne<>(3);
+		tripleStack.push(0, 9);
+		tripleStack.push(0, 8);
+		tripleStack.push(0, 7);
+		tripleStack.push(0, 6);
+		tripleStack.push(0, 5);
+		tripleStack.push(0, 4);
+		tripleStack.push(0, 3);
+		tripleStack.push(0, 2);
+		tripleStack.push(0, 1);
+		tripleStack.push(0, 0);
+		
+		StringBuilder sb = new StringBuilder();
+		while(!tripleStack.isEmpty(0)) {
+			sb.append(tripleStack.pop(0));		
+		}
+		assertEquals("0123456789", sb.toString());
+	}
+	
 }
