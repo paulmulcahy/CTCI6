@@ -4,44 +4,6 @@ import java.util.Collection;
 import java.util.Optional;
 
 public class SinglyLinkedList<E> {
-	
-    static class Node<E>{    
-        private Optional<E> data;    
-        private Node<E> next;    
-            
-        Node(E data) {    
-            this.data = Optional.ofNullable(data);    
-            this.next = null;    
-        }
-		
-		E getData() {
-			return data.orElse(null);
-		}
-		
-		Optional<E> getOptionalData() {
-			return data;
-		}
-		
-		void setData(E data) {
-			this.data = Optional.ofNullable(data);
-		}
-		
-		Node<E> getNext() {
-			return next;
-		}
-		
-		void setNext(Node<E> next) {
-			this.next = next;
-		}
-		
-		@Override
-		public String toString() {
-			if(data.isPresent()) {
-				return data.get().toString();
-			} 
-			return "null";
-		}
-	}
   
     private Node<E> head = null;
     private Node<E> tail = null;
@@ -156,7 +118,7 @@ public class SinglyLinkedList<E> {
 	
 	public SinglyLinkedList<E> getReverse() {
 		SinglyLinkedList<E> reversed = new SinglyLinkedList<E>();
-		SinglyLinkedList.Node<E> current = this.getHead();
+		Node<E> current = this.getHead();
 		while(current!=null) {
 			reversed.addToStart(current.getData());
 			current = current.getNext();
