@@ -1,8 +1,5 @@
 package ca.pmulcahy.ctci6.chp1.q1;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /*
  * Implement an algorithm to determine if a string has all unique characters if you cannot use additional data structures
  */

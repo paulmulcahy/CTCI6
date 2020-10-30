@@ -1,7 +1,6 @@
 package ca.pmulcahy.ctci6.chp2;
 
 import java.util.Collection;
-import java.util.Optional;
 
 public class SinglyLinkedList<E> {
   

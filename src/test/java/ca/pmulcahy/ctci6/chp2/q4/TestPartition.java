@@ -1,6 +1,5 @@
 package ca.pmulcahy.ctci6.chp2.q4;
 
-import ca.pmulcahy.ctci6.chp2.Node;
 import ca.pmulcahy.ctci6.chp2.SinglyLinkedList;
 
 import java.util.Arrays;
