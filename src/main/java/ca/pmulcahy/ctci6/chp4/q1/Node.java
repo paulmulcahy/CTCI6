@@ -5,21 +5,21 @@ import java.util.Set;
 
 public class Node<T> {
 	private T data;
-	private Set<Node> children;
+	private Set<Node<T>> children;
 	public Node(T data) {
 		this.data = data;
-		this.children = new HashSet<Node>();
+		this.children = new HashSet<Node<T>>();
 	}
 	
 	public T getData() {
 		return data;
 	}
 	
-	public Set<Node> getChildren() {
+	public Set<Node<T>> getChildren() {
 		return children;
 	}
 	
-	public boolean addChild(Node child) {
+	public boolean addChild(Node<T> child) {
 		return children.add(child);
 	}
 }

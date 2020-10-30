@@ -1,4 +1,4 @@
-package ca.pmulcahy.ctci6.chp4.q2;
+package ca.pmulcahy.ctci6.chp4;
 
 public class TreeNode<T> {
 	T data;
@@ -13,19 +13,19 @@ public class TreeNode<T> {
 		return data;
 	}
 
-	public void setLeft(TreeNode left) {
+	public void setLeft(TreeNode<T> left) {
 		this.left = left;
 	}
 	
-	public TreeNode getLeft() {
+	public TreeNode<T> getLeft() {
 		return left;
 	}
 	
-	public void setRight(TreeNode right) {
+	public void setRight(TreeNode<T> right) {
 		this.right = right;
 	}
 	
-	public TreeNode getRight() {
+	public TreeNode<T> getRight() {
 		return right;
 	}
 	

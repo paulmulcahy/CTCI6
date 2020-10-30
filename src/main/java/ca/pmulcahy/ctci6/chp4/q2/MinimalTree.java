@@ -1,5 +1,7 @@
 package ca.pmulcahy.ctci6.chp4.q2;
 
+import ca.pmulcahy.ctci6.chp4.TreeNode;
+
 import java.util.List;
 
 /*

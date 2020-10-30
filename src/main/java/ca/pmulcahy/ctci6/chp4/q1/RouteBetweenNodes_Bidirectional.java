@@ -11,24 +11,24 @@ import java.util.Set;
  */
 public class RouteBetweenNodes_Bidirectional {
 	
-	public static boolean isRouteBetweenNodes(NodeWithParents startNode, NodeWithParents endNode) {	
-		Queue<NodeWithParents> nodesToSearchFromStart = new ArrayDeque<>();
+	public static <T> boolean isRouteBetweenNodes(NodeWithParents<T> startNode, NodeWithParents<T> endNode) {	
+		Queue<NodeWithParents<T>> nodesToSearchFromStart = new ArrayDeque<>();
 		nodesToSearchFromStart.add(startNode);
-		Queue<NodeWithParents> nodesToSearchFromEnd = new ArrayDeque<>();
+		Queue<NodeWithParents<T>> nodesToSearchFromEnd = new ArrayDeque<>();
 		nodesToSearchFromEnd.add(endNode);
 		
-		Set<NodeWithParents> nodesConnectedToStart = new HashSet<>();
+		Set<NodeWithParents<T>> nodesConnectedToStart = new HashSet<>();
 		nodesConnectedToStart.add(startNode);
-		Set<NodeWithParents> nodesConnectedToEnd = new HashSet<>();
+		Set<NodeWithParents<T>> nodesConnectedToEnd = new HashSet<>();
 		nodesConnectedToEnd.add(endNode);
 		
 		while(!nodesToSearchFromStart.isEmpty() || !nodesToSearchFromEnd.isEmpty()) {
 			
 			if(!nodesToSearchFromStart.isEmpty()) {
-				NodeWithParents node = nodesToSearchFromStart.remove();
-				Set<NodeWithParents> childNodes = node.getChildren();
+				NodeWithParents<T> node = nodesToSearchFromStart.remove();
+				Set<NodeWithParents<T>> childNodes = node.getChildren();
 				
-				for(NodeWithParents child : childNodes) {
+				for(NodeWithParents<T> child : childNodes) {
 					if(nodesConnectedToEnd.contains(child)) {
 						return true;
 					}
@@ -39,10 +39,10 @@ public class RouteBetweenNodes_Bidirectional {
 			}
 			
 			if(!nodesToSearchFromEnd.isEmpty()) {
-				NodeWithParents node = nodesToSearchFromEnd.remove();
-				Set<NodeWithParents> parentNodes = node.getParents();
+				NodeWithParents<T> node = nodesToSearchFromEnd.remove();
+				Set<NodeWithParents<T>> parentNodes = node.getParents();
 				
-				for(NodeWithParents parent : parentNodes) {
+				for(NodeWithParents<T> parent : parentNodes) {
 					if(nodesConnectedToStart.contains(parent)) {
 						return true;
 					}
