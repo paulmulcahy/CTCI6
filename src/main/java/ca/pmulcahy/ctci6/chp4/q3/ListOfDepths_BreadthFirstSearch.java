@@ -10,7 +10,7 @@ import java.util.List;
  * Given a binary tree, design an algorithm which creates a linked list of all the nodes at each depth (eg, if you have a tree with depth D, you'll have D linked lists).
  */
 public class ListOfDepths_BreadthFirstSearch {
-	public static <T> List<LinkedList<TreeNode<T>>> getListOfDepths(TreeNode<T> root) {
+	public static <T extends Comparable<T>> List<LinkedList<TreeNode<T>>> getListOfDepths(TreeNode<T> root) {
 
 		List<LinkedList<TreeNode<T>>> listOfNodeLists = new ArrayList<LinkedList<TreeNode<T>>>();
 		LinkedList<TreeNode<T>> nodesAtDepth = new LinkedList<TreeNode<T>>();

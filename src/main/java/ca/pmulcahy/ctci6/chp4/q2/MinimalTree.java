@@ -10,11 +10,11 @@ import java.util.List;
  * This is the generic implementation. As generic arrays cannot be used in java, lists are used instead. See MinimalTreeInt.java for the Array/Integer implementation.
  */
 public class MinimalTree {
-	public static <T> TreeNode<T> buildBinaryTree(List<T> sortedUniques) {
+	public static <T extends Comparable<T>> TreeNode<T> buildBinaryTree(List<T> sortedUniques) {
 		return buildBinaryTree(sortedUniques, 0, sortedUniques.size());
 	}
 	
-	private static <T> TreeNode<T> buildBinaryTree(List<T> sortedUniques, int start, int end) {
+	private static <T extends Comparable<T>> TreeNode<T> buildBinaryTree(List<T> sortedUniques, int start, int end) {
 		if(end - start > 1) {
 			final int mid = (end + start) / 2;
 			final TreeNode<T> parent = new TreeNode<T>(sortedUniques.get(mid));
