@@ -1,9 +1,9 @@
 package ca.pmulcahy.ctci6.chp4;
 
 public class TreeNode<T extends Comparable<T>> {
-	T data;
-	TreeNode<T> left;
-	TreeNode<T> right;
+	private T data;
+	private TreeNode<T> left;
+	private TreeNode<T> right;
 
 	public TreeNode(T data) {
 		this.data = data;
