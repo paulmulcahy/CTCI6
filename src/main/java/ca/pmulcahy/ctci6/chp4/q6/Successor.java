@@ -12,7 +12,8 @@ public class Successor {
 					treeNode = treeNode.getLeft();
 				}
 				return treeNode;
-			} else if(treeNode.getParent()!= null) {
+			}
+			if(treeNode.getParent()!= null) {
 				TreeNodeParentLinked<T> parentNode = treeNode.getParent();
 				while(parentNode!=null && !treeNode.equals(parentNode.getLeft())) {
 					treeNode = parentNode;

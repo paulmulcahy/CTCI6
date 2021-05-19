@@ -9,14 +9,14 @@ public class TestSuccessor {
 	@Test
 	public void zeroNodes() {
 		TreeNodeParentLinked<Integer> rootNode = null;
-		TreeNodeParentLinked rootNodeSuccessor = Successor.getSuccessor(rootNode);
+		TreeNodeParentLinked<Integer> rootNodeSuccessor = Successor.getSuccessor(rootNode);
 		assertNull(rootNodeSuccessor);
 	}
 
 	@Test
 	public void oneNode() {
 		TreeNodeParentLinked<Integer> rootNode = new TreeNodeParentLinked<Integer>(1);
-		TreeNodeParentLinked rootNodeSuccessor = Successor.getSuccessor(rootNode);
+		TreeNodeParentLinked<Integer> rootNodeSuccessor = Successor.getSuccessor(rootNode);
 		assertNull(rootNodeSuccessor);
 	}
 	
@@ -25,9 +25,9 @@ public class TestSuccessor {
 		TreeNodeParentLinked<Integer> rootNode = new TreeNodeParentLinked<Integer>(2);
 		TreeNodeParentLinked<Integer> leftNode = new TreeNodeParentLinked<Integer>(1);
 		rootNode.setLeft(leftNode);
-		TreeNodeParentLinked rootNodeSuccessor = Successor.getSuccessor(rootNode);
+		TreeNodeParentLinked<Integer> rootNodeSuccessor = Successor.getSuccessor(rootNode);
 		assertNull(rootNodeSuccessor);
-		TreeNodeParentLinked leftNodeSuccessor = Successor.getSuccessor(leftNode);
+		TreeNodeParentLinked<Integer> leftNodeSuccessor = Successor.getSuccessor(leftNode);
 		assertEquals(rootNode, leftNodeSuccessor);		
 	}	
 
@@ -36,9 +36,9 @@ public class TestSuccessor {
 		TreeNodeParentLinked<Integer> rootNode = new TreeNodeParentLinked<Integer>(1);
 		TreeNodeParentLinked<Integer> rightNode = new TreeNodeParentLinked<Integer>(2);
 		rootNode.setRight(rightNode);		
-		TreeNodeParentLinked rootNodeSuccessor = Successor.getSuccessor(rootNode);
+		TreeNodeParentLinked<Integer> rootNodeSuccessor = Successor.getSuccessor(rootNode);
 		assertEquals(rightNode, rootNodeSuccessor);
-		TreeNodeParentLinked rightNodeSuccessor = Successor.getSuccessor(rightNode);
+		TreeNodeParentLinked<Integer> rightNodeSuccessor = Successor.getSuccessor(rightNode);
 		assertNull(rightNodeSuccessor);
 	}
 	
@@ -50,11 +50,11 @@ public class TestSuccessor {
 		TreeNodeParentLinked<Integer> rightNode = new TreeNodeParentLinked<Integer>(3);
 		rootNode.setRight(rightNode);
 		
-		TreeNodeParentLinked rootNodeSuccessor = Successor.getSuccessor(rootNode);
+		TreeNodeParentLinked<Integer> rootNodeSuccessor = Successor.getSuccessor(rootNode);
 		assertEquals(rightNode, rootNodeSuccessor);
-		TreeNodeParentLinked leftNodeSuccessor = Successor.getSuccessor(leftNode);
+		TreeNodeParentLinked<Integer> leftNodeSuccessor = Successor.getSuccessor(leftNode);
 		assertEquals(rootNode, leftNodeSuccessor);	
-		TreeNodeParentLinked rightNodeSuccessor = Successor.getSuccessor(rightNode);
+		TreeNodeParentLinked<Integer> rightNodeSuccessor = Successor.getSuccessor(rightNode);
 		assertNull(rightNodeSuccessor);
 	}
 	
@@ -66,11 +66,11 @@ public class TestSuccessor {
 		TreeNodeParentLinked<Integer> leftLeftNode = new TreeNodeParentLinked<Integer>(1);
 		leftNode.setLeft(leftLeftNode);
 
-		TreeNodeParentLinked rootNodeSuccessor = Successor.getSuccessor(rootNode);
+		TreeNodeParentLinked<Integer> rootNodeSuccessor = Successor.getSuccessor(rootNode);
 		assertNull(rootNodeSuccessor);
-		TreeNodeParentLinked leftNodeSuccessor = Successor.getSuccessor(leftNode);
+		TreeNodeParentLinked<Integer> leftNodeSuccessor = Successor.getSuccessor(leftNode);
 		assertEquals(rootNode, leftNodeSuccessor);	
-		TreeNodeParentLinked leftLeftNodeSuccessor = Successor.getSuccessor(leftLeftNode);
+		TreeNodeParentLinked<Integer> leftLeftNodeSuccessor = Successor.getSuccessor(leftLeftNode);
 		assertEquals(leftNode, leftLeftNodeSuccessor);		
 	}	
 
@@ -82,11 +82,11 @@ public class TestSuccessor {
 		TreeNodeParentLinked<Integer> leftRightNode = new TreeNodeParentLinked<Integer>(2);
 		leftNode.setRight(leftRightNode);
 
-		TreeNodeParentLinked rootNodeSuccessor = Successor.getSuccessor(rootNode);
+		TreeNodeParentLinked<Integer> rootNodeSuccessor = Successor.getSuccessor(rootNode);
 		assertNull(rootNodeSuccessor);
-		TreeNodeParentLinked leftNodeSuccessor = Successor.getSuccessor(leftNode);
+		TreeNodeParentLinked<Integer> leftNodeSuccessor = Successor.getSuccessor(leftNode);
 		assertEquals(leftRightNode, leftNodeSuccessor);	
-		TreeNodeParentLinked leftRightNodeSuccessor = Successor.getSuccessor(leftRightNode);
+		TreeNodeParentLinked<Integer> leftRightNodeSuccessor = Successor.getSuccessor(leftRightNode);
 		assertEquals(rootNode, leftRightNodeSuccessor);		
 	}
 	
@@ -99,11 +99,11 @@ public class TestSuccessor {
 		TreeNodeParentLinked<Integer> rightLeftNode = new TreeNodeParentLinked<Integer>(2);
 		rightNode.setLeft(rightLeftNode);
 
-		TreeNodeParentLinked rootNodeSuccessor = Successor.getSuccessor(rootNode);
+		TreeNodeParentLinked<Integer> rootNodeSuccessor = Successor.getSuccessor(rootNode);
 		assertEquals(rightLeftNode, rootNodeSuccessor);
-		TreeNodeParentLinked rightNodeSuccessor = Successor.getSuccessor(rightNode);
+		TreeNodeParentLinked<Integer> rightNodeSuccessor = Successor.getSuccessor(rightNode);
 		assertNull(rightNodeSuccessor);	
-		TreeNodeParentLinked rightLeftNodeSuccessor = Successor.getSuccessor(rightLeftNode);
+		TreeNodeParentLinked<Integer> rightLeftNodeSuccessor = Successor.getSuccessor(rightLeftNode);
 		assertEquals(rightNode, rightLeftNodeSuccessor);		
 	}
 
@@ -116,11 +116,11 @@ public class TestSuccessor {
 		TreeNodeParentLinked<Integer> rightRightNode = new TreeNodeParentLinked<Integer>(3);
 		rightNode.setRight(rightRightNode);
 
-		TreeNodeParentLinked rootNodeSuccessor = Successor.getSuccessor(rootNode);
+		TreeNodeParentLinked<Integer> rootNodeSuccessor = Successor.getSuccessor(rootNode);
 		assertEquals(rightNode, rootNodeSuccessor);
-		TreeNodeParentLinked rightNodeSuccessor = Successor.getSuccessor(rightNode);
+		TreeNodeParentLinked<Integer> rightNodeSuccessor = Successor.getSuccessor(rightNode);
 		assertEquals(rightRightNode, rightNodeSuccessor);	
-		TreeNodeParentLinked rightRightNodeSuccessor = Successor.getSuccessor(rightRightNode);
+		TreeNodeParentLinked<Integer> rightRightNodeSuccessor = Successor.getSuccessor(rightRightNode);
 		assertNull(rightRightNodeSuccessor);	
 	}	
 
@@ -134,13 +134,13 @@ public class TestSuccessor {
 		TreeNodeParentLinked<Integer> leftLeftNode = new TreeNodeParentLinked<Integer>(1);
 		leftNode.setLeft(leftLeftNode);
 
-		TreeNodeParentLinked rootNodeSuccessor = Successor.getSuccessor(rootNode);
+		TreeNodeParentLinked<Integer> rootNodeSuccessor = Successor.getSuccessor(rootNode);
 		assertEquals(rightNode, rootNodeSuccessor);
-		TreeNodeParentLinked leftNodeSuccessor = Successor.getSuccessor(leftNode);
+		TreeNodeParentLinked<Integer> leftNodeSuccessor = Successor.getSuccessor(leftNode);
 		assertEquals(rootNode, leftNodeSuccessor);	
-		TreeNodeParentLinked rightNodeSuccessor = Successor.getSuccessor(rightNode);
+		TreeNodeParentLinked<Integer> rightNodeSuccessor = Successor.getSuccessor(rightNode);
 		assertNull(rightNodeSuccessor);
-		TreeNodeParentLinked leftLeftNodeSuccessor = Successor.getSuccessor(leftLeftNode);
+		TreeNodeParentLinked<Integer> leftLeftNodeSuccessor = Successor.getSuccessor(leftLeftNode);
 		assertEquals(leftNode, leftLeftNodeSuccessor);	
 	}
 	
@@ -154,13 +154,13 @@ public class TestSuccessor {
 		TreeNodeParentLinked<Integer> leftRightNode = new TreeNodeParentLinked<Integer>(3);
 		leftNode.setRight(leftRightNode);
 
-		TreeNodeParentLinked rootNodeSuccessor = Successor.getSuccessor(rootNode);
+		TreeNodeParentLinked<Integer> rootNodeSuccessor = Successor.getSuccessor(rootNode);
 		assertNull(rootNodeSuccessor);
-		TreeNodeParentLinked leftNodeSuccessor = Successor.getSuccessor(leftNode);
+		TreeNodeParentLinked<Integer> leftNodeSuccessor = Successor.getSuccessor(leftNode);
 		assertEquals(leftRightNode, leftNodeSuccessor);	
-		TreeNodeParentLinked leftLeftNodeSuccessor = Successor.getSuccessor(leftLeftNode);
+		TreeNodeParentLinked<Integer> leftLeftNodeSuccessor = Successor.getSuccessor(leftLeftNode);
 		assertEquals(leftNode, leftLeftNodeSuccessor);	
-		TreeNodeParentLinked leftRightNodeSuccessor = Successor.getSuccessor(leftRightNode);
+		TreeNodeParentLinked<Integer> leftRightNodeSuccessor = Successor.getSuccessor(leftRightNode);
 		assertEquals(rootNode, leftRightNodeSuccessor);	
 	}
 	
