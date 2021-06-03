@@ -9,13 +9,13 @@ import java.util.Set;
  * Note: This implementation will work with different-sized jagged arrays.
  */
 public class ZeroMatrix{
-	public static long[][] zeroMatrix(long[][] matrix) {
+	public static long[][] zeroMatrix(final long[][] matrix) {
 		if(matrix==null) {
 			return null;
 		}
 		
-		Set<Integer> columnsToZero = new HashSet<>();
-		Set<Integer> rowsToZero = new HashSet<>();
+		final Set<Integer> columnsToZero = new HashSet<>();
+		final Set<Integer> rowsToZero = new HashSet<>();
 		
 		for(int i=0; i<matrix.length; i++) {
 			for (int j=0; j<matrix[i].length; j++) {

@@ -18,7 +18,7 @@ public class SetOfStacks<T> {
 		this(1);
 	}
 	
-	public SetOfStacks(int maxStackSize) {
+	public SetOfStacks(final int maxStackSize) {
 		this(maxStackSize, 1);
 	}
 	
@@ -39,8 +39,8 @@ public class SetOfStacks<T> {
 	}
 	
 	private boolean isSetOfStacksFull() {
-		int numStacks = internalArray.length;
-		int maxStackSize = internalArray[0].length;
+		final int numStacks = internalArray.length;
+		final int maxStackSize = internalArray[0].length;
 		for(int i=0; i<numStacks; i++) {
 			if(stackSizeArray[i] != maxStackSize) {
 				return false;
@@ -51,11 +51,11 @@ public class SetOfStacks<T> {
 	
 	@SuppressWarnings("unchecked")
 	private void addStack() {
-		int numStacks = internalArray.length;
-		int newNumStacks = numStacks + 1;
-		int maxStackSize = internalArray[0].length;
-		T[][] oneLargerInternalArray = (T[][])new Object[newNumStacks][];
-		int[] oneLargerStackSizeArray = new int[newNumStacks];
+		final int numStacks = internalArray.length;
+		final int newNumStacks = numStacks + 1;
+		final int maxStackSize = internalArray[0].length;
+		final T[][] oneLargerInternalArray = (T[][])new Object[newNumStacks][];
+		final int[] oneLargerStackSizeArray = new int[newNumStacks];
 		for(int i=0; i<numStacks; i++) {
 			oneLargerInternalArray[i] = internalArray[i];
 			oneLargerStackSizeArray[i] = stackSizeArray[i];
@@ -66,7 +66,7 @@ public class SetOfStacks<T> {
 		stackSizeArray = oneLargerStackSizeArray;
 	}
 	
-	public void push(T item) {
+	public void push(final T item) {
 		if(isSetOfStacksFull()) {
 			addStack();
 		}
@@ -111,20 +111,20 @@ public class SetOfStacks<T> {
 		return item;
 	}
 	
-	public T popAt(int stackNum) {
-		T item = peekAt(stackNum);
+	public T popAt(final int stackNum) {
+		final T item = peekAt(stackNum);
 		stackSizeArray[stackNum]--;
 		return item;
 	}
 
-	private void validateStackSelection(int stackNum) {
+	private void validateStackSelection(final int stackNum) {
 		final int numStacks = internalArray.length;
 		if(stackNum < 0 || stackNum >= numStacks) {
 			throw new IllegalArgumentException(ILLEGAL_STACK_SELECTION);			
 		}		
 	}
 	
-	public T peekAt(int stackNum) {
+	public T peekAt(final int stackNum) {
 		T item;
 		validateStackSelection(stackNum);
 		int stackSize = stackSizeArray[stackNum];

@@ -13,16 +13,16 @@ public class TestMinimalTree {
 	@Test
 	public void zeroNodes() {
 		final Integer[] inputArr = {};
-		List<Integer> inputList = Arrays.asList(inputArr);
-		TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
+		final List<Integer> inputList = Arrays.asList(inputArr);
+		final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
 		assertNull(rootNode);
 	}
 
 	@Test
 	public void oneNode() {
 		final Integer[] inputArr = {1};
-		List<Integer> inputList = Arrays.asList(inputArr);
-		TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
+		final List<Integer> inputList = Arrays.asList(inputArr);
+		final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
 		assertEquals(1, rootNode.getData());
 		assertNull(rootNode.getLeft());
 		assertNull(rootNode.getRight());
@@ -31,10 +31,10 @@ public class TestMinimalTree {
 	@Test
 	public void twoNodes() {
 		final Integer[] inputArr = {1, 2};
-		List<Integer> inputList = Arrays.asList(inputArr);
-		TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
+		final List<Integer> inputList = Arrays.asList(inputArr);
+		final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
 		assertEquals(2, rootNode.getData());
-		TreeNode<Integer> leftNode = rootNode.getLeft();
+		final TreeNode<Integer> leftNode = rootNode.getLeft();
 		assertEquals(1, leftNode.getData());
 		assertNull(leftNode.getLeft());
 		assertNull(leftNode.getRight());
@@ -44,14 +44,14 @@ public class TestMinimalTree {
 	@Test
 	public void threeNodes() {
 		final Integer[] inputArr = {1, 2, 3};
-		List<Integer> inputList = Arrays.asList(inputArr);
-		TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
+		final List<Integer> inputList = Arrays.asList(inputArr);
+		final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
 		assertEquals(2, rootNode.getData());
-		TreeNode<Integer> leftNode = rootNode.getLeft();
+		final TreeNode<Integer> leftNode = rootNode.getLeft();
 		assertEquals(1, leftNode.getData());
 		assertNull(leftNode.getLeft());
 		assertNull(leftNode.getRight());
-		TreeNode<Integer> rightNode = rootNode.getRight();
+		final TreeNode<Integer> rightNode = rootNode.getRight();
 		assertEquals(3, rightNode.getData());
 		assertNull(rightNode.getLeft());
 		assertNull(rightNode.getRight());
@@ -60,17 +60,17 @@ public class TestMinimalTree {
 	@Test
 	public void fourNodes() {
 		final Integer[] inputArr = {1, 2, 3, 4};
-		List<Integer> inputList = Arrays.asList(inputArr);
-		TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
+		final List<Integer> inputList = Arrays.asList(inputArr);
+		final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
 		assertEquals(3, rootNode.getData());
-		TreeNode<Integer> leftNode = rootNode.getLeft();
+		final TreeNode<Integer> leftNode = rootNode.getLeft();
 		assertEquals(2, leftNode.getData());
-		TreeNode<Integer> leftLeftNode = leftNode.getLeft();
+		final TreeNode<Integer> leftLeftNode = leftNode.getLeft();
 		assertEquals(1, leftLeftNode.getData());
 		assertNull(leftLeftNode.getLeft());
 		assertNull(leftLeftNode.getRight());
 		assertNull(leftNode.getRight());
-		TreeNode<Integer> rightNode = rootNode.getRight();
+		final TreeNode<Integer> rightNode = rootNode.getRight();
 		assertEquals(4, rightNode.getData());
 		assertNull(rightNode.getLeft());
 		assertNull(rightNode.getRight());
@@ -79,19 +79,19 @@ public class TestMinimalTree {
 	@Test
 	public void fiveNodes() {
 		final Integer[] inputArr = {1, 2, 3, 4, 5};
-		List<Integer> inputList = Arrays.asList(inputArr);
-		TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
+		final List<Integer> inputList = Arrays.asList(inputArr);
+		final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
 		assertEquals(3, rootNode.getData());
-		TreeNode<Integer> leftNode = rootNode.getLeft();
+		final TreeNode<Integer> leftNode = rootNode.getLeft();
 		assertEquals(2, leftNode.getData());
-		TreeNode<Integer> leftLeftNode = leftNode.getLeft();
+		final TreeNode<Integer> leftLeftNode = leftNode.getLeft();
 		assertEquals(1, leftLeftNode.getData());
 		assertNull(leftLeftNode.getLeft());
 		assertNull(leftLeftNode.getRight());
 		assertNull(leftNode.getRight());
-		TreeNode<Integer> rightNode = rootNode.getRight();
+		final TreeNode<Integer> rightNode = rootNode.getRight();
 		assertEquals(5, rightNode.getData());
-		TreeNode<Integer> rightLeftNode = rightNode.getLeft();
+		final TreeNode<Integer> rightLeftNode = rightNode.getLeft();
 		assertEquals(4, rightLeftNode.getData());
 		assertNull(rightLeftNode.getLeft());
 		assertNull(rightLeftNode.getRight());
@@ -101,22 +101,22 @@ public class TestMinimalTree {
 	@Test
 	public void sixNodes() {
 		final Integer[] inputArr = {1, 2, 3, 4, 5, 6};
-		List<Integer> inputList = Arrays.asList(inputArr);
-		TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
+		final List<Integer> inputList = Arrays.asList(inputArr);
+		final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
 		assertEquals(4, rootNode.getData());
-		TreeNode<Integer> leftNode = rootNode.getLeft();
+		final TreeNode<Integer> leftNode = rootNode.getLeft();
 		assertEquals(2, leftNode.getData());
-		TreeNode<Integer> leftLeftNode = leftNode.getLeft();
+		final TreeNode<Integer> leftLeftNode = leftNode.getLeft();
 		assertEquals(1, leftLeftNode.getData());
 		assertNull(leftLeftNode.getLeft());
 		assertNull(leftLeftNode.getRight());
-		TreeNode<Integer> leftRightNode = leftNode.getRight();
+		final TreeNode<Integer> leftRightNode = leftNode.getRight();
 		assertEquals(3, leftRightNode.getData());
 		assertNull(leftRightNode.getLeft());
 		assertNull(leftRightNode.getRight());		
-		TreeNode<Integer> rightNode = rootNode.getRight();
+		final TreeNode<Integer> rightNode = rootNode.getRight();
 		assertEquals(6, rightNode.getData());
-		TreeNode<Integer> rightLeftNode = rightNode.getLeft();
+		final TreeNode<Integer> rightLeftNode = rightNode.getLeft();
 		assertEquals(5, rightLeftNode.getData());
 		assertNull(rightLeftNode.getLeft());
 		assertNull(rightLeftNode.getRight());
@@ -126,26 +126,26 @@ public class TestMinimalTree {
 	@Test
 	public void sevenNodes() {
 		final Integer[] inputArr = {1, 2, 3, 4, 5, 6, 7};
-		List<Integer> inputList = Arrays.asList(inputArr);
-		TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
+		final List<Integer> inputList = Arrays.asList(inputArr);
+		final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
 		assertEquals(4, rootNode.getData());
-		TreeNode<Integer> leftNode = rootNode.getLeft();
+		final TreeNode<Integer> leftNode = rootNode.getLeft();
 		assertEquals(2, leftNode.getData());
-		TreeNode<Integer> leftLeftNode = leftNode.getLeft();
+		final TreeNode<Integer> leftLeftNode = leftNode.getLeft();
 		assertEquals(1, leftLeftNode.getData());
 		assertNull(leftLeftNode.getLeft());
 		assertNull(leftLeftNode.getRight());
-		TreeNode<Integer> leftRightNode = leftNode.getRight();
+		final TreeNode<Integer> leftRightNode = leftNode.getRight();
 		assertEquals(3, leftRightNode.getData());
 		assertNull(leftRightNode.getLeft());
 		assertNull(leftRightNode.getRight());		
-		TreeNode<Integer> rightNode = rootNode.getRight();
+		final TreeNode<Integer> rightNode = rootNode.getRight();
 		assertEquals(6, rightNode.getData());
-		TreeNode<Integer> rightLeftNode = rightNode.getLeft();
+		final TreeNode<Integer> rightLeftNode = rightNode.getLeft();
 		assertEquals(5, rightLeftNode.getData());
 		assertNull(rightLeftNode.getLeft());
 		assertNull(rightLeftNode.getRight());
-		TreeNode<Integer> rightRightNode = rightNode.getRight();
+		final TreeNode<Integer> rightRightNode = rightNode.getRight();
 		assertEquals(7, rightRightNode.getData());
 		assertNull(rightRightNode.getLeft());
 		assertNull(rightRightNode.getRight());

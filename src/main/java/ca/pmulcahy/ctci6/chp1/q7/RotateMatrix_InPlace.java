@@ -5,12 +5,12 @@ package ca.pmulcahy.ctci6.chp1.q7;
  * rotate the image by 90 degress. Can you do this in place?
  */
 public class RotateMatrix_InPlace{
-	public static long[][] rotate(long[][] matrix) {
+	public static long[][] rotate(final long[][] matrix) {
 		if(!validateInput(matrix)) {
 			return null;
 		}
 		
-		int nSize = matrix.length;		
+		final int nSize = matrix.length;		
 		
 		for(int i=0; i<nSize - 1 - i; i++) {
 			for( int j=i; j<nSize - 1 - i; j++) {
@@ -25,11 +25,11 @@ public class RotateMatrix_InPlace{
 		return matrix;
 	}
 	
-	private static boolean validateInput(long[][] matrix) {
+	private static boolean validateInput(final long[][] matrix) {
 		if(matrix==null) {
 			return false;
 		}
-		int nSize = matrix.length;
+		final int nSize = matrix.length;
 		for(int i=0; i<nSize; i++) {
 			if(matrix[i] == null || matrix[i].length != nSize) {
 				return false;

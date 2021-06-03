@@ -5,11 +5,11 @@ package ca.pmulcahy.ctci6.chp1.q1;
  */
 
 public class AllUniqueCharacters_WithoutAdditionalDataStructure{
-	public static boolean isAllUniqueCharacters(String str) {
+	public static boolean isAllUniqueCharacters(final String str) {
 		for(int i=0; i<str.length(); i++) {
-			char iChar = str.charAt(i);
+			final char iChar = str.charAt(i);
 			for(int j=0; j<i; j++) {
-				char jChar = str.charAt(j);
+				final char jChar = str.charAt(j);
 				if(iChar == jChar) {
 					return false;
 				}

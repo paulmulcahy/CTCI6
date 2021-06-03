@@ -14,12 +14,12 @@ public class NInOne<T> {
 	private int numStacks;
 	private int[] stackSize;
 	
-	public NInOne(int numStacks) {
+	public NInOne(final int numStacks) {
 		this(numStacks, numStacks);
 	}
 	
 	@SuppressWarnings("unchecked")
-	public NInOne(int numStacks, int startingArraySize) {
+	public NInOne(final int numStacks, int startingArraySize) {
 		if(numStacks<1) {
 			throw new IllegalArgumentException(ILLEGAL_NUM_STACKS);
 		}
@@ -37,8 +37,8 @@ public class NInOne<T> {
 
 	@SuppressWarnings("unchecked")
 	private void increaseArraySize() {
-		int largerStackMaxSize = stackMaxSize * 2;
-		T[] largerInternalArray = (T[])new Object[largerStackMaxSize*numStacks];
+		final int largerStackMaxSize = stackMaxSize * 2;
+		final T[] largerInternalArray = (T[])new Object[largerStackMaxSize*numStacks];
 		for(int i=0; i<numStacks; i++) {
 			for(int j=0; j<stackSize[i]; j++) {
 				largerInternalArray[i*largerStackMaxSize+j] = internalArray[i*stackMaxSize+j];
@@ -48,7 +48,7 @@ public class NInOne<T> {
 		internalArray = largerInternalArray;
 	}
 	
-	public void push(int stackNum, T t) {
+	public void push(final int stackNum, final T t) {
 		validateStackSelection(stackNum);
 		if(stackSize[stackNum] == stackMaxSize) {
 			increaseArraySize();
@@ -57,27 +57,27 @@ public class NInOne<T> {
 		stackSize[stackNum]++;
 	}
 	
-	public T peek(int stackNum) {
+	public T peek(final int stackNum) {
 		validateStackSelection(stackNum);
 		if(stackSize[stackNum] == 0) {
 			throw new EmptyStackException();
 		}
-		T item = internalArray[stackMaxSize*stackNum+stackSize[stackNum] - 1];
+		final T item = internalArray[stackMaxSize*stackNum+stackSize[stackNum] - 1];
 		return item;
 	}
 	
-	public T pop(int stackNum) {
-		T item = peek(stackNum);
+	public T pop(final int stackNum) {
+		final T item = peek(stackNum);
 		stackSize[stackNum]--;
 		return item;
 	}
 	
-	public boolean isEmpty(int stackNum) {
+	public boolean isEmpty(final int stackNum) {
 		validateStackSelection(stackNum);
 		return stackSize[stackNum] == 0;
 	}
 	
-	private void validateStackSelection(int stackNum) {
+	private void validateStackSelection(final int stackNum) {
 		if(stackNum < 0 || stackNum >= numStacks) {
 			throw new IllegalArgumentException(ILLEGAL_STACK_SELECTION);			
 		}		

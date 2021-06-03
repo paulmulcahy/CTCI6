@@ -10,14 +10,14 @@ import java.util.Map;
  * Output: True (permutations: "taco cat", "atco cta", etc.)
  */
 public class PalindromePermutation{
-	public static boolean isPermutationOfPalindrome(String str) {
-		String strLower = str.toLowerCase();
-		String whiteSpaceRemoved = strLower.replace(" ", "");
+	public static boolean isPermutationOfPalindrome(final String str) {
+		final String strLower = str.toLowerCase();
+		final String whiteSpaceRemoved = strLower.replace(" ", "");
 		
-		Map<Character, Integer> characterCount = new HashMap<>();
+		final Map<Character, Integer> characterCount = new HashMap<>();
 		for(int i=0; i<whiteSpaceRemoved.length(); i++) {
-			Character c = whiteSpaceRemoved.charAt(i);
-			Integer count = characterCount.get(c);
+			final Character c = whiteSpaceRemoved.charAt(i);
+			final Integer count = characterCount.get(c);
 			if (count==null){
 				characterCount.put(c, 1);
 			} else {

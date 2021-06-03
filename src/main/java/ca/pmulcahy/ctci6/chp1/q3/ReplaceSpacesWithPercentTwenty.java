@@ -10,9 +10,9 @@ public class ReplaceSpacesWithPercentTwenty{
 	public final static Character EMPTY_CHAR = ' '; 
 	
 	public static String replaceSpacesWithPercentTwenty(String str) {
-		Character[] characterArrayWithSpaceAllocatedForAdditionalCharacters = toCharacterArrayWithSpaceAllocatedForAdditionalCharacters(str);
-		Character[] characterArrayWithSpacesReplacedByPercentTwenty = replaceSpacesWithPercentTwentyInPlace(characterArrayWithSpaceAllocatedForAdditionalCharacters);
-		char[] charArrayWithSpacesReplacedByPercentTwenty = characterArrayToCharArray(characterArrayWithSpacesReplacedByPercentTwenty);
+		final Character[] characterArrayWithSpaceAllocatedForAdditionalCharacters = toCharacterArrayWithSpaceAllocatedForAdditionalCharacters(str);
+		final Character[] characterArrayWithSpacesReplacedByPercentTwenty = replaceSpacesWithPercentTwentyInPlace(characterArrayWithSpaceAllocatedForAdditionalCharacters);
+		final char[] charArrayWithSpacesReplacedByPercentTwenty = characterArrayToCharArray(characterArrayWithSpacesReplacedByPercentTwenty);
 		return new String (charArrayWithSpacesReplacedByPercentTwenty);
 	}
 
@@ -27,7 +27,7 @@ public class ReplaceSpacesWithPercentTwenty{
 	}
 	
 	private static Character[] toCharacterArrayWithSpaceAllocatedForAdditionalCharacters(String str) {		
-		Character[] chArr = new Character[str.length() + additionalCharactersNeeded(str)];
+		final Character[] chArr = new Character[str.length() + additionalCharactersNeeded(str)];
 		
 		for(int i=0; i<str.length(); i++) {
 			chArr[i] = str.charAt(i);
@@ -57,7 +57,7 @@ public class ReplaceSpacesWithPercentTwenty{
 	}
 	
 	private static char[] characterArrayToCharArray(Character[] chArr) {
-		char[] charArr = new char[chArr.length];
+		final char[] charArr = new char[chArr.length];
 		for(int i=0; i<chArr.length; i++) {
 			charArr[i] = chArr[i];
 		}

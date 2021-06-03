@@ -8,7 +8,7 @@ import ca.pmulcahy.ctci6.chp2.SinglyLinkedList;
  */
 public class Intersection{
 	
-	public static <E> Node<E> getIntersection(SinglyLinkedList<E> s1, SinglyLinkedList<E> s2) {	
+	public static <E> Node<E> getIntersection(final SinglyLinkedList<E> s1, final SinglyLinkedList<E> s2) {	
 		Node<E> node1 = s1.getHead();
 		while(node1!=null) {
 			Node<E> node2 = s2.getHead();

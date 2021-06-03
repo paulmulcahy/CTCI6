@@ -7,13 +7,13 @@ package ca.pmulcahy.ctci6.chp1.q6;
  * string only has uppercase and lowercase letters (a-z).
  */
 public class StringCompression{
-	public static String compress(String uncompressed) {
+	public static String compress(final String uncompressed) {
 		
 		if(uncompressed.length() == 0) {
 			return uncompressed;
 		}
 		
-		StringBuilder sb = new StringBuilder();
+		final StringBuilder sb = new StringBuilder();
 		
 		char lastChar = uncompressed.charAt(0);
 		int lastCharCount = 1;

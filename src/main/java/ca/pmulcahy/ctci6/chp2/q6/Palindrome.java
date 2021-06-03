@@ -8,8 +8,8 @@ import ca.pmulcahy.ctci6.chp2.SinglyLinkedList;
  */
 public class Palindrome{
 	
-	public static <E> boolean isPalindrome(SinglyLinkedList<E> singlyLinkedList) {	
-		SinglyLinkedList<E> reversedList = singlyLinkedList.getReverse();
+	public static <E> boolean isPalindrome(final SinglyLinkedList<E> singlyLinkedList) {	
+		final SinglyLinkedList<E> reversedList = singlyLinkedList.getReverse();
 		
 		Node<E> node1 = singlyLinkedList.getHead();
 		Node<E> node2 = reversedList.getHead();

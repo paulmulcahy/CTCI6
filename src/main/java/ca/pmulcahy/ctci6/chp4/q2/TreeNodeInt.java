@@ -4,7 +4,7 @@ public class TreeNodeInt {
 	private int data;
 	private TreeNodeInt left;
 	private TreeNodeInt right;
-	public TreeNodeInt(int data) {
+	public TreeNodeInt(final int data) {
 		this.data = data;
 	}
 	
@@ -12,7 +12,7 @@ public class TreeNodeInt {
 		return data;
 	}
 
-	public void setLeft(TreeNodeInt left) {
+	public void setLeft(final TreeNodeInt left) {
 		this.left = left;
 	}
 	
@@ -20,7 +20,7 @@ public class TreeNodeInt {
 		return left;
 	}
 	
-	public void setRight(TreeNodeInt right) {
+	public void setRight(final TreeNodeInt right) {
 		this.right = right;
 	}
 	

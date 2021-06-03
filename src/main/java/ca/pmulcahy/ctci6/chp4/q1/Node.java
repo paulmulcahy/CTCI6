@@ -6,7 +6,7 @@ import java.util.Set;
 public class Node<T> {
 	private T data;
 	private Set<Node<T>> children;
-	public Node(T data) {
+	public Node(final T data) {
 		this.data = data;
 		this.children = new HashSet<Node<T>>();
 	}
@@ -19,7 +19,7 @@ public class Node<T> {
 		return children;
 	}
 	
-	public boolean addChild(Node<T> child) {
+	public boolean addChild(final Node<T> child) {
 		return children.add(child);
 	}
 }

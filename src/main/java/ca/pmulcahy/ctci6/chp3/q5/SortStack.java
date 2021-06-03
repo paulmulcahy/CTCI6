@@ -24,15 +24,15 @@ public class SortStack<T extends Comparable<T>> {
 	
 	@SuppressWarnings("unchecked")
 	private void increaseArraySize() {
-		int largerInternalArraySize = internalArray.length * 2;
-		T[] largerInternalArray = (T[])new Comparable[largerInternalArraySize];
+		final int largerInternalArraySize = internalArray.length * 2;
+		final T[] largerInternalArray = (T[])new Comparable[largerInternalArraySize];
 		for(int i=0; i<internalArray.length; i++) {
 			largerInternalArray[i] = internalArray[i];
 		}
 		internalArray = largerInternalArray;
 	}
 	
-	public void push(T item) {
+	public void push(final T item) {
 		if(stackSize == internalArray.length) {
 			increaseArraySize();
 		}
@@ -43,12 +43,12 @@ public class SortStack<T extends Comparable<T>> {
 		if(stackSize == 0) {
 			throw new EmptyStackException();
 		}
-		T item = internalArray[stackSize-1];
+		final T item = internalArray[stackSize-1];
 		return item;
 	}
 	
 	public T pop() {
-		T item = peek();
+		final T item = peek();
 		stackSize--;
 		return item;
 	}
@@ -58,9 +58,9 @@ public class SortStack<T extends Comparable<T>> {
 	}
 	
 	public void sort() {
-		SortStack<T> reverseStack = new SortStack<>(this.stackSize);
+		final SortStack<T> reverseStack = new SortStack<>(this.stackSize);
 		while(!this.isEmpty()) {
-			T temp = this.pop();
+			final T temp = this.pop();
 			while(!reverseStack.isEmpty() && reverseStack.peek().compareTo(temp)<0) {
 				this.push((T)reverseStack.pop());	
 			}

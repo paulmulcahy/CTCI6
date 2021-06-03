@@ -5,7 +5,7 @@ public class TreeNode<T extends Comparable<T>> {
 	private TreeNode<T> left;
 	private TreeNode<T> right;
 
-	public TreeNode(T data) {
+	public TreeNode(final T data) {
 		this.data = data;
 	}
 	
@@ -13,7 +13,7 @@ public class TreeNode<T extends Comparable<T>> {
 		return data;
 	}
 
-	public void setLeft(TreeNode<T> left) {
+	public void setLeft(final TreeNode<T> left) {
 		this.left = left;
 	}
 	
@@ -21,7 +21,7 @@ public class TreeNode<T extends Comparable<T>> {
 		return left;
 	}
 	
-	public void setRight(TreeNode<T> right) {
+	public void setRight(final TreeNode<T> right) {
 		this.right = right;
 	}
 	

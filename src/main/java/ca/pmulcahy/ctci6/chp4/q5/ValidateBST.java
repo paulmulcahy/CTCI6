@@ -6,7 +6,7 @@ import ca.pmulcahy.ctci6.chp4.TreeNode;
  * Implement a function to check if a binary tree is balanced. For the purposes of this question, a balanced tree is defined to be a tree such that the heights of the two subtrees of any node never differ by more than one.
  */
 public class ValidateBST {
-	public static <T extends Comparable<T>> boolean isBinarySearchTree(TreeNode<T> treeNode) {		
+	public static <T extends Comparable<T>> boolean isBinarySearchTree(final TreeNode<T> treeNode) {		
 		boolean isNodeValid = true;
 		if(treeNode!=null) {
 			isNodeValid = isBST(treeNode);
@@ -14,9 +14,9 @@ public class ValidateBST {
 		return isNodeValid;
 	}
 	
-	private static <T extends Comparable<T>> boolean isBST(TreeNode<T> treeNode) {
+	private static <T extends Comparable<T>> boolean isBST(final TreeNode<T> treeNode) {
 		boolean isNodeValid = true;
-		T nodeData = treeNode.getData();
+		final T nodeData = treeNode.getData();
 		
 		if(nodeData!=null){
 			final TreeNode<T> leftNode = treeNode.getLeft();

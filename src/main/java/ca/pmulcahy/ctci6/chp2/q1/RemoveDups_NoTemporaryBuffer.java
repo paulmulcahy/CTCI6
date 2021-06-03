@@ -10,7 +10,7 @@ import ca.pmulcahy.ctci6.chp2.SinglyLinkedList;
  */
 public class RemoveDups_NoTemporaryBuffer{
 	
-	public static <E> SinglyLinkedList<E> removeDuplicates(SinglyLinkedList<E> singlyLinkedList) {
+	public static <E> SinglyLinkedList<E> removeDuplicates(final SinglyLinkedList<E> singlyLinkedList) {
 		Node<E> nodeToCompare = singlyLinkedList.getHead();
 		while(nodeToCompare!=null) {
 			Node<E> previousNode = nodeToCompare;			

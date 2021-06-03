@@ -7,7 +7,7 @@ public class NodeWithParents<T> {
 	private T data;
 	private Set<NodeWithParents<T>> children;
 	private Set<NodeWithParents<T>> parents;
-	public NodeWithParents(T data) {
+	public NodeWithParents(final T data) {
 		this.data = data;
 		this.children = new HashSet<NodeWithParents<T>>();
 		this.parents = new HashSet<NodeWithParents<T>>();
@@ -25,7 +25,7 @@ public class NodeWithParents<T> {
 		return parents;
 	}
 	
-	public void addChild(NodeWithParents<T> child) {
+	public void addChild(final NodeWithParents<T> child) {
 		children.add(child);
 		child.parents.add(this);
 	}

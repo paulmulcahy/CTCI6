@@ -13,7 +13,7 @@ import ca.pmulcahy.ctci6.chp2.SinglyLinkedList;
  */
 public class Partition{
 	
-	public static <E extends Comparable<E>> SinglyLinkedList<E> partition(SinglyLinkedList<E> singlyLinkedList, E e) {	
+	public static <E extends Comparable<E>> SinglyLinkedList<E> partition(final SinglyLinkedList<E> singlyLinkedList, final E e) {	
 		Node<E> previousNode = singlyLinkedList.getHead();
 		if(previousNode != null && e!= null) {
 			Node<E> currentNode = previousNode.getNext();		

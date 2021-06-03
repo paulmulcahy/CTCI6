@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestZeroMatrix{
 
-    private static long[][] initializeMatrix(int ySize, int xSize){
-        long[][] matrix = new long[ySize][];
+    private static long[][] initializeMatrix(final int ySize, final int xSize){
+        final long[][] matrix = new long[ySize][];
 		for(int i=0; i< matrix.length; i++) {
 			matrix[i] = new long[xSize];
 		}

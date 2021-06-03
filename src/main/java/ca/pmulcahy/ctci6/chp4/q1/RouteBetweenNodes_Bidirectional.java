@@ -11,22 +11,22 @@ import java.util.Set;
  */
 public class RouteBetweenNodes_Bidirectional {
 	
-	public static <T> boolean isRouteBetweenNodes(NodeWithParents<T> startNode, NodeWithParents<T> endNode) {	
-		Queue<NodeWithParents<T>> nodesToSearchFromStart = new ArrayDeque<>();
+	public static <T> boolean isRouteBetweenNodes(final NodeWithParents<T> startNode, final NodeWithParents<T> endNode) {	
+		final Queue<NodeWithParents<T>> nodesToSearchFromStart = new ArrayDeque<>();
 		nodesToSearchFromStart.add(startNode);
-		Queue<NodeWithParents<T>> nodesToSearchFromEnd = new ArrayDeque<>();
+		final Queue<NodeWithParents<T>> nodesToSearchFromEnd = new ArrayDeque<>();
 		nodesToSearchFromEnd.add(endNode);
 		
-		Set<NodeWithParents<T>> nodesConnectedToStart = new HashSet<>();
+		final Set<NodeWithParents<T>> nodesConnectedToStart = new HashSet<>();
 		nodesConnectedToStart.add(startNode);
-		Set<NodeWithParents<T>> nodesConnectedToEnd = new HashSet<>();
+		final Set<NodeWithParents<T>> nodesConnectedToEnd = new HashSet<>();
 		nodesConnectedToEnd.add(endNode);
 		
 		while(!nodesToSearchFromStart.isEmpty() || !nodesToSearchFromEnd.isEmpty()) {
 			
 			if(!nodesToSearchFromStart.isEmpty()) {
-				NodeWithParents<T> node = nodesToSearchFromStart.remove();
-				Set<NodeWithParents<T>> childNodes = node.getChildren();
+				final NodeWithParents<T> node = nodesToSearchFromStart.remove();
+				final Set<NodeWithParents<T>> childNodes = node.getChildren();
 				
 				for(NodeWithParents<T> child : childNodes) {
 					if(nodesConnectedToEnd.contains(child)) {
@@ -39,8 +39,8 @@ public class RouteBetweenNodes_Bidirectional {
 			}
 			
 			if(!nodesToSearchFromEnd.isEmpty()) {
-				NodeWithParents<T> node = nodesToSearchFromEnd.remove();
-				Set<NodeWithParents<T>> parentNodes = node.getParents();
+				final NodeWithParents<T> node = nodesToSearchFromEnd.remove();
+				final Set<NodeWithParents<T>> parentNodes = node.getParents();
 				
 				for(NodeWithParents<T> parent : parentNodes) {
 					if(nodesConnectedToStart.contains(parent)) {

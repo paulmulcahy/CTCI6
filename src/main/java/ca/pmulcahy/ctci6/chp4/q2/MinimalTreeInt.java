@@ -5,11 +5,11 @@ package ca.pmulcahy.ctci6.chp4.q2;
  *
  */
 public class MinimalTreeInt {
-	public static TreeNodeInt buildBinaryTree(int[] sortedUniques) {
+	public static TreeNodeInt buildBinaryTree(final int[] sortedUniques) {
 		return buildBinaryTree(sortedUniques, 0, sortedUniques.length);
 	}
 
-	private static TreeNodeInt buildBinaryTree(int[] sortedUniques, int start, int end) {
+	private static TreeNodeInt buildBinaryTree(final int[] sortedUniques, final int start, final int end) {
 		if(end - start > 1) {
 			final int mid = (end + start) / 2;
 			final TreeNodeInt parent = new TreeNodeInt(sortedUniques[mid]);

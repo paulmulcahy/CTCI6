@@ -12,7 +12,7 @@ public class TestStringPermutationOfOtherString{
 		final String length3 = "123";
 		final String length4 = "1234";
 				
-		boolean result = StringPermutationOfOtherString.stringPermutationOfOther(length3, length4);
+		final boolean result = StringPermutationOfOtherString.stringPermutationOfOther(length3, length4);
 		assertFalse(result, length3 + " is a different length from " + length4 + " and therefore cannot be a permutation.");
 	}	
 	
@@ -21,7 +21,7 @@ public class TestStringPermutationOfOtherString{
 	
 		final String matchingString = "Matching String!";
 		
-		boolean result = StringPermutationOfOtherString.stringPermutationOfOther(matchingString, matchingString);
+		final boolean result = StringPermutationOfOtherString.stringPermutationOfOther(matchingString, matchingString);
 		assertTrue(result, "The string " + matchingString + " should work if provided twice.");
 	}
 	
@@ -31,7 +31,7 @@ public class TestStringPermutationOfOtherString{
 		final String abc = "ABC";
 		final String xyz = "XYZ";
 		
-		boolean result = StringPermutationOfOtherString.stringPermutationOfOther(abc, xyz);
+		final boolean result = StringPermutationOfOtherString.stringPermutationOfOther(abc, xyz);
 		assertFalse(result, "The string " + abc + " is not a permuation of " + xyz);
 	}
 
@@ -41,7 +41,7 @@ public class TestStringPermutationOfOtherString{
 		final String abc = "ABC";
 		final String cba = "CBA";
 		
-		boolean result = StringPermutationOfOtherString.stringPermutationOfOther(abc, cba);
+		final boolean result = StringPermutationOfOtherString.stringPermutationOfOther(abc, cba);
 		assertTrue(result, "The string " + abc + " is a permuation of " + cba);
 	}
 
@@ -51,7 +51,7 @@ public class TestStringPermutationOfOtherString{
 		final String aabc = "AABC";
 		final String abcc = "ABCC";
 		
-		boolean result = StringPermutationOfOtherString.stringPermutationOfOther(aabc, abcc);
+		final boolean result = StringPermutationOfOtherString.stringPermutationOfOther(aabc, abcc);
 		assertFalse(result, "The string " + aabc + " has the same unique characters but is not a permutation of " + abcc);
 	}
 	

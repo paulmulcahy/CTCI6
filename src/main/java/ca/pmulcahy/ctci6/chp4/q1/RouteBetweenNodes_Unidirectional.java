@@ -11,15 +11,15 @@ import java.util.Set;
 public class RouteBetweenNodes_Unidirectional {
 	
 	public static <T> boolean isRouteBetweenNodes(Node<T> startNode, Node<T> endNode) {
-		Queue<Node<T>> nodesToSearch = new ArrayDeque<>();
+		final Queue<Node<T>> nodesToSearch = new ArrayDeque<>();
 		nodesToSearch.add(startNode);
 		
-		Set<Node<T>> connectedNodes = new HashSet<>();
+		final Set<Node<T>> connectedNodes = new HashSet<>();
 		connectedNodes.add(startNode);
 		
 		while(!nodesToSearch.isEmpty()) {
-			Node<T> node = nodesToSearch.remove();
-			Set<Node<T>> childNodes = node.getChildren();
+			final Node<T> node = nodesToSearch.remove();
+			final Set<Node<T>> childNodes = node.getChildren();
 			
 			for(Node<T> child : childNodes) {
 				if(child.equals(endNode)) {

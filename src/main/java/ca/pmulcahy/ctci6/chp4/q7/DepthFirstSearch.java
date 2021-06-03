@@ -1,54 +1,73 @@
 package ca.pmulcahy.ctci6.chp4.q7;
 
-import java.util.AbstractMap.SimpleEntry;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Deque;
-import java.util.stream.Collectors;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.AbstractMap.SimpleEntry;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /*
  * You are given a list of projects and a list of dependencies (which is a list of pairs of projects where the second project
  *  is dependent on the first project). All of a project's dependencies must be built before the project is. Find a build order
  *  that will allow the projects to be built. If there is no valid build order, return an error.
  */
-public class KahnsAlgorithm {
-	public static <T> List<T> getBuildOrder(final List<T> projectsInput, final List<SimpleEntry<T,T>> dependencyList) {	
+public class DepthFirstSearch {
+
+	private enum Mark {UNMARKED, PERMANENT, TEMPORARY};
 	
+	public static <T> List<T> getBuildOrder(final List<T> projectsInput, final List<SimpleEntry<T,T>> dependencyList) {
 		final Set<T> projects = new HashSet<T>(projectsInput);
-		final int numProjects = projects.size();
+		//final int numProjects = projects.size();
 		final Set<T> dependencyProjects = getProjectListFromDependencies(dependencyList);
 		if(!projects.containsAll(dependencyProjects)) {
 			throw new IncompleteProjectListException(projectsInput, dependencyList);
 		}
 		final Map<T,Set<T>> dependencyMap = getDependencyMap(dependencyList);
-		final Deque<T> projectsWithoutDependencies = getProjectsWithoutDependencies(projects, dependencyMap);
-		final List<T> buildOrder = getOrder(projectsWithoutDependencies, dependencyMap, numProjects);
-
+		final List<T> buildOrder = getOrder(projects, dependencyMap);
+		
 		return buildOrder;
 	}
 	
-	private static <T> List<T> getOrder(final Deque<T> projectsWithoutDependencies, final Map<T, Set<T>> dependencyMap, final int numProjects) {
-		final List<T> buildOrder = new ArrayList<T>();
-
-		while(!projectsWithoutDependencies.isEmpty()) {
-			final T projectWithoutDependencies = projectsWithoutDependencies.pop();
-			for(T project : dependencyMap.keySet()) {
-				final Set<T> dependencies = dependencyMap.get(project);
-				if(dependencies.remove(projectWithoutDependencies) && dependencies.isEmpty()) {
-					projectsWithoutDependencies.push(project);
-				}
-			}
-			buildOrder.add(projectWithoutDependencies);
+	private static <T> List<T> getOrder(final Set<T> projects, final Map<T, Set<T>> dependencyMap) {
+		//final List<T> projectList = new ArrayList<>(projects);
+		final Map<T,Mark> projectMarks = new HashMap<>();
+		for(T project : projects) {
+			projectMarks.put(project, Mark.UNMARKED);
 		}
-		if(buildOrder.size() != numProjects) {
+		final Deque<T> buildOrder = new ArrayDeque<>();
+		for(T project : projects) {
+			Mark mark = projectMarks.get(project);
+			if(mark==Mark.UNMARKED) {
+				visit(buildOrder, project, dependencyMap, projectMarks);
+			}
+		}
+		// TODO Auto-generated method stub
+		return new ArrayList<T>(buildOrder);
+	}
+
+	private static <T> void visit(final Deque<T> buildOrder, final T project, final Map<T, Set<T>> dependencyMap, final Map<T, Mark> projectMarks) {
+		Mark mark = projectMarks.get(project);
+		if(mark==Mark.PERMANENT) {
+			return;
+		}
+		if(mark==Mark.TEMPORARY) {
 			throw new CyclicalDependencyException(dependencyMap);
 		}
+		projectMarks.put(project, Mark.TEMPORARY);
 		
-		return buildOrder;
+		final Set<T> dependentProjects = dependencyMap.get(project);
+		if(dependentProjects!=null) {
+			for(T dependentProject : dependentProjects) {
+				visit(buildOrder, dependentProject, dependencyMap, projectMarks);
+			}
+		}
+		projectMarks.put(project, Mark.PERMANENT);
+		buildOrder.push(project);
 	}
 
 	private static <T> Set<T> getProjectListFromDependencies(final List<SimpleEntry<T, T>> dependencies) {
@@ -59,24 +78,17 @@ public class KahnsAlgorithm {
 		}
 		return projects;
 	}
-
+	
 	/* 
 	 * Build the Graph in the form of a Map of Sets (Map<T,Set<T>>) where the Set<T> value is a list of
-	 * dependencies on T key.
+	 * projects dependent on T key.
 	 */
 	private static <T> Map<T,Set<T>> getDependencyMap(final List<SimpleEntry<T,T>> dependencyList) {
 		final Map<T,Set<T>> dependencyMap = dependencyList.stream()
-														  .collect(Collectors.groupingBy(SimpleEntry::getValue,
-																   Collectors.mapping(SimpleEntry::getKey,
+														  .collect(Collectors.groupingBy(SimpleEntry::getKey,
+																   Collectors.mapping(SimpleEntry::getValue,
 																   Collectors.toSet())));		
 		return dependencyMap;
-	}
-	
-	private static <T> Deque<T> getProjectsWithoutDependencies(final Set<T> projects, final Map<T, Set<T>> dependencyMap) {
-		final Deque<T> projectsWithoutDependencies = projects.stream()
-															 .filter(t -> dependencyMap.get(t) == null || dependencyMap.get(t).isEmpty())
-															 .collect(Collectors.toCollection(()-> new ArrayDeque<T>()));
-		return projectsWithoutDependencies;
 	}
 
 	static class IncompleteProjectListException extends RuntimeException {

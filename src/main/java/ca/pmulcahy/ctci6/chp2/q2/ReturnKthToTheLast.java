@@ -8,8 +8,8 @@ import ca.pmulcahy.ctci6.chp2.SinglyLinkedList;
  */
 public class ReturnKthToTheLast{
 	
-	public static <E> E returnKthToTheLast(SinglyLinkedList<E> singlyLinkedList, int k) {
-		int count = getSinglyLinkedListSize(singlyLinkedList);
+	public static <E> E returnKthToTheLast(final SinglyLinkedList<E> singlyLinkedList, final int k) {
+		final int count = getSinglyLinkedListSize(singlyLinkedList);
 		if(k > count || k < 1) {
 			return null;
 		}
@@ -18,12 +18,12 @@ public class ReturnKthToTheLast{
 		for(int i=0; i< count-k; i++) {
 			currentNode = currentNode.getNext();			
 		}
-		E kthToTheLast = (E)(currentNode.getData());
+		final E kthToTheLast = (E)(currentNode.getData());
 		
 		return kthToTheLast;
 	}
 	  
-	private static <E> int getSinglyLinkedListSize(SinglyLinkedList<E> singlyLinkedList) {
+	private static <E> int getSinglyLinkedListSize(final SinglyLinkedList<E> singlyLinkedList) {
 		int count = 0;
 		Node<E> currentNode = singlyLinkedList.getHead();
 		while(currentNode!=null) {

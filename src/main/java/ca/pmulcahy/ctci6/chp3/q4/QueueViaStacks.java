@@ -26,15 +26,15 @@ public class QueueViaStacks<T> {
 		
 		@SuppressWarnings("unchecked")
 		private void increaseArraySize() {
-			int largerInternalArraySize = internalArray.length * 2;
-			T[] largerInternalArray = (T[])new Object[largerInternalArraySize];
+			final int largerInternalArraySize = internalArray.length * 2;
+			final T[] largerInternalArray = (T[])new Object[largerInternalArraySize];
 			for(int i=0; i<internalArray.length; i++) {
 				largerInternalArray[i] = internalArray[i];
 			}
 			internalArray = largerInternalArray;
 		}
 		
-		private void push(T item) {
+		private void push(final T item) {
 			if(stackSize == internalArray.length) {
 				increaseArraySize();
 			}
@@ -45,12 +45,12 @@ public class QueueViaStacks<T> {
 			if(stackSize == 0) {
 				throw new EmptyStackException();
 			}
-			T item = internalArray[stackSize-1];
+			final T item = internalArray[stackSize-1];
 			return item;
 		}
 		
 		private T pop() {
-			T item = peek();
+			final T item = peek();
 			stackSize--;
 			return item;
 		}
@@ -78,7 +78,7 @@ public class QueueViaStacks<T> {
 	}
 	
 	public void add(T item) {
-		InternalStack tempStack = new InternalStack(mainStack.getStackSize());
+		final InternalStack tempStack = new InternalStack(mainStack.getStackSize());
 		while(!mainStack.isEmpty()) {
 			tempStack.push(mainStack.pop());			
 		}
@@ -92,7 +92,7 @@ public class QueueViaStacks<T> {
 		if(mainStack.isEmpty()) {
 			throw new NoSuchElementException();
 		}
-		T item = (T)mainStack.pop();
+		final T item = (T)mainStack.pop();
 		return item;
 	}
 	
@@ -100,7 +100,7 @@ public class QueueViaStacks<T> {
 		if(mainStack.isEmpty()) {
 			throw new NoSuchElementException();
 		}
-		T item = (T)mainStack.peek();
+		final T item = (T)mainStack.peek();
 		return item;
 	}
 	

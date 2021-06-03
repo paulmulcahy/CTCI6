@@ -12,7 +12,7 @@ public class Node<E>{
 	private Optional<E> data;    
 	private Node<E> next;    
 		
-	public Node(E data) {    
+	public Node(final E data) {    
 		this.data = Optional.ofNullable(data);    
 		this.next = null;    
 	}
@@ -25,7 +25,7 @@ public class Node<E>{
 		return data;
 	}
 	
-	public void setData(E data) {
+	public void setData(final E data) {
 		this.data = Optional.ofNullable(data);
 	}
 	
@@ -33,7 +33,7 @@ public class Node<E>{
 		return next;
 	}
 	
-	public void setNext(Node<E> next) {
+	public void setNext(final Node<E> next) {
 		this.next = next;
 	}
 	

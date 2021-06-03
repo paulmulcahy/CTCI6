@@ -5,9 +5,9 @@ package ca.pmulcahy.ctci6.chp1.q9;
  */
 public class StringRotation{
 	public static boolean isRotation(String s1, String s2) {
-		boolean s1LengthGreaterOrEqual = s1.length() >= s2.length();
-		String s1Doubled = s1 + s1;
-		boolean s1DoubledContains = s1Doubled.contains(s2);
+		final boolean s1LengthGreaterOrEqual = s1.length() >= s2.length();
+		final String s1Doubled = s1 + s1;
+		final boolean s1DoubledContains = s1Doubled.contains(s2);
 		return (s1LengthGreaterOrEqual && s1DoubledContains);
 	}
 }	

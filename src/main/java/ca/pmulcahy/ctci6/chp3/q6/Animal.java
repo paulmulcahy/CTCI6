@@ -3,7 +3,7 @@ package ca.pmulcahy.ctci6.chp3.q6;
 public class Animal{
 	private Species species;
 	private String name;
-	Animal(Species species, String name) {
+	Animal(final Species species, final String name) {
 		this.species = species;
 		this.name = name;
 	}

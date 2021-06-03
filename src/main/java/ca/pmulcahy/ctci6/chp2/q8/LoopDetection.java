@@ -16,7 +16,7 @@ import java.util.Set;
  */
 public class LoopDetection{
 	
-	public static <E> Node<E> detectLoop(SinglyLinkedList<E> singlyLinkedList) {
+	public static <E> Node<E> detectLoop(final SinglyLinkedList<E> singlyLinkedList) {
 		Set<Node<E>> usedNodes = new HashSet<>();
 		for(Node<E> currentNode = singlyLinkedList.getHead();
 			currentNode!=null;

@@ -9,7 +9,7 @@ import ca.pmulcahy.ctci6.chp2.SinglyLinkedList;
  */
 public class DeleteMiddleNode{
 	
-	public static <E> SinglyLinkedList<E> deleteNode(SinglyLinkedList<E> singlyLinkedList, E e) {
+	public static <E> SinglyLinkedList<E> deleteNode(final SinglyLinkedList<E> singlyLinkedList, final E e) {
 		Node<E> previousNode = singlyLinkedList.getHead();
 		if(previousNode != null) {
 			Node<E> currentNode = previousNode.getNext();		

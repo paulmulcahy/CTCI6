@@ -8,10 +8,10 @@ import java.util.Set;
  */
 
 public class AllUniqueCharacters_WithAdditionalDataStructure{
-	public static boolean isAllUniqueCharacters(String str) {
-		Set<Character> charsUsed = new HashSet<>();
+	public static boolean isAllUniqueCharacters(final String str) {
+		final Set<Character> charsUsed = new HashSet<>();
 		for(int i=0; i<str.length(); i++) {
-			boolean uniqueChar = charsUsed.add(str.charAt(i));
+			final boolean uniqueChar = charsUsed.add(str.charAt(i));
 			if(!uniqueChar) {
 				return false;
 			}

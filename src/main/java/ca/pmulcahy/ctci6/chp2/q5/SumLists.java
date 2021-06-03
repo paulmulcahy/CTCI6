@@ -18,14 +18,14 @@ import ca.pmulcahy.ctci6.chp2.SinglyLinkedList;
  */
 public class SumLists{
 	
-	public static SinglyLinkedList<Integer> sumReverse(SinglyLinkedList<Integer> s1, SinglyLinkedList<Integer> s2) {	
-		SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<Integer>();
+	public static SinglyLinkedList<Integer> sumReverse(final SinglyLinkedList<Integer> s1, final SinglyLinkedList<Integer> s2) {	
+		final SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<Integer>();
 		Node<Integer> node1 = s1.getHead();
 		Node<Integer> node2 = s2.getHead();
 		int carry=0;
 		
 		while(node1!=null || node2!=null || carry!=0) {
-			int num1, num2;
+			final int num1, num2;
 			if(node1!=null) {
 				num1 = node1.getData();
 				node1 = node1.getNext();
@@ -40,7 +40,7 @@ public class SumLists{
 				num2 = 0;
 			}
 			
-			int sum = (num1 + num2 + carry)%10;
+			final int sum = (num1 + num2 + carry)%10;
 			singlyLinkedList.add(sum);
 			carry = (num1 + num2 + carry)/10;		
 		}
@@ -48,16 +48,16 @@ public class SumLists{
 		return singlyLinkedList;
 	}
 
-	public static <E extends Number> SinglyLinkedList<Integer> sumForward(SinglyLinkedList<E> s1, SinglyLinkedList<E> s2) {	
-		SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<Integer>();
-		SinglyLinkedList<E> s1Reversed = s1.getReverse();
-		SinglyLinkedList<E> s2Reversed = s2.getReverse();
+	public static <E extends Number> SinglyLinkedList<Integer> sumForward(final SinglyLinkedList<E> s1, final SinglyLinkedList<E> s2) {	
+		final SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<Integer>();
+		final SinglyLinkedList<E> s1Reversed = s1.getReverse();
+		final SinglyLinkedList<E> s2Reversed = s2.getReverse();
 		Node<E> node1 = s1Reversed.getHead();
 		Node<E> node2 = s2Reversed.getHead();
 		int carry=0;
 		
 		while(node1!=null || node2!=null || carry!=0) {
-			int intFromNode1, intFromNode2;
+			final int intFromNode1, intFromNode2;
 			
 			if(node1!=null) {
 				intFromNode1 = (Integer)node1.getData();
@@ -73,7 +73,7 @@ public class SumLists{
 				intFromNode2 = 0;
 			}
 			
-			int sum = (intFromNode1 + intFromNode2 + carry)%10;
+			final int sum = (intFromNode1 + intFromNode2 + carry)%10;
 			singlyLinkedList.add(sum);
 			carry = (intFromNode1 + intFromNode2 + carry)/10;		
 		}

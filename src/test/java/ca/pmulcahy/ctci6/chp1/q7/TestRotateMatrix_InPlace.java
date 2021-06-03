@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class TestRotateMatrix_InPlace{
 
-    private static long[][] initializeMatrix(int nSize){
+    private static long[][] initializeMatrix(final int nSize){
         long[][] matrix = new long[nSize][];
 		for(int i=0; i< matrix.length; i++) {
 			matrix[i] = new long[nSize];
@@ -20,7 +20,7 @@ public class TestRotateMatrix_InPlace{
 		final int X_N_SIZE = 2;
 		final int Y_N_SIZE = 3;
 	
-        long[][] matrix = new long[X_N_SIZE][];
+        final long[][] matrix = new long[X_N_SIZE][];
 		for(int i=0; i< matrix.length; i++) {
 			matrix[i] = new long[Y_N_SIZE];
 		}	

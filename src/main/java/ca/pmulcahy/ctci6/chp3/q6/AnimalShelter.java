@@ -9,7 +9,7 @@ public class AnimalShelter {
 	
 	LinkedList<Animal> animals = new LinkedList<>();
 	
-	public void enqueue(Animal animal) {
+	public void enqueue(final Animal animal) {
 		animals.add(animal);
 	}
 	
@@ -18,7 +18,7 @@ public class AnimalShelter {
 		return animal;
 	}
 
-	public Animal dequeue(Species species) {
+	public Animal dequeue(final Species species) {
 		for(Animal animal : animals) {
 			if(animal.getSpecies() == species) {
 				animals.remove(animal);

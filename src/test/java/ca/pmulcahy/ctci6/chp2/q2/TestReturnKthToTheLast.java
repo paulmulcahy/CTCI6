@@ -33,7 +33,7 @@ public class TestReturnKthToTheLast {
 
 	@Test
 	public void singleValue() {
-		Integer singleInt = 1;
+		final Integer singleInt = 1;
 		
 		final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();	
 		sList.add(singleInt);
@@ -44,7 +44,7 @@ public class TestReturnKthToTheLast {
 
 	@Test
 	public void singleNullValue() {
-		Integer singleInt = null;
+		final Integer singleInt = null;
 		
 		final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();	
 		sList.add(singleInt);
@@ -55,8 +55,8 @@ public class TestReturnKthToTheLast {
 
 	@Test
 	public void twoValuesReturnFirst() {
-		Integer firstInt = 1;
-		Integer secondInt = 2;
+		final Integer firstInt = 1;
+		final Integer secondInt = 2;
 		
 		final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();	
 		sList.add(firstInt);
@@ -68,8 +68,8 @@ public class TestReturnKthToTheLast {
 
 	@Test
 	public void twoValuesReturnLast() {
-		Integer firstInt = 1;
-		Integer secondInt = 2;
+		final Integer firstInt = 1;
+		final Integer secondInt = 2;
 		
 		final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();	
 		sList.add(firstInt);
@@ -81,8 +81,8 @@ public class TestReturnKthToTheLast {
 
 	@Test
 	public void kTooLarge() {
-		Integer firstInt = 1;
-		Integer secondInt = 2;
+		final Integer firstInt = 1;
+		final Integer secondInt = 2;
 		
 		final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();	
 		sList.add(firstInt);
@@ -94,9 +94,9 @@ public class TestReturnKthToTheLast {
 	
 	@Test
 	public void threeValuesReturnFirst() {
-		Integer firstInt = 1;
-		Integer secondInt = null;
-		Integer thirdInt = 3;
+		final Integer firstInt = 1;
+		final Integer secondInt = null;
+		final Integer thirdInt = 3;
 		
 		final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();	
 		sList.add(firstInt);
@@ -109,9 +109,9 @@ public class TestReturnKthToTheLast {
 
 	@Test
 	public void threeValuesReturnMiddle() {
-		Integer firstInt = 1;
-		Integer secondInt = null;
-		Integer thirdInt = 3;
+		final Integer firstInt = 1;
+		final Integer secondInt = null;
+		final Integer thirdInt = 3;
 		
 		final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();	
 		sList.add(firstInt);
@@ -124,9 +124,9 @@ public class TestReturnKthToTheLast {
 
 	@Test
 	public void threeValuesReturnLast() {
-		Integer firstInt = 1;
-		Integer secondInt = null;
-		Integer thirdInt = 3;
+		final Integer firstInt = 1;
+		final Integer secondInt = null;
+		final Integer thirdInt = 3;
 		
 		final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();	
 		sList.add(firstInt);

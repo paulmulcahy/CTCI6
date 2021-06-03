@@ -11,7 +11,7 @@ public class SinglyLinkedList<E> {
 		return head;
 	}
 	
-	public void setHead(Node<E> head) {
+	public void setHead(final Node<E> head) {
 		this.head = head;
 	}
 	
@@ -19,7 +19,7 @@ public class SinglyLinkedList<E> {
 		return tail;
 	}
 	
-	public void setTail(Node<E> tail) {
+	public void setTail(final Node<E> tail) {
 		this.tail = tail;
 	}	
 	
@@ -36,7 +36,7 @@ public class SinglyLinkedList<E> {
 		return true;
     }
 	
-	public boolean addToStart(E data) { 
+	public boolean addToStart(final E data) { 
 	    Node<E> node = new Node<>(data); 
 
 		if(head == null) {
@@ -49,14 +49,14 @@ public class SinglyLinkedList<E> {
 		return true;
     }
     
-    public boolean addAll(Collection<? extends E> data) {
+    public boolean addAll(final Collection<? extends E> data) {
     	for(E e: data) {
     		add(e);
     	}
     	return true;
     }
 
-    public boolean addNode(Node<E> node) { 
+    public boolean addNode(final Node<E> node) { 
 		if(head == null) {    
             head = node;    
             tail = node;    
@@ -86,7 +86,7 @@ public class SinglyLinkedList<E> {
 	}
 	
 	@Override
-	public boolean equals(Object o) {
+	public boolean equals(final Object o) {
         if (o == this) { 
             return true; 
         } 
