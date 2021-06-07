@@ -1,5 +1,7 @@
 package ca.pmulcahy.ctci6.chp4;
 
+import java.util.List;
+
 public class TreeNode<T extends Comparable<T>> {
 	private T data;
 	private TreeNode<T> left;
@@ -7,6 +9,15 @@ public class TreeNode<T extends Comparable<T>> {
 
 	public TreeNode(final T data) {
 		this.data = data;
+	}
+	
+	public TreeNode(final List<T> dataList) {
+		if(dataList != null && !dataList.isEmpty()) {	
+			this.data = dataList.get(0);
+			for(int i=1; i<dataList.size(); i++) {
+				insertInOrder(dataList.get(i));
+			}
+		}
 	}
 	
 	public T getData() {
@@ -27,6 +38,22 @@ public class TreeNode<T extends Comparable<T>> {
 	
 	public TreeNode<T> getRight() {
 		return right;
+	}
+	
+	private void insertInOrder(final T data) {
+		if(data.compareTo(this.data)<=0) {
+			if(left == null) {
+				setLeft(new TreeNode<T>(data));
+			} else {
+				left.insertInOrder(data);
+			}
+		} else {
+			if(right == null) {
+				setRight(new TreeNode<T>(data));
+			} else {
+				right.insertInOrder(data);
+			}
+		}
 	}
 	
 	@Override

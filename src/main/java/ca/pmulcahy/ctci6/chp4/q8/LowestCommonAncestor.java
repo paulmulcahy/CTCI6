@@ -7,31 +7,35 @@ import ca.pmulcahy.ctci6.chp4.TreeNode;
  *  Avoid storing nodes in a data structure. NOTE: This is not necessarily a binary search tree.
  */
 public class LowestCommonAncestor {
-	public static <T extends Comparable<T>> TreeNode<T> getLowestCommonAncestor(final TreeNode<T> root, T data1, T data2) {
+	public static <T extends Comparable<T>> TreeNode<T> getLowestCommonAncestor(final TreeNode<T> root, final T data1, final T data2) {
+		// Input Validation
 		if(data1 == null || data2 == null) {
-			throw new IllegalArgumentException("Data arguments must be non-null values");
+			throw new IllegalArgumentException("Data arguments cannot be null");
 		}
 		return lca(root, data1, data2);
 	}
 	
-	public static <T extends Comparable<T>> TreeNode<T> lca(final TreeNode<T> root, T data1, T data2) {
+	private static <T extends Comparable<T>> TreeNode<T> lca(final TreeNode<T> root, final T data1, final T data2) {
 		if(root == null) {
+			// 1st Base Case
 			return null;
 		}
 		if(data1.equals(root.getData()) || data2.equals(root.getData())) {
+			// 2nd Base Case
 			return root;
 		}
 		
-		final TreeNode<T> leftNode = lca(root.getLeft(), data1, data2);
-		final TreeNode<T> rightNode = lca(root.getRight(), data1, data2);
+		// Divide
+		final var leftNode = lca(root.getLeft(), data1, data2);
+		final var rightNode = lca(root.getRight(), data1, data2);
 		
+		// (and Conquer)		
 		if(leftNode != null && rightNode != null) {
 			return root;
 		}
 		if(leftNode == null && rightNode == null) {
 			return null;
 		}
-		
 		if(leftNode != null) {
 			return leftNode;
 		}
