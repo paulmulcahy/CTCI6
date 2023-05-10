@@ -8,40 +8,40 @@ import java.util.Optional;
  *
  */
 
-public class Node<E>{    
-	private Optional<E> data;    
-	private Node<E> next;    
-		
-	public Node(final E data) {    
-		this.data = Optional.ofNullable(data);    
-		this.next = null;    
-	}
-	
-	public E getData() {
-		return data.orElse(null);
-	}
-	
-	public Optional<E> getOptionalData() {
-		return data;
-	}
-	
-	public void setData(final E data) {
-		this.data = Optional.ofNullable(data);
-	}
-	
-	public Node<E> getNext() {
-		return next;
-	}
-	
-	public void setNext(final Node<E> next) {
-		this.next = next;
-	}
-	
-	@Override
-	public String toString() {
-		if(data.isPresent()) {
-			return data.get().toString();
-		} 
-		return "null";
-	}
+public class Node<E> {
+  private Optional<E> data;
+  private Node<E> next;
+
+  public Node(final E data) {
+    this.data = Optional.ofNullable(data);
+    this.next = null;
+  }
+
+  public E getData() {
+    return data.orElse(null);
+  }
+
+  public Optional<E> getOptionalData() {
+    return data;
+  }
+
+  public void setData(final E data) {
+    this.data = Optional.ofNullable(data);
+  }
+
+  public Node<E> getNext() {
+    return next;
+  }
+
+  public void setNext(final Node<E> next) {
+    this.next = next;
+  }
+
+  @Override
+  public String toString() {
+    if (data.isPresent()) {
+      return data.get().toString();
+    }
+    return "null";
+  }
 }

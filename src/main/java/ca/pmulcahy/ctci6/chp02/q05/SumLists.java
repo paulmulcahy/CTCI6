@@ -16,68 +16,70 @@ import ca.pmulcahy.ctci6.chp02.SinglyLinkedList;
  * Input: (6 -> 1 -> 7) + (2 -> 9 -> 5). That is, 617 + 295
  * Output: 2 -> 1 -> 9. That is, 912.
  */
-public class SumLists{
-	
-	public static SinglyLinkedList<Integer> sumReverse(final SinglyLinkedList<Integer> s1, final SinglyLinkedList<Integer> s2) {	
-		final SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<Integer>();
-		Node<Integer> node1 = s1.getHead();
-		Node<Integer> node2 = s2.getHead();
-		int carry=0;
-		
-		while(node1!=null || node2!=null || carry!=0) {
-			final int num1, num2;
-			if(node1!=null) {
-				num1 = node1.getData();
-				node1 = node1.getNext();
-			} else {
-				num1 = 0;
-			}
-			
-			if(node2!=null) {
-				num2 = node2.getData();
-				node2 = node2.getNext();
-			} else {
-				num2 = 0;
-			}
-			
-			final int sum = (num1 + num2 + carry)%10;
-			singlyLinkedList.add(sum);
-			carry = (num1 + num2 + carry)/10;		
-		}
+public class SumLists {
 
-		return singlyLinkedList;
-	}
+  public static SinglyLinkedList<Integer> sumReverse(
+      final SinglyLinkedList<Integer> s1, final SinglyLinkedList<Integer> s2) {
+    final SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<Integer>();
+    Node<Integer> node1 = s1.getHead();
+    Node<Integer> node2 = s2.getHead();
+    int carry = 0;
 
-	public static <E extends Number> SinglyLinkedList<Integer> sumForward(final SinglyLinkedList<E> s1, final SinglyLinkedList<E> s2) {	
-		final SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<Integer>();
-		final SinglyLinkedList<E> s1Reversed = s1.getReverse();
-		final SinglyLinkedList<E> s2Reversed = s2.getReverse();
-		Node<E> node1 = s1Reversed.getHead();
-		Node<E> node2 = s2Reversed.getHead();
-		int carry=0;
-		
-		while(node1!=null || node2!=null || carry!=0) {
-			final int intFromNode1, intFromNode2;
-			
-			if(node1!=null) {
-				intFromNode1 = (Integer)node1.getData();
-				node1 = node1.getNext();
-			} else {
-				intFromNode1 = 0;
-			}
-			
-			if(node2!=null) {
-				intFromNode2 = (Integer)node2.getData();
-				node2 = node2.getNext();
-			} else {
-				intFromNode2 = 0;
-			}
-			
-			final int sum = (intFromNode1 + intFromNode2 + carry)%10;
-			singlyLinkedList.add(sum);
-			carry = (intFromNode1 + intFromNode2 + carry)/10;		
-		}
+    while (node1 != null || node2 != null || carry != 0) {
+      final int num1, num2;
+      if (node1 != null) {
+        num1 = node1.getData();
+        node1 = node1.getNext();
+      } else {
+        num1 = 0;
+      }
 
-		return singlyLinkedList;
-	}	
+      if (node2 != null) {
+        num2 = node2.getData();
+        node2 = node2.getNext();
+      } else {
+        num2 = 0;
+      }
+
+      final int sum = (num1 + num2 + carry) % 10;
+      singlyLinkedList.add(sum);
+      carry = (num1 + num2 + carry) / 10;
+    }
+
+    return singlyLinkedList;
+  }
+
+  public static <E extends Number> SinglyLinkedList<Integer> sumForward(
+      final SinglyLinkedList<E> s1, final SinglyLinkedList<E> s2) {
+    final SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<Integer>();
+    final SinglyLinkedList<E> s1Reversed = s1.getReverse();
+    final SinglyLinkedList<E> s2Reversed = s2.getReverse();
+    Node<E> node1 = s1Reversed.getHead();
+    Node<E> node2 = s2Reversed.getHead();
+    int carry = 0;
+
+    while (node1 != null || node2 != null || carry != 0) {
+      final int intFromNode1, intFromNode2;
+
+      if (node1 != null) {
+        intFromNode1 = (Integer) node1.getData();
+        node1 = node1.getNext();
+      } else {
+        intFromNode1 = 0;
+      }
+
+      if (node2 != null) {
+        intFromNode2 = (Integer) node2.getData();
+        node2 = node2.getNext();
+      } else {
+        intFromNode2 = 0;
+      }
+
+      final int sum = (intFromNode1 + intFromNode2 + carry) % 10;
+      singlyLinkedList.add(sum);
+      carry = (intFromNode1 + intFromNode2 + carry) / 10;
+    }
+
+    return singlyLinkedList;
+  }
 }
