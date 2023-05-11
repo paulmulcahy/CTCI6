@@ -5,30 +5,30 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class TestRouteBetweenNodes_Unidirectional {
+class TestRouteBetweenNodes_Unidirectional {
 
   @Test
-  public void sameNodeUnconnected() {
+  void sameNodeUnconnected() {
     final Node<Integer> node = new Node<>(1);
     assertFalse(RouteBetweenNodes_Unidirectional.isRouteBetweenNodes(node, node));
   }
 
   @Test
-  public void selfConnectedNode() {
+  void selfConnectedNode() {
     final Node<Integer> node = new Node<>(1);
     node.addChild(node);
     assertTrue(RouteBetweenNodes_Unidirectional.isRouteBetweenNodes(node, node));
   }
 
   @Test
-  public void unconnectedNodes() {
+  void unconnectedNodes() {
     final Node<Integer> node1 = new Node<>(1);
     final Node<Integer> node2 = new Node<>(2);
     assertFalse(RouteBetweenNodes_Unidirectional.isRouteBetweenNodes(node1, node2));
   }
 
   @Test
-  public void directlyConnectedNodesBidirectional() {
+  void directlyConnectedNodesBidirectional() {
     final Node<Integer> node1 = new Node<>(1);
     final Node<Integer> node2 = new Node<>(2);
     node1.addChild(node2);
@@ -37,7 +37,7 @@ public class TestRouteBetweenNodes_Unidirectional {
   }
 
   @Test
-  public void directlyConnectedNodesUnidirectional() {
+  void directlyConnectedNodesUnidirectional() {
     final Node<Integer> node1 = new Node<>(1);
     final Node<Integer> node2 = new Node<>(2);
     node1.addChild(node2);
@@ -45,7 +45,7 @@ public class TestRouteBetweenNodes_Unidirectional {
   }
 
   @Test
-  public void directlyConnectedNodesUnidirectionalOtherWay() {
+  void directlyConnectedNodesUnidirectionalOtherWay() {
     final Node<Integer> node1 = new Node<>(1);
     final Node<Integer> node2 = new Node<>(2);
     node2.addChild(node1);
@@ -53,7 +53,7 @@ public class TestRouteBetweenNodes_Unidirectional {
   }
 
   @Test
-  public void connectedByOneNodeBidirectional() {
+  void connectedByOneNodeBidirectional() {
     final Node<Integer> node1 = new Node<>(1);
     final Node<Integer> node2 = new Node<>(2);
     final Node<Integer> middle = new Node<>(3);
@@ -65,7 +65,7 @@ public class TestRouteBetweenNodes_Unidirectional {
   }
 
   @Test
-  public void connectedByOneNodeUnidirectional() {
+  void connectedByOneNodeUnidirectional() {
     final Node<Integer> node1 = new Node<>(1);
     final Node<Integer> node2 = new Node<>(2);
     final Node<Integer> middle = new Node<>(3);
@@ -75,7 +75,7 @@ public class TestRouteBetweenNodes_Unidirectional {
   }
 
   @Test
-  public void connectedByOneNodeUnidirectionalOtherWay() {
+  void connectedByOneNodeUnidirectionalOtherWay() {
     final Node<Integer> node1 = new Node<>(1);
     final Node<Integer> node2 = new Node<>(2);
     final Node<Integer> middle = new Node<>(3);
@@ -85,7 +85,7 @@ public class TestRouteBetweenNodes_Unidirectional {
   }
 
   @Test
-  public void connectedToMiddleNodeOnly() {
+  void connectedToMiddleNodeOnly() {
     final Node<Integer> node1 = new Node<>(1);
     final Node<Integer> node2 = new Node<>(2);
     final Node<Integer> middle = new Node<>(3);
@@ -95,7 +95,7 @@ public class TestRouteBetweenNodes_Unidirectional {
   }
 
   @Test
-  public void moreComplicated() {
+  void moreComplicated() {
     final Node<Character> a = new Node<>('A');
     final Node<Character> b = new Node<>('B');
     final Node<Character> c = new Node<>('C');
@@ -117,7 +117,7 @@ public class TestRouteBetweenNodes_Unidirectional {
   }
 
   @Test
-  public void moreComplicated2() {
+  void moreComplicated2() {
     final Node<Character> a = new Node<>('A');
     final Node<Character> b = new Node<>('B');
     final Node<Character> c = new Node<>('C');

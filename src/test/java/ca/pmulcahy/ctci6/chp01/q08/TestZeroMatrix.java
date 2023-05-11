@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class TestZeroMatrix {
+class TestZeroMatrix {
 
   private static long[][] initializeMatrix(final int ySize, final int xSize) {
     final long[][] matrix = new long[ySize][];
@@ -15,7 +15,7 @@ public class TestZeroMatrix {
   }
 
   @Test
-  public void nSizeTwo() {
+  void nSizeTwo() {
     final int N_SIZE = 2;
 
     final long[][] toZero = initializeMatrix(N_SIZE, N_SIZE);
@@ -43,7 +43,7 @@ public class TestZeroMatrix {
   }
 
   @Test
-  public void nSizeThree() {
+  void nSizeThree() {
     final int N_SIZE = 3;
 
     final long[][] toZero = initializeMatrix(N_SIZE, N_SIZE);
@@ -81,7 +81,7 @@ public class TestZeroMatrix {
   }
 
   @Test
-  public void nTwoByThree() {
+  void nTwoByThree() {
     final int Y_SIZE = 2;
     final int X_SIZE = 3;
 
@@ -113,7 +113,8 @@ public class TestZeroMatrix {
     }
   }
 
-  public void nJagged() {
+  @Test
+  void nJagged() {
     final int N_SIZE = 3;
 
     final long[][] toZero = initializeMatrix(N_SIZE, N_SIZE);
@@ -129,7 +130,7 @@ public class TestZeroMatrix {
     toZero[2][2] = 9;
 
     final long[][] expected = initializeMatrix(N_SIZE, N_SIZE);
-    toZero[1] = new long[2];
+    expected[1] = new long[2];
     expected[0][0] = 0;
     expected[0][1] = 0;
     expected[0][2] = 0;
@@ -147,7 +148,15 @@ public class TestZeroMatrix {
         assertEquals(
             expected[i][j],
             actual[i][j],
-            "expected was " + expected[i][j] + " but actual was " + actual[i][j] + ".");
+            "expected for i: "
+                + i
+                + " and j: "
+                + j
+                + " was "
+                + expected[i][j]
+                + " but actual was "
+                + actual[i][j]
+                + ".");
       }
     }
   }

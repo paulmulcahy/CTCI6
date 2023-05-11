@@ -7,10 +7,10 @@ import java.util.LinkedList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class TestListOfDepths_BreadthFirstSearch {
+class TestListOfDepths_BreadthFirstSearch {
 
   @Test
-  public void zeroNodes() {
+  void zeroNodes() {
     final TreeNode<Integer> rootNode = null;
     final List<LinkedList<TreeNode<Integer>>> listOfNodes =
         ListOfDepths_BreadthFirstSearch.getListOfDepths(rootNode);
@@ -18,7 +18,7 @@ public class TestListOfDepths_BreadthFirstSearch {
   }
 
   @Test
-  public void oneNode() {
+  void oneNode() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(1);
     final List<LinkedList<TreeNode<Integer>>> listOfNodes =
         ListOfDepths_BreadthFirstSearch.getListOfDepths(rootNode);
@@ -28,7 +28,7 @@ public class TestListOfDepths_BreadthFirstSearch {
   }
 
   @Test
-  public void twoNodesLeftHeavy() {
+  void twoNodesLeftHeavy() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(2);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(1);
     rootNode.setLeft(leftNode);
@@ -42,7 +42,7 @@ public class TestListOfDepths_BreadthFirstSearch {
   }
 
   @Test
-  public void twoNodesRightHeavy() {
+  void twoNodesRightHeavy() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(1);
     final TreeNode<Integer> rightNode = new TreeNode<Integer>(2);
     rootNode.setRight(rightNode);
@@ -56,7 +56,7 @@ public class TestListOfDepths_BreadthFirstSearch {
   }
 
   @Test
-  public void threeNodesBalanced() {
+  void threeNodesBalanced() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(2);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(1);
     rootNode.setLeft(leftNode);
@@ -73,7 +73,7 @@ public class TestListOfDepths_BreadthFirstSearch {
   }
 
   @Test
-  public void threeNodesLeftLeftHeavy() {
+  void threeNodesLeftLeftHeavy() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(3);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(2);
     rootNode.setLeft(leftNode);
@@ -91,7 +91,7 @@ public class TestListOfDepths_BreadthFirstSearch {
   }
 
   @Test
-  public void threeNodesLeftRightHeavy() {
+  void threeNodesLeftRightHeavy() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(3);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(1);
     rootNode.setLeft(leftNode);
@@ -109,7 +109,7 @@ public class TestListOfDepths_BreadthFirstSearch {
   }
 
   @Test
-  public void threeNodesRightLeftHeavy() {
+  void threeNodesRightLeftHeavy() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(1);
     final TreeNode<Integer> rightNode = new TreeNode<Integer>(3);
     rootNode.setRight(rightNode);
@@ -127,7 +127,7 @@ public class TestListOfDepths_BreadthFirstSearch {
   }
 
   @Test
-  public void threeNodesRightRightHeavy() {
+  void threeNodesRightRightHeavy() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(1);
     final TreeNode<Integer> rightNode = new TreeNode<Integer>(2);
     rootNode.setRight(rightNode);
@@ -145,7 +145,7 @@ public class TestListOfDepths_BreadthFirstSearch {
   }
 
   @Test
-  public void fourNodesLeftLeftHeavy() {
+  void fourNodesLeftLeftHeavy() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(3);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(2);
     rootNode.setLeft(leftNode);
@@ -166,7 +166,7 @@ public class TestListOfDepths_BreadthFirstSearch {
   }
 
   @Test
-  public void fourNodesLeftHeavy() {
+  void fourNodesLeftHeavy() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(4);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(2);
     rootNode.setLeft(leftNode);

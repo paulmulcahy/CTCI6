@@ -7,10 +7,10 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class TestSumLists {
+class TestSumLists {
 
   @Test
-  public void emptyReverse() {
+  void emptyReverse() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
 
     final SinglyLinkedList<Integer> actual = SumLists.sumReverse(sList, sList);
@@ -25,7 +25,7 @@ public class TestSumLists {
   }
 
   @Test
-  public void emptyForward() {
+  void emptyForward() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
 
     final SinglyLinkedList<Integer> actual = SumLists.sumForward(sList, sList);
@@ -40,7 +40,7 @@ public class TestSumLists {
   }
 
   @Test
-  public void lengthOneReverse() {
+  void lengthOneReverse() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(1);
 
@@ -60,7 +60,7 @@ public class TestSumLists {
   }
 
   @Test
-  public void lengthOneForward() {
+  void lengthOneForward() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(1);
 
@@ -80,7 +80,7 @@ public class TestSumLists {
   }
 
   @Test
-  public void bookReverse() {
+  void bookReverse() {
     final Integer[] inputArr1 = new Integer[] {7, 1, 6};
     final List<Integer> inputList1 = Arrays.asList(inputArr1);
     final SinglyLinkedList<Integer> sList1 = new SinglyLinkedList<>();
@@ -109,7 +109,7 @@ public class TestSumLists {
   }
 
   @Test
-  public void bookForward() {
+  void bookForward() {
     final Integer[] inputArr1 = new Integer[] {6, 1, 7};
     final List<Integer> inputList1 = Arrays.asList(inputArr1);
     final SinglyLinkedList<Integer> sList1 = new SinglyLinkedList<>();

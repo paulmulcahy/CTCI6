@@ -7,10 +7,10 @@ import ca.pmulcahy.ctci6.chp02.Node;
 import ca.pmulcahy.ctci6.chp02.SinglyLinkedList;
 import org.junit.jupiter.api.Test;
 
-public class TestIntersection {
+class TestIntersection {
 
   @Test
-  public void empty() {
+  void empty() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
 
     final Node<Integer> expected = null;
@@ -30,7 +30,7 @@ public class TestIntersection {
   }
 
   @Test
-  public void singleIntersectingNode() {
+  void singleIntersectingNode() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     final Node<Integer> expected = new Node<>(1);
     sList.addNode(expected);
@@ -51,7 +51,7 @@ public class TestIntersection {
   }
 
   @Test
-  public void singleNonIntersectingNode() {
+  void singleNonIntersectingNode() {
     final SinglyLinkedList<Integer> sList1 = new SinglyLinkedList<>();
     sList1.add(1);
     final SinglyLinkedList<Integer> sList2 = new SinglyLinkedList<>();
@@ -68,7 +68,7 @@ public class TestIntersection {
   }
 
   @Test
-  public void singleNonIntersectingNodeSameData() {
+  void singleNonIntersectingNodeSameData() {
     final SinglyLinkedList<Integer> sList1 = new SinglyLinkedList<>();
     sList1.add(1);
     final SinglyLinkedList<Integer> sList2 = new SinglyLinkedList<>();
@@ -85,7 +85,7 @@ public class TestIntersection {
   }
 
   @Test
-  public void firstIntersectingNodes() {
+  void firstIntersectingNodes() {
     final Node<Integer> expected = new Node<>(1);
     final SinglyLinkedList<Integer> sList1 = new SinglyLinkedList<>();
     sList1.addNode(expected);
@@ -109,7 +109,7 @@ public class TestIntersection {
   }
 
   @Test
-  public void nonFirstIntersectingNodes() {
+  void nonFirstIntersectingNodes() {
     final Node<Integer> expected = new Node<>(1);
     final SinglyLinkedList<Integer> sList1 = new SinglyLinkedList<>();
     sList1.add(2);
@@ -133,7 +133,7 @@ public class TestIntersection {
   }
 
   @Test
-  public void intersectingNodeInJumble() {
+  void intersectingNodeInJumble() {
     final Node<Integer> expected = new Node<>(1);
     final SinglyLinkedList<Integer> sList1 = new SinglyLinkedList<>();
     sList1.add(2);

@@ -8,49 +8,49 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Test;
 
-public class TestQueueViaStacks {
+class TestQueueViaStacks {
 
   @Test
-  public void isEmpty() {
+  void isEmpty() {
     final QueueViaStacks<Integer> queue = new QueueViaStacks<>();
     assertTrue(queue.isEmpty());
   }
 
   @Test
-  public void isNotEmpty0() {
+  void isNotEmpty0() {
     final QueueViaStacks<Integer> queue = new QueueViaStacks<>();
     queue.add(1);
     assertFalse(queue.isEmpty());
   }
 
   @Test
-  public void addRemove() {
+  void addRemove() {
     final QueueViaStacks<Integer> queue = new QueueViaStacks<>();
     queue.add(1);
     assertEquals(1, queue.remove());
   }
 
   @Test
-  public void addPeek() {
+  void addPeek() {
     final QueueViaStacks<Integer> queue = new QueueViaStacks<>();
     queue.add(1);
     assertEquals(1, queue.peek());
   }
 
   @Test
-  public void removeEmpty() {
+  void removeEmpty() {
     final QueueViaStacks<Integer> queue = new QueueViaStacks<>();
     assertThrows(NoSuchElementException.class, () -> queue.remove());
   }
 
   @Test
-  public void peekEmpty() {
+  void peekEmpty() {
     final QueueViaStacks<Integer> queue = new QueueViaStacks<>();
     assertThrows(NoSuchElementException.class, () -> queue.peek());
   }
 
   @Test
-  public void addaddRemove() {
+  void addaddRemove() {
     final QueueViaStacks<Integer> queue = new QueueViaStacks<>();
     queue.add(1);
     queue.add(2);
@@ -58,7 +58,7 @@ public class TestQueueViaStacks {
   }
 
   @Test
-  public void addaddPeek() {
+  void addaddPeek() {
     final QueueViaStacks<Integer> queue = new QueueViaStacks<>();
     queue.add(1);
     queue.add(2);
@@ -66,7 +66,7 @@ public class TestQueueViaStacks {
   }
 
   @Test
-  public void addaddRemoveRemove() {
+  void addaddRemoveRemove() {
     final QueueViaStacks<Integer> queue = new QueueViaStacks<>();
     queue.add(1);
     queue.add(2);
@@ -75,7 +75,7 @@ public class TestQueueViaStacks {
   }
 
   @Test
-  public void addaddRemovePeek() {
+  void addaddRemovePeek() {
     final QueueViaStacks<Integer> queue = new QueueViaStacks<>();
     queue.add(1);
     queue.add(2);
@@ -84,7 +84,7 @@ public class TestQueueViaStacks {
   }
 
   @Test
-  public void increaseStackSize() {
+  void increaseStackSize() {
     final QueueViaStacks<Integer> queue = new QueueViaStacks<>(3);
     queue.add(0);
     queue.add(1);
@@ -97,7 +97,7 @@ public class TestQueueViaStacks {
     queue.add(8);
     queue.add(9);
 
-    StringBuilder sb = new StringBuilder();
+    final StringBuilder sb = new StringBuilder();
     while (!queue.isEmpty()) {
       sb.append(queue.remove());
     }

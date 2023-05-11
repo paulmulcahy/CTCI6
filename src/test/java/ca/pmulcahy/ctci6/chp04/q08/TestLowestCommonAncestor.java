@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import ca.pmulcahy.ctci6.chp04.TreeNode;
 import org.junit.jupiter.api.Test;
 
-public class TestLowestCommonAncestor {
+class TestLowestCommonAncestor {
 
   private TreeNode<Integer> getTree() {
     final TreeNode<Integer> root = new TreeNode<Integer>(3);
@@ -32,7 +32,7 @@ public class TestLowestCommonAncestor {
   }
 
   @Test
-  public void nullArg1() {
+  void nullArg1() {
     final TreeNode<Integer> root = getTree();
     assertThrows(
         IllegalArgumentException.class,
@@ -40,7 +40,7 @@ public class TestLowestCommonAncestor {
   }
 
   @Test
-  public void nullArg2() {
+  void nullArg2() {
     final TreeNode<Integer> root = getTree();
     assertThrows(
         IllegalArgumentException.class,
@@ -48,14 +48,14 @@ public class TestLowestCommonAncestor {
   }
 
   @Test
-  public void neitherInTree() {
+  void neitherInTree() {
     final TreeNode<Integer> root = getTree();
     final TreeNode<Integer> result = LowestCommonAncestor.getLowestCommonAncestor(root, 20, 30);
     assertNull(result);
   }
 
   @Test
-  public void twoEight() {
+  void twoEight() {
     final Integer expected = 3;
     final TreeNode<Integer> root = getTree();
     final Integer result = LowestCommonAncestor.getLowestCommonAncestor(root, 2, 8).getData();
@@ -63,7 +63,7 @@ public class TestLowestCommonAncestor {
   }
 
   @Test
-  public void twoFive() {
+  void twoFive() {
     final Integer expected = 6;
     final TreeNode<Integer> root = getTree();
     final Integer result = LowestCommonAncestor.getLowestCommonAncestor(root, 2, 5).getData();
@@ -71,7 +71,7 @@ public class TestLowestCommonAncestor {
   }
 
   @Test
-  public void nineFive() {
+  void nineFive() {
     final Integer expected = 11;
     final TreeNode<Integer> root = getTree();
     final Integer result = LowestCommonAncestor.getLowestCommonAncestor(root, 9, 5).getData();
@@ -79,7 +79,7 @@ public class TestLowestCommonAncestor {
   }
 
   @Test
-  public void eightSeven() {
+  void eightSeven() {
     final Integer expected = 8;
     final TreeNode<Integer> root = getTree();
     final Integer result = LowestCommonAncestor.getLowestCommonAncestor(root, 7, 8).getData();
@@ -87,7 +87,7 @@ public class TestLowestCommonAncestor {
   }
 
   @Test
-  public void nineThree() {
+  void nineThree() {
     final Integer expected = 3;
     final TreeNode<Integer> root = getTree();
     final Integer result = LowestCommonAncestor.getLowestCommonAncestor(root, 9, 3).getData();

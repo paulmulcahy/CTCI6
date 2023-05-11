@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class TestAllUniqueCharacters_WithAdditionalDataStructure {
 
   @Test
-  public void stringWithUniqueCharacters() {
+  void stringWithUniqueCharacters() {
     final String uniqueCharacterString = "abcdefg";
     final boolean result =
         AllUniqueCharacters_WithAdditionalDataStructure.isAllUniqueCharacters(
@@ -17,7 +17,7 @@ public class TestAllUniqueCharacters_WithAdditionalDataStructure {
   }
 
   @Test
-  public void stringWithNonUniqueCharacters() {
+  void stringWithNonUniqueCharacters() {
     final String nonUniqueCharacterString = "abcdefa";
     final boolean result =
         AllUniqueCharacters_WithAdditionalDataStructure.isAllUniqueCharacters(
@@ -26,7 +26,7 @@ public class TestAllUniqueCharacters_WithAdditionalDataStructure {
   }
 
   @Test
-  public void stringWithNoCharacters() {
+  void stringWithNoCharacters() {
     final String emptyString = "";
     final boolean result =
         AllUniqueCharacters_WithAdditionalDataStructure.isAllUniqueCharacters(emptyString);

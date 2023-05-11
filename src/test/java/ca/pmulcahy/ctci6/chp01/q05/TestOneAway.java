@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class TestOneAway {
+class TestOneAway {
 
   @Test
-  public void zeroDifferences() {
+  void zeroDifferences() {
 
     final String strings = "abc";
 
@@ -17,7 +17,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void firstStringTwoCharactersLonger() {
+  void firstStringTwoCharactersLonger() {
 
     final String str1 = "abc";
     final String str2 = "abcde";
@@ -27,7 +27,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void secondStringTwoCharactersLonger() {
+  void secondStringTwoCharactersLonger() {
 
     final String str1 = "abc";
     final String str2 = "abcde";
@@ -37,7 +37,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void replacedFirstCharacter() {
+  void replacedFirstCharacter() {
 
     final String str1 = "abcde";
     final String str2 = "Abcde";
@@ -47,7 +47,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void replacedMiddleCharacter() {
+  void replacedMiddleCharacter() {
 
     final String str1 = "abcde";
     final String str2 = "abCde";
@@ -57,7 +57,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void replacedLastCharacter() {
+  void replacedLastCharacter() {
 
     final String str1 = "abcde";
     final String str2 = "abcdE";
@@ -67,7 +67,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void additionalFirstCharacter() {
+  void additionalFirstCharacter() {
 
     final String str1 = "abcd";
     final String str2 = "1abcd";
@@ -77,7 +77,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void additionalMiddleCharacter() {
+  void additionalMiddleCharacter() {
 
     final String str1 = "abcd";
     final String str2 = "ab1cd";
@@ -87,7 +87,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void additionalLastCharacter() {
+  void additionalLastCharacter() {
 
     final String str1 = "abcd";
     final String str2 = "abcd1";
@@ -97,7 +97,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void firstCharacterRemoved() {
+  void firstCharacterRemoved() {
 
     final String str1 = "abcde";
     final String str2 = "bcde";
@@ -107,7 +107,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void middleCharacterRemoved() {
+  void middleCharacterRemoved() {
 
     final String str1 = "abcde";
     final String str2 = "abde";
@@ -117,7 +117,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void lastCharacterRemoved() {
+  void lastCharacterRemoved() {
 
     final String str1 = "abcde";
     final String str2 = "abcd";
@@ -127,7 +127,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void additionalFirstCharacterAndLastCharacterRemoved() {
+  void additionalFirstCharacterAndLastCharacterRemoved() {
 
     final String str1 = "bcde";
     final String str2 = "abcd";
@@ -137,7 +137,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void additionalLastCharacterAndFirstCharacterRemoved() {
+  void additionalLastCharacterAndFirstCharacterRemoved() {
 
     final String str1 = "abcd";
     final String str2 = "bcde";
@@ -147,7 +147,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void emptyStringAndCharacter() {
+  void emptyStringAndCharacter() {
 
     final String str1 = "";
     final String str2 = "1";
@@ -157,7 +157,7 @@ public class TestOneAway {
   }
 
   @Test
-  public void characterAndEmptyString() {
+  void characterAndEmptyString() {
 
     final String str1 = "";
     final String str2 = "1";

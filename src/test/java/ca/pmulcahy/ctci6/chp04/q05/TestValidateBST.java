@@ -6,24 +6,24 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import ca.pmulcahy.ctci6.chp04.TreeNode;
 import org.junit.jupiter.api.Test;
 
-public class TestValidateBST {
+class TestValidateBST {
 
   @Test
-  public void zeroNodes() {
+  void zeroNodes() {
     final TreeNode<Integer> rootNode = null;
     final boolean validBST = ValidateBST.isBinarySearchTree(rootNode);
     assertTrue(validBST);
   }
 
   @Test
-  public void oneNode() {
+  void oneNode() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(1);
     final boolean validBST = ValidateBST.isBinarySearchTree(rootNode);
     assertTrue(validBST);
   }
 
   @Test
-  public void twoNodesLeftHeavyValid() {
+  void twoNodesLeftHeavyValid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(2);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(1);
     rootNode.setLeft(leftNode);
@@ -32,7 +32,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void twoNodesLeftHeavyEqual() {
+  void twoNodesLeftHeavyEqual() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(1);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(1);
     rootNode.setLeft(leftNode);
@@ -41,7 +41,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void twoNodesLeftHeavyInvalid() {
+  void twoNodesLeftHeavyInvalid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(1);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(2);
     rootNode.setLeft(leftNode);
@@ -50,7 +50,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void twoNodesRightHeavyValid() {
+  void twoNodesRightHeavyValid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(1);
     final TreeNode<Integer> rightNode = new TreeNode<Integer>(2);
     rootNode.setRight(rightNode);
@@ -59,7 +59,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void twoNodesRightHeavyInvalid() {
+  void twoNodesRightHeavyInvalid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(2);
     final TreeNode<Integer> rightNode = new TreeNode<Integer>(1);
     rootNode.setRight(rightNode);
@@ -68,7 +68,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void twoNodesRightHeavyEqual() {
+  void twoNodesRightHeavyEqual() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(1);
     final TreeNode<Integer> rightNode = new TreeNode<Integer>(1);
     rootNode.setRight(rightNode);
@@ -77,7 +77,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void threeNodesBalancedValid() {
+  void threeNodesBalancedValid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(2);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(1);
     rootNode.setLeft(leftNode);
@@ -88,7 +88,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void threeNodesBalancedInvalid() {
+  void threeNodesBalancedInvalid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(2);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(3);
     rootNode.setLeft(leftNode);
@@ -99,7 +99,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void threeNodesLeftLeftHeavyValid() {
+  void threeNodesLeftLeftHeavyValid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(3);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(2);
     rootNode.setLeft(leftNode);
@@ -110,7 +110,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void threeNodesLeftLeftHeavyInvalid() {
+  void threeNodesLeftLeftHeavyInvalid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(3);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(1);
     rootNode.setLeft(leftNode);
@@ -121,7 +121,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void threeNodesLeftRightHeavyValid() {
+  void threeNodesLeftRightHeavyValid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(3);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(1);
     rootNode.setLeft(leftNode);
@@ -132,7 +132,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void threeNodesLeftRightHeavyInvalid() {
+  void threeNodesLeftRightHeavyInvalid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(3);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(1);
     rootNode.setLeft(leftNode);
@@ -143,7 +143,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void threeNodesRightLeftHeavyValid() {
+  void threeNodesRightLeftHeavyValid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(1);
     final TreeNode<Integer> rightNode = new TreeNode<Integer>(3);
     rootNode.setRight(rightNode);
@@ -154,7 +154,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void threeNodesRightLeftHeavyInvalid() {
+  void threeNodesRightLeftHeavyInvalid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(1);
     final TreeNode<Integer> rightNode = new TreeNode<Integer>(2);
     rootNode.setRight(rightNode);
@@ -165,7 +165,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void threeNodesRightRightHeavyValid() {
+  void threeNodesRightRightHeavyValid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(1);
     final TreeNode<Integer> rightNode = new TreeNode<Integer>(2);
     rootNode.setRight(rightNode);
@@ -176,7 +176,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void threeNodesRightRightHeavyInvalid() {
+  void threeNodesRightRightHeavyInvalid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(1);
     final TreeNode<Integer> rightNode = new TreeNode<Integer>(1);
     rootNode.setRight(rightNode);
@@ -187,7 +187,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void fourNodesLeftLeftHeavyValid() {
+  void fourNodesLeftLeftHeavyValid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(3);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(2);
     rootNode.setLeft(leftNode);
@@ -200,7 +200,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void fourNodesLeftLeftHeavyInvalid() {
+  void fourNodesLeftLeftHeavyInvalid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(3);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(2);
     rootNode.setLeft(leftNode);
@@ -213,7 +213,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void fourNodesLeftHeavyValid() {
+  void fourNodesLeftHeavyValid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(4);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(2);
     rootNode.setLeft(leftNode);
@@ -226,7 +226,7 @@ public class TestValidateBST {
   }
 
   @Test
-  public void fourNodesLeftHeavyInvalid() {
+  void fourNodesLeftHeavyInvalid() {
     final TreeNode<Integer> rootNode = new TreeNode<Integer>(4);
     final TreeNode<Integer> leftNode = new TreeNode<Integer>(2);
     rootNode.setLeft(leftNode);

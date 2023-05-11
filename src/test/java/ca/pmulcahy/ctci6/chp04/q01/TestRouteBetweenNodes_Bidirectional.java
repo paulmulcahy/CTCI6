@@ -5,30 +5,30 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class TestRouteBetweenNodes_Bidirectional {
+class TestRouteBetweenNodes_Bidirectional {
 
   @Test
-  public void sameNodeUnconnected() {
+  void sameNodeUnconnected() {
     final NodeWithParents<Integer> node = new NodeWithParents<>(1);
     assertFalse(RouteBetweenNodes_Bidirectional.isRouteBetweenNodes(node, node));
   }
 
   @Test
-  public void selfConnectedNode() {
+  void selfConnectedNode() {
     final NodeWithParents<Integer> node = new NodeWithParents<>(1);
     node.addChild(node);
     assertTrue(RouteBetweenNodes_Bidirectional.isRouteBetweenNodes(node, node));
   }
 
   @Test
-  public void unconnectedNodes() {
+  void unconnectedNodes() {
     final NodeWithParents<Integer> node1 = new NodeWithParents<>(1);
     final NodeWithParents<Integer> node2 = new NodeWithParents<>(2);
     assertFalse(RouteBetweenNodes_Bidirectional.isRouteBetweenNodes(node1, node2));
   }
 
   @Test
-  public void directlyConnectedNodesBidirectional() {
+  void directlyConnectedNodesBidirectional() {
     final NodeWithParents<Integer> node1 = new NodeWithParents<>(1);
     final NodeWithParents<Integer> node2 = new NodeWithParents<>(2);
     node1.addChild(node2);
@@ -37,7 +37,7 @@ public class TestRouteBetweenNodes_Bidirectional {
   }
 
   @Test
-  public void directlyConnectedNodesUnidirectional() {
+  void directlyConnectedNodesUnidirectional() {
     final NodeWithParents<Integer> node1 = new NodeWithParents<>(1);
     final NodeWithParents<Integer> node2 = new NodeWithParents<>(2);
     node1.addChild(node2);
@@ -45,7 +45,7 @@ public class TestRouteBetweenNodes_Bidirectional {
   }
 
   @Test
-  public void directlyConnectedNodesUnidirectionalOtherWay() {
+  void directlyConnectedNodesUnidirectionalOtherWay() {
     final NodeWithParents<Integer> node1 = new NodeWithParents<>(1);
     final NodeWithParents<Integer> node2 = new NodeWithParents<>(2);
     node2.addChild(node1);
@@ -53,7 +53,7 @@ public class TestRouteBetweenNodes_Bidirectional {
   }
 
   @Test
-  public void connectedByOneNodeBidirectional() {
+  void connectedByOneNodeBidirectional() {
     final NodeWithParents<Integer> node1 = new NodeWithParents<>(1);
     final NodeWithParents<Integer> node2 = new NodeWithParents<>(2);
     final NodeWithParents<Integer> middle = new NodeWithParents<>(3);
@@ -65,7 +65,7 @@ public class TestRouteBetweenNodes_Bidirectional {
   }
 
   @Test
-  public void connectedByOneNodeUnidirectional() {
+  void connectedByOneNodeUnidirectional() {
     final NodeWithParents<Integer> node1 = new NodeWithParents<>(1);
     final NodeWithParents<Integer> node2 = new NodeWithParents<>(2);
     final NodeWithParents<Integer> middle = new NodeWithParents<>(3);
@@ -75,7 +75,7 @@ public class TestRouteBetweenNodes_Bidirectional {
   }
 
   @Test
-  public void connectedByOneNodeUnidirectionalOtherWay() {
+  void connectedByOneNodeUnidirectionalOtherWay() {
     final NodeWithParents<Integer> node1 = new NodeWithParents<>(1);
     final NodeWithParents<Integer> node2 = new NodeWithParents<>(2);
     final NodeWithParents<Integer> middle = new NodeWithParents<>(3);
@@ -85,7 +85,7 @@ public class TestRouteBetweenNodes_Bidirectional {
   }
 
   @Test
-  public void connectedToMiddleNodeOnly() {
+  void connectedToMiddleNodeOnly() {
     final NodeWithParents<Integer> node1 = new NodeWithParents<>(1);
     final NodeWithParents<Integer> node2 = new NodeWithParents<>(2);
     final NodeWithParents<Integer> middle = new NodeWithParents<>(3);
@@ -95,7 +95,7 @@ public class TestRouteBetweenNodes_Bidirectional {
   }
 
   @Test
-  public void moreComplicated() {
+  void moreComplicated() {
     final NodeWithParents<Character> a = new NodeWithParents<>('A');
     final NodeWithParents<Character> b = new NodeWithParents<>('B');
     final NodeWithParents<Character> c = new NodeWithParents<>('C');
@@ -117,7 +117,7 @@ public class TestRouteBetweenNodes_Bidirectional {
   }
 
   @Test
-  public void moreComplicated2() {
+  void moreComplicated2() {
     final NodeWithParents<Character> a = new NodeWithParents<>('A');
     final NodeWithParents<Character> b = new NodeWithParents<>('B');
     final NodeWithParents<Character> c = new NodeWithParents<>('C');

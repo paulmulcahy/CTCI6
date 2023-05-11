@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class TestStringCompression {
+class TestStringCompression {
 
   @Test
-  public void allUniqueCharacters() {
+  void allUniqueCharacters() {
 
     final String abc = "ABC";
 
@@ -19,7 +19,7 @@ public class TestStringCompression {
   }
 
   @Test
-  public void allMatchingCharacters() {
+  void allMatchingCharacters() {
 
     final String abc = "AAA";
     final String expected = "A3";

@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class TestDepthFirstSearchWithNodes {
+class TestDepthFirstSearchWithNodes {
 
   @Test
-  public void zeroNodes() {
+  void zeroNodes() {
     final List<Character> expected = new ArrayList<Character>();
     final List<Character> projects = new ArrayList<Character>();
     final List<SimpleEntry<Character, Character>> dependencies =
@@ -21,7 +21,7 @@ public class TestDepthFirstSearchWithNodes {
   }
 
   @Test
-  public void bookExample() {
+  void bookExample() {
     final List<Character> expected =
         new ArrayList<Character>(List.of('f', 'e', 'b', 'a', 'd', 'c'));
     final List<Character> projects =
@@ -38,7 +38,7 @@ public class TestDepthFirstSearchWithNodes {
   }
 
   @Test
-  public void incompleteProjectList() {
+  void incompleteProjectList() {
     final List<Character> projects = new ArrayList<Character>(List.of('a', 'b'));
     final List<SimpleEntry<Character, Character>> dependencies =
         new ArrayList<SimpleEntry<Character, Character>>();
@@ -50,7 +50,7 @@ public class TestDepthFirstSearchWithNodes {
   }
 
   @Test
-  public void impossible() {
+  void impossible() {
     final List<Character> projects = new ArrayList<Character>(List.of('a', 'b'));
     final List<SimpleEntry<Character, Character>> dependencies =
         new ArrayList<SimpleEntry<Character, Character>>();

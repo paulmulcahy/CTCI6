@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import ca.pmulcahy.ctci6.chp02.SinglyLinkedList;
 import org.junit.jupiter.api.Test;
 
-public class TestReturnKthToTheLast {
+class TestReturnKthToTheLast {
 
   @Test
-  public void empty() {
+  void empty() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
 
     final Integer actual = ReturnKthToTheLast.returnKthToTheLast(sList, 0);
@@ -19,7 +19,7 @@ public class TestReturnKthToTheLast {
   }
 
   @Test
-  public void kIsZero() {
+  void kIsZero() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(1);
     final Integer actual = ReturnKthToTheLast.returnKthToTheLast(sList, 0);
@@ -27,7 +27,7 @@ public class TestReturnKthToTheLast {
   }
 
   @Test
-  public void kIsBelowZero() {
+  void kIsBelowZero() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(1);
     final Integer actual = ReturnKthToTheLast.returnKthToTheLast(sList, -1);
@@ -35,7 +35,7 @@ public class TestReturnKthToTheLast {
   }
 
   @Test
-  public void singleValue() {
+  void singleValue() {
     final Integer singleInt = 1;
 
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
@@ -52,7 +52,7 @@ public class TestReturnKthToTheLast {
   }
 
   @Test
-  public void singleNullValue() {
+  void singleNullValue() {
     final Integer singleInt = null;
 
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
@@ -69,7 +69,7 @@ public class TestReturnKthToTheLast {
   }
 
   @Test
-  public void twoValuesReturnFirst() {
+  void twoValuesReturnFirst() {
     final Integer firstInt = 1;
     final Integer secondInt = 2;
 
@@ -88,7 +88,7 @@ public class TestReturnKthToTheLast {
   }
 
   @Test
-  public void twoValuesReturnLast() {
+  void twoValuesReturnLast() {
     final Integer firstInt = 1;
     final Integer secondInt = 2;
 
@@ -107,7 +107,7 @@ public class TestReturnKthToTheLast {
   }
 
   @Test
-  public void kTooLarge() {
+  void kTooLarge() {
     final Integer firstInt = 1;
     final Integer secondInt = 2;
 
@@ -125,7 +125,7 @@ public class TestReturnKthToTheLast {
   }
 
   @Test
-  public void threeValuesReturnFirst() {
+  void threeValuesReturnFirst() {
     final Integer firstInt = 1;
     final Integer secondInt = null;
     final Integer thirdInt = 3;
@@ -146,7 +146,7 @@ public class TestReturnKthToTheLast {
   }
 
   @Test
-  public void threeValuesReturnMiddle() {
+  void threeValuesReturnMiddle() {
     final Integer firstInt = 1;
     final Integer secondInt = null;
     final Integer thirdInt = 3;
@@ -167,7 +167,7 @@ public class TestReturnKthToTheLast {
   }
 
   @Test
-  public void threeValuesReturnLast() {
+  void threeValuesReturnLast() {
     final Integer firstInt = 1;
     final Integer secondInt = null;
     final Integer thirdInt = 3;

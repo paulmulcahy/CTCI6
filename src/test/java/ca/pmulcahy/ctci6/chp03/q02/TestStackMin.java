@@ -8,37 +8,37 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.Test;
 
-public class TestStackMin {
+class TestStackMin {
 
   @Test
-  public void isEmpty() {
+  void isEmpty() {
     final StackMin<Integer> stack = new StackMin<>();
     assertTrue(stack.isEmpty());
   }
 
   @Test
-  public void isNotEmpty0() {
+  void isNotEmpty0() {
     final StackMin<Integer> stack = new StackMin<>();
     stack.push(1);
     assertFalse(stack.isEmpty());
   }
 
   @Test
-  public void pushPop() {
+  void pushPop() {
     final StackMin<Integer> stack = new StackMin<>();
     stack.push(1);
     assertEquals(1, stack.pop());
   }
 
   @Test
-  public void pushPeek() {
+  void pushPeek() {
     final StackMin<Integer> stack = new StackMin<>();
     stack.push(1);
     assertEquals(1, stack.peek());
   }
 
   @Test
-  public void increaseStackSize() {
+  void increaseStackSize() {
     final StackMin<Integer> stack = new StackMin<>(3);
     stack.push(9);
     stack.push(8);
@@ -59,32 +59,32 @@ public class TestStackMin {
   }
 
   @Test
-  public void pushMin() {
+  void pushMin() {
     final StackMin<Integer> stack = new StackMin<>();
     stack.push(1);
     assertEquals(1, stack.min());
   }
 
   @Test
-  public void popEmpty() {
+  void popEmpty() {
     final StackMin<Integer> stack = new StackMin<>();
     assertThrows(EmptyStackException.class, () -> stack.pop());
   }
 
   @Test
-  public void peekEmpty() {
+  void peekEmpty() {
     final StackMin<Integer> stack = new StackMin<>();
     assertThrows(EmptyStackException.class, () -> stack.peek());
   }
 
   @Test
-  public void minEmpty() {
+  void minEmpty() {
     final StackMin<Integer> stack = new StackMin<>();
     assertThrows(EmptyStackException.class, () -> stack.min());
   }
 
   @Test
-  public void pushPopMinEmpty() {
+  void pushPopMinEmpty() {
     final StackMin<Integer> stack = new StackMin<>();
     stack.push(1);
     stack.pop();
@@ -92,7 +92,7 @@ public class TestStackMin {
   }
 
   @Test
-  public void pushPushPopLargerMin() {
+  void pushPushPopLargerMin() {
     final StackMin<Integer> stack = new StackMin<>();
     stack.push(1);
     stack.push(0);
@@ -101,7 +101,7 @@ public class TestStackMin {
   }
 
   @Test
-  public void pushPushPopSmallerMin() {
+  void pushPushPopSmallerMin() {
     final StackMin<Integer> stack = new StackMin<>();
     stack.push(0);
     stack.push(1);

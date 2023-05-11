@@ -8,10 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class TestMinimalTree {
+class TestMinimalTree {
 
   @Test
-  public void zeroNodes() {
+  void zeroNodes() {
     final Integer[] inputArr = {};
     final List<Integer> inputList = Arrays.asList(inputArr);
     final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
@@ -19,7 +19,7 @@ public class TestMinimalTree {
   }
 
   @Test
-  public void oneNode() {
+  void oneNode() {
     final Integer[] inputArr = {1};
     final List<Integer> inputList = Arrays.asList(inputArr);
     final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
@@ -29,7 +29,7 @@ public class TestMinimalTree {
   }
 
   @Test
-  public void twoNodes() {
+  void twoNodes() {
     final Integer[] inputArr = {1, 2};
     final List<Integer> inputList = Arrays.asList(inputArr);
     final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
@@ -42,7 +42,7 @@ public class TestMinimalTree {
   }
 
   @Test
-  public void threeNodes() {
+  void threeNodes() {
     final Integer[] inputArr = {1, 2, 3};
     final List<Integer> inputList = Arrays.asList(inputArr);
     final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
@@ -58,7 +58,7 @@ public class TestMinimalTree {
   }
 
   @Test
-  public void fourNodes() {
+  void fourNodes() {
     final Integer[] inputArr = {1, 2, 3, 4};
     final List<Integer> inputList = Arrays.asList(inputArr);
     final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
@@ -77,7 +77,7 @@ public class TestMinimalTree {
   }
 
   @Test
-  public void fiveNodes() {
+  void fiveNodes() {
     final Integer[] inputArr = {1, 2, 3, 4, 5};
     final List<Integer> inputList = Arrays.asList(inputArr);
     final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
@@ -99,7 +99,7 @@ public class TestMinimalTree {
   }
 
   @Test
-  public void sixNodes() {
+  void sixNodes() {
     final Integer[] inputArr = {1, 2, 3, 4, 5, 6};
     final List<Integer> inputList = Arrays.asList(inputArr);
     final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);
@@ -124,7 +124,7 @@ public class TestMinimalTree {
   }
 
   @Test
-  public void sevenNodes() {
+  void sevenNodes() {
     final Integer[] inputArr = {1, 2, 3, 4, 5, 6, 7};
     final List<Integer> inputList = Arrays.asList(inputArr);
     final TreeNode<Integer> rootNode = MinimalTree.buildBinaryTree(inputList);

@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class TestStringPermutationOfOtherString {
+class TestStringPermutationOfOtherString {
 
   @Test
-  public void stringsWithDifferentLengths() {
+  void stringsWithDifferentLengths() {
 
     final String length3 = "123";
     final String length4 = "1234";
@@ -24,7 +24,7 @@ public class TestStringPermutationOfOtherString {
   }
 
   @Test
-  public void matchingStrings() {
+  void matchingStrings() {
 
     final String matchingString = "Matching String!";
 
@@ -34,7 +34,7 @@ public class TestStringPermutationOfOtherString {
   }
 
   @Test
-  public void stringsWithSameLengthDifferentUniqueCharacters() {
+  void stringsWithSameLengthDifferentUniqueCharacters() {
 
     final String abc = "ABC";
     final String xyz = "XYZ";
@@ -44,7 +44,7 @@ public class TestStringPermutationOfOtherString {
   }
 
   @Test
-  public void stringsPermutationsOfEachOther() {
+  void stringsPermutationsOfEachOther() {
 
     final String abc = "ABC";
     final String cba = "CBA";
@@ -54,7 +54,7 @@ public class TestStringPermutationOfOtherString {
   }
 
   @Test
-  public void stringsSameLengthSameUniqueCharactersNotPermutation() {
+  void stringsSameLengthSameUniqueCharactersNotPermutation() {
 
     final String aabc = "AABC";
     final String abcc = "ABCC";

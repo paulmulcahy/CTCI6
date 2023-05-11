@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class TestReplaceSpacesWithPercentTwenty {
+class TestReplaceSpacesWithPercentTwenty {
 
   @Test
-  public void NoSpaces() {
+  void NoSpaces() {
 
     final String abc = "ABC";
 
@@ -17,7 +17,7 @@ public class TestReplaceSpacesWithPercentTwenty {
   }
 
   @Test
-  public void OnlySpace() {
+  void OnlySpace() {
 
     final String space = " ";
     final String expected = "%20";
@@ -28,7 +28,7 @@ public class TestReplaceSpacesWithPercentTwenty {
   }
 
   @Test
-  public void OneSpaceInMiddle() {
+  void OneSpaceInMiddle() {
 
     final String abcd = "AB CD";
     final String expected = "AB%20CD";
@@ -39,7 +39,7 @@ public class TestReplaceSpacesWithPercentTwenty {
   }
 
   @Test
-  public void OneSpaceAtBeginning() {
+  void OneSpaceAtBeginning() {
 
     final String abcd = " ABCD";
     final String expected = "%20ABCD";
@@ -50,7 +50,7 @@ public class TestReplaceSpacesWithPercentTwenty {
   }
 
   @Test
-  public void OneSpaceAtEnd() {
+  void OneSpaceAtEnd() {
 
     final String abcd = "ABCD ";
     final String expected = "ABCD%20";
@@ -61,7 +61,7 @@ public class TestReplaceSpacesWithPercentTwenty {
   }
 
   @Test
-  public void ManySpaces() {
+  void ManySpaces() {
 
     final String abcd = " A B  C D ";
     final String expected = "%20A%20B%20%20C%20D%20";

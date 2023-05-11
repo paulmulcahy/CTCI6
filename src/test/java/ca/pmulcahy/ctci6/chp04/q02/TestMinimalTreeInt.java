@@ -5,17 +5,17 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.Test;
 
-public class TestMinimalTreeInt {
+class TestMinimalTreeInt {
 
   @Test
-  public void zeroNodes() {
+  void zeroNodes() {
     final int[] inputArr = {};
     final TreeNodeInt rootNode = MinimalTreeInt.buildBinaryTree(inputArr);
     assertNull(rootNode);
   }
 
   @Test
-  public void oneNode() {
+  void oneNode() {
     final int[] inputArr = {1};
     final TreeNodeInt rootNode = MinimalTreeInt.buildBinaryTree(inputArr);
     assertEquals(1, rootNode.getData());
@@ -24,7 +24,7 @@ public class TestMinimalTreeInt {
   }
 
   @Test
-  public void twoNodes() {
+  void twoNodes() {
     final int[] inputArr = {1, 2};
     final TreeNodeInt rootNode = MinimalTreeInt.buildBinaryTree(inputArr);
     assertEquals(2, rootNode.getData());
@@ -36,7 +36,7 @@ public class TestMinimalTreeInt {
   }
 
   @Test
-  public void threeNodes() {
+  void threeNodes() {
     final int[] inputArr = {1, 2, 3};
     final TreeNodeInt rootNode = MinimalTreeInt.buildBinaryTree(inputArr);
     assertEquals(2, rootNode.getData());
@@ -51,7 +51,7 @@ public class TestMinimalTreeInt {
   }
 
   @Test
-  public void fourNodes() {
+  void fourNodes() {
     final int[] inputArr = {1, 2, 3, 4};
     final TreeNodeInt rootNode = MinimalTreeInt.buildBinaryTree(inputArr);
     assertEquals(3, rootNode.getData());
@@ -69,7 +69,7 @@ public class TestMinimalTreeInt {
   }
 
   @Test
-  public void fiveNodes() {
+  void fiveNodes() {
     final int[] inputArr = {1, 2, 3, 4, 5};
     final TreeNodeInt rootNode = MinimalTreeInt.buildBinaryTree(inputArr);
     assertEquals(3, rootNode.getData());
@@ -90,7 +90,7 @@ public class TestMinimalTreeInt {
   }
 
   @Test
-  public void sixNodes() {
+  void sixNodes() {
     final int[] inputArr = {1, 2, 3, 4, 5, 6};
     final TreeNodeInt rootNode = MinimalTreeInt.buildBinaryTree(inputArr);
     assertEquals(4, rootNode.getData());
@@ -114,7 +114,7 @@ public class TestMinimalTreeInt {
   }
 
   @Test
-  public void sevenNodes() {
+  void sevenNodes() {
     final int[] inputArr = {1, 2, 3, 4, 5, 6, 7};
     final TreeNodeInt rootNode = MinimalTreeInt.buildBinaryTree(inputArr);
     assertEquals(4, rootNode.getData());

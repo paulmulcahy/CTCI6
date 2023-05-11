@@ -7,10 +7,10 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class TestRemoveDups_NoTemporaryBuffer {
+class TestRemoveDups_NoTemporaryBuffer {
 
   @Test
-  public void empty() {
+  void empty() {
     final Integer[] inputArr = new Integer[] {};
     final List<Integer> inputList = Arrays.asList(inputArr);
 
@@ -23,7 +23,7 @@ public class TestRemoveDups_NoTemporaryBuffer {
   }
 
   @Test
-  public void noDuplicates() {
+  void noDuplicates() {
     final Integer[] inputArr = new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     final List<Integer> inputList = Arrays.asList(inputArr);
 
@@ -38,7 +38,7 @@ public class TestRemoveDups_NoTemporaryBuffer {
   }
 
   @Test
-  public void noDuplicatesWithNull() {
+  void noDuplicatesWithNull() {
     final Integer[] inputArr = new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, null};
     final List<Integer> inputList = Arrays.asList(inputArr);
 
@@ -53,7 +53,7 @@ public class TestRemoveDups_NoTemporaryBuffer {
   }
 
   @Test
-  public void duplicatesOfSingle() {
+  void duplicatesOfSingle() {
     final Integer[] inputArr = new Integer[] {1, 1, 1, 1, 1};
     final List<Integer> inputList = Arrays.asList(inputArr);
 
@@ -71,7 +71,7 @@ public class TestRemoveDups_NoTemporaryBuffer {
   }
 
   @Test
-  public void duplicatesOfSingleNull() {
+  void duplicatesOfSingleNull() {
     final Integer[] inputArr = new Integer[] {null, null, null, null, null};
     final List<Integer> inputList = Arrays.asList(inputArr);
 
@@ -89,7 +89,7 @@ public class TestRemoveDups_NoTemporaryBuffer {
   }
 
   @Test
-  public void duplicates() {
+  void duplicates() {
     final Integer[] inputArr = new Integer[] {1, 1, 2, 2, 2, 3, 3};
     final List<Integer> inputList = Arrays.asList(inputArr);
 
@@ -109,7 +109,7 @@ public class TestRemoveDups_NoTemporaryBuffer {
   }
 
   @Test
-  public void duplicatesWithNulls() {
+  void duplicatesWithNulls() {
     final Integer[] inputArr = new Integer[] {1, 1, 2, 2, 2, 3, 3, null, null};
     final List<Integer> inputList = Arrays.asList(inputArr);
 

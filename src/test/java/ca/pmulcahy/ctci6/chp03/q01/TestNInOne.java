@@ -8,184 +8,184 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.Test;
 
-public class TestNInOne {
+class TestNInOne {
 
   @Test
-  public void isEmptyStackLow() {
+  void isEmptyStackLow() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.isEmpty(-1));
   }
 
   @Test
-  public void isEmpty0() {
+  void isEmpty0() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertTrue(tripleStack.isEmpty(0));
   }
 
   @Test
-  public void isEmpty1() {
+  void isEmpty1() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertTrue(tripleStack.isEmpty(1));
   }
 
   @Test
-  public void isEmpty2() {
+  void isEmpty2() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertTrue(tripleStack.isEmpty(2));
   }
 
   @Test
-  public void isEmptyStackHigh() {
+  void isEmptyStackHigh() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.isEmpty(3));
   }
 
   @Test
-  public void isEmptyQuadruple() {
+  void isEmptyQuadruple() {
     final NInOne<Integer> quadrupleStack = new NInOne<>(4);
     assertTrue(quadrupleStack.isEmpty(3));
   }
 
   @Test
-  public void isNotEmptyStackLow() {
+  void isNotEmptyStackLow() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(0, 1);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.isEmpty(-1));
   }
 
   @Test
-  public void isNotEmpty0() {
+  void isNotEmpty0() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(0, 1);
     assertFalse(tripleStack.isEmpty(0));
   }
 
   @Test
-  public void isNotEmpty1() {
+  void isNotEmpty1() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(1, 2);
     assertFalse(tripleStack.isEmpty(1));
   }
 
   @Test
-  public void isNotEmpty2() {
+  void isNotEmpty2() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(2, 3);
     assertFalse(tripleStack.isEmpty(2));
   }
 
   @Test
-  public void isNotEmptyStackHigh() {
+  void isNotEmptyStackHigh() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(2, 1);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.isEmpty(3));
   }
 
   @Test
-  public void isNotEmptyQuadruple() {
+  void isNotEmptyQuadruple() {
     final NInOne<Integer> quadrupleStack = new NInOne<>(4);
     quadrupleStack.push(3, 4);
     assertFalse(quadrupleStack.isEmpty(3));
   }
 
   @Test
-  public void pushLow() {
+  void pushLow() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.push(-1, 1));
   }
 
   @Test
-  public void popLow() {
+  void popLow() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(0, 1);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.pop(-1));
   }
 
   @Test
-  public void pushHigh() {
+  void pushHigh() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.push(3, 1));
   }
 
   @Test
-  public void popHigh() {
+  void popHigh() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(2, 3);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.pop(3));
   }
 
   @Test
-  public void pushPop0() {
+  void pushPop0() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(0, 1);
     assertEquals(1, tripleStack.pop(0));
   }
 
   @Test
-  public void pushPop1() {
+  void pushPop1() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(1, 2);
     assertEquals(2, tripleStack.pop(1));
   }
 
   @Test
-  public void pushPop2() {
+  void pushPop2() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(2, 3);
     assertEquals(3, tripleStack.pop(2));
   }
 
   @Test
-  public void pushPopQuadruple() {
+  void pushPopQuadruple() {
     final NInOne<Integer> quadrupleStack = new NInOne<>(4);
     quadrupleStack.push(3, 4);
     assertEquals(4, quadrupleStack.pop(3));
   }
 
   @Test
-  public void peekLow() {
+  void peekLow() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(0, 1);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.peek(-1));
   }
 
   @Test
-  public void peekHigh() {
+  void peekHigh() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(2, 3);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.peek(3));
   }
 
   @Test
-  public void pushPeek0() {
+  void pushPeek0() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(0, 1);
     assertEquals(1, tripleStack.peek(0));
   }
 
   @Test
-  public void pushPeek1() {
+  void pushPeek1() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(1, 2);
     assertEquals(2, tripleStack.peek(1));
   }
 
   @Test
-  public void pushPeek2() {
+  void pushPeek2() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(2, 3);
     assertEquals(3, tripleStack.peek(2));
   }
 
   @Test
-  public void pushPeekQuadruple() {
+  void pushPeekQuadruple() {
     final NInOne<Integer> quadrupleStack = new NInOne<>(4);
     quadrupleStack.push(3, 4);
     assertEquals(4, quadrupleStack.peek(3));
   }
 
   @Test
-  public void pushPushPop0() {
+  void pushPushPop0() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(0, 0);
     tripleStack.push(0, 1);
@@ -193,7 +193,7 @@ public class TestNInOne {
   }
 
   @Test
-  public void pushPushPop1() {
+  void pushPushPop1() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(1, 0);
     tripleStack.push(1, 2);
@@ -201,7 +201,7 @@ public class TestNInOne {
   }
 
   @Test
-  public void pushPushPop2() {
+  void pushPushPop2() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(2, 0);
     tripleStack.push(2, 3);
@@ -209,7 +209,7 @@ public class TestNInOne {
   }
 
   @Test
-  public void pushPushPopQuadruple() {
+  void pushPushPopQuadruple() {
     final NInOne<Integer> quadrupleStack = new NInOne<>(4);
     quadrupleStack.push(3, 0);
     quadrupleStack.push(3, 4);
@@ -217,79 +217,79 @@ public class TestNInOne {
   }
 
   @Test
-  public void popEmptyLow() {
+  void popEmptyLow() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.pop(-1));
   }
 
   @Test
-  public void popEmptyHigh() {
+  void popEmptyHigh() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.pop(3));
   }
 
   @Test
-  public void popEmpty0() {
+  void popEmpty0() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(EmptyStackException.class, () -> tripleStack.pop(0));
   }
 
   @Test
-  public void popEmpty1() {
+  void popEmpty1() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(EmptyStackException.class, () -> tripleStack.pop(1));
   }
 
   @Test
-  public void popEmpty2() {
+  void popEmpty2() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(EmptyStackException.class, () -> tripleStack.pop(2));
   }
 
   @Test
-  public void popEmptyQuadruple() {
+  void popEmptyQuadruple() {
     final NInOne<Integer> quadrupleStack = new NInOne<>(4);
     assertThrows(EmptyStackException.class, () -> quadrupleStack.pop(3));
   }
 
   @Test
-  public void peekEmptyLow() {
+  void peekEmptyLow() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.peek(-1));
   }
 
   @Test
-  public void peekEmptyHigh() {
+  void peekEmptyHigh() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(IllegalArgumentException.class, () -> tripleStack.peek(3));
   }
 
   @Test
-  public void peekEmpty0() {
+  void peekEmpty0() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(EmptyStackException.class, () -> tripleStack.peek(0));
   }
 
   @Test
-  public void peekEmpty1() {
+  void peekEmpty1() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(EmptyStackException.class, () -> tripleStack.peek(1));
   }
 
   @Test
-  public void peekEmpty2() {
+  void peekEmpty2() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     assertThrows(EmptyStackException.class, () -> tripleStack.peek(2));
   }
 
   @Test
-  public void peekEmptyQuadruple() {
+  void peekEmptyQuadruple() {
     final NInOne<Integer> quadrupleStack = new NInOne<>(4);
     assertThrows(EmptyStackException.class, () -> quadrupleStack.peek(3));
   }
 
   @Test
-  public void increaseStackSize() {
+  void increaseStackSize() {
     final NInOne<Integer> tripleStack = new NInOne<>(3);
     tripleStack.push(0, 9);
     tripleStack.push(0, 8);

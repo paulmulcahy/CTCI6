@@ -7,10 +7,10 @@ import ca.pmulcahy.ctci6.chp02.Node;
 import ca.pmulcahy.ctci6.chp02.SinglyLinkedList;
 import org.junit.jupiter.api.Test;
 
-public class TestLoopDetection {
+class TestLoopDetection {
 
   @Test
-  public void empty() {
+  void empty() {
     final SinglyLinkedList<Character> sList = new SinglyLinkedList<>();
 
     final Node<Character> actual = LoopDetection.detectLoop(sList);
@@ -19,7 +19,7 @@ public class TestLoopDetection {
   }
 
   @Test
-  public void noLoop() {
+  void noLoop() {
     final SinglyLinkedList<Character> sList = new SinglyLinkedList<>();
     sList.add('A');
     sList.add('B');
@@ -33,7 +33,7 @@ public class TestLoopDetection {
   }
 
   @Test
-  public void duplicateAtBeginning() {
+  void duplicateAtBeginning() {
     final Node<Character> duplicate = new Node<>('A');
     final SinglyLinkedList<Character> sList = new SinglyLinkedList<>();
     sList.addNode(duplicate);
@@ -53,7 +53,7 @@ public class TestLoopDetection {
   }
 
   @Test
-  public void immediateDuplicate() {
+  void immediateDuplicate() {
     final Node<Character> duplicate = new Node<>('C');
     final SinglyLinkedList<Character> sList = new SinglyLinkedList<>();
     sList.add('A');
@@ -73,7 +73,7 @@ public class TestLoopDetection {
   }
 
   @Test
-  public void bookExample() {
+  void bookExample() {
     final Node<Character> duplicate = new Node<>('C');
     final SinglyLinkedList<Character> sList = new SinglyLinkedList<>();
     sList.add('A');

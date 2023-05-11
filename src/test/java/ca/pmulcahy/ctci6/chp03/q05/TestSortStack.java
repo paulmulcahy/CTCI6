@@ -8,49 +8,49 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.Test;
 
-public class TestSortStack {
+class TestSortStack {
 
   @Test
-  public void isEmpty() {
+  void isEmpty() {
     final SortStack<Integer> stack = new SortStack<>();
     assertTrue(stack.isEmpty());
   }
 
   @Test
-  public void isNotEmpty0() {
+  void isNotEmpty0() {
     final SortStack<Integer> stack = new SortStack<>();
     stack.push(1);
     assertFalse(stack.isEmpty());
   }
 
   @Test
-  public void pushPop() {
+  void pushPop() {
     final SortStack<Integer> stack = new SortStack<>();
     stack.push(1);
     assertEquals(1, stack.pop());
   }
 
   @Test
-  public void pushPeek() {
+  void pushPeek() {
     final SortStack<Integer> stack = new SortStack<>();
     stack.push(1);
     assertEquals(1, stack.peek());
   }
 
   @Test
-  public void popEmpty() {
+  void popEmpty() {
     final SortStack<Integer> stack = new SortStack<>();
     assertThrows(EmptyStackException.class, () -> stack.pop());
   }
 
   @Test
-  public void peekEmpty() {
+  void peekEmpty() {
     final SortStack<Integer> stack = new SortStack<>();
     assertThrows(EmptyStackException.class, () -> stack.peek());
   }
 
   @Test
-  public void pushPushPop() {
+  void pushPushPop() {
     final SortStack<Integer> stack = new SortStack<>();
     stack.push(1);
     stack.push(2);
@@ -58,7 +58,7 @@ public class TestSortStack {
   }
 
   @Test
-  public void pushPushPeek() {
+  void pushPushPeek() {
     final SortStack<Integer> stack = new SortStack<>();
     stack.push(1);
     stack.push(2);
@@ -66,7 +66,7 @@ public class TestSortStack {
   }
 
   @Test
-  public void pushPushPopPop() {
+  void pushPushPopPop() {
     final SortStack<Integer> stack = new SortStack<>();
     stack.push(1);
     stack.push(2);
@@ -75,7 +75,7 @@ public class TestSortStack {
   }
 
   @Test
-  public void pushPushPopPeek() {
+  void pushPushPopPeek() {
     final SortStack<Integer> stack = new SortStack<>();
     stack.push(1);
     stack.push(2);
@@ -84,7 +84,7 @@ public class TestSortStack {
   }
 
   @Test
-  public void pushPushSortPop() {
+  void pushPushSortPop() {
     final SortStack<Integer> stack = new SortStack<>();
     stack.push(2);
     stack.push(1);
@@ -93,7 +93,7 @@ public class TestSortStack {
   }
 
   @Test
-  public void pushPushAlreadySortedPeek() {
+  void pushPushAlreadySortedPeek() {
     final SortStack<Integer> stack = new SortStack<>();
     stack.push(1);
     stack.push(2);
@@ -102,7 +102,7 @@ public class TestSortStack {
   }
 
   @Test
-  public void many() {
+  void many() {
     final SortStack<Integer> stack = new SortStack<>();
     stack.push(7);
     stack.push(5);

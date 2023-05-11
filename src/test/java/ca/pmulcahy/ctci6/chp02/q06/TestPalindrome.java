@@ -8,10 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class TestPalindrome {
+class TestPalindrome {
 
   @Test
-  public void empty() {
+  void empty() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
 
     final boolean actual = Palindrome.isPalindrome(sList);
@@ -19,7 +19,7 @@ public class TestPalindrome {
   }
 
   @Test
-  public void singleWhiteSpaceString() {
+  void singleWhiteSpaceString() {
     final SinglyLinkedList<Character> sList = new SinglyLinkedList<>();
     final Character character = 'H';
     sList.add(character);
@@ -29,7 +29,7 @@ public class TestPalindrome {
   }
 
   @Test
-  public void notPalindrome() {
+  void notPalindrome() {
     final Character[] inputArr = new Character[] {'1', '2'};
     final List<Character> inputList = Arrays.asList(inputArr);
     final SinglyLinkedList<Character> sList = new SinglyLinkedList<>();
@@ -40,7 +40,7 @@ public class TestPalindrome {
   }
 
   @Test
-  public void complicatedPalindrome() {
+  void complicatedPalindrome() {
     final Character[] inputArr = new Character[] {'a', null, 'b', null, 'a'};
     final List<Character> inputList = Arrays.asList(inputArr);
     final SinglyLinkedList<Character> sList = new SinglyLinkedList<>();
@@ -51,7 +51,7 @@ public class TestPalindrome {
   }
 
   @Test
-  public void complicatedNonPalindrome() {
+  void complicatedNonPalindrome() {
     final Character[] inputArr = new Character[] {'a', null, 'b', null, 'a', null, 'a'};
     final List<Character> inputList = Arrays.asList(inputArr);
     final SinglyLinkedList<Character> sList = new SinglyLinkedList<>();

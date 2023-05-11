@@ -8,49 +8,49 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.Test;
 
-public class TestSetOfStacks {
+class TestSetOfStacks {
 
   @Test
-  public void isEmpty() {
+  void isEmpty() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     assertTrue(stack.isEmpty());
   }
 
   @Test
-  public void isNotEmpty0() {
+  void isNotEmpty0() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     assertFalse(stack.isEmpty());
   }
 
   @Test
-  public void pushPop() {
+  void pushPop() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     assertEquals(1, stack.pop());
   }
 
   @Test
-  public void pushPeek() {
+  void pushPeek() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     assertEquals(1, stack.peek());
   }
 
   @Test
-  public void popEmpty() {
+  void popEmpty() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     assertThrows(EmptyStackException.class, () -> stack.pop());
   }
 
   @Test
-  public void peekEmpty() {
+  void peekEmpty() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     assertThrows(EmptyStackException.class, () -> stack.peek());
   }
 
   @Test
-  public void pushPushPop() {
+  void pushPushPop() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.push(2);
@@ -58,7 +58,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void pushPushPeek() {
+  void pushPushPeek() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.push(2);
@@ -66,7 +66,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void pushPushPopPop() {
+  void pushPushPopPop() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.push(2);
@@ -75,7 +75,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void pushPushPopPeek() {
+  void pushPushPopPeek() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.push(2);
@@ -84,7 +84,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void pushPushPopAtFirst() {
+  void pushPushPopAtFirst() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.push(2);
@@ -92,7 +92,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void pushPushPopAtLast() {
+  void pushPushPopAtLast() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.push(2);
@@ -100,7 +100,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void pushPushPeekAtFirst() {
+  void pushPushPeekAtFirst() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.push(2);
@@ -108,7 +108,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void pushPushPeekAtLast() {
+  void pushPushPeekAtLast() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.push(2);
@@ -116,7 +116,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void popAtLow() {
+  void popAtLow() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     assertThrows(IllegalArgumentException.class, () -> stack.popAt(-1));
   }
@@ -128,31 +128,31 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void peekAtLow() {
+  void peekAtLow() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     assertThrows(IllegalArgumentException.class, () -> stack.peekAt(-1));
   }
 
   @Test
-  public void peekAtHigh() {
+  void peekAtHigh() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     assertThrows(IllegalArgumentException.class, () -> stack.peekAt(1));
   }
 
   @Test
-  public void popAtEmpty() {
+  void popAtEmpty() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     assertThrows(EmptyStackException.class, () -> stack.popAt(0));
   }
 
   @Test
-  public void peekAtEmpty() {
+  void peekAtEmpty() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     assertThrows(EmptyStackException.class, () -> stack.peekAt(0));
   }
 
   @Test
-  public void pushPopPopEmpty() {
+  void pushPopPopEmpty() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.pop();
@@ -160,7 +160,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void pushPopPeekEmpty() {
+  void pushPopPeekEmpty() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.pop();
@@ -168,7 +168,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void pushPushPopPopPopEmpty() {
+  void pushPushPopPopPopEmpty() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.push(2);
@@ -178,7 +178,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void pushPushPopPopPeekEmpty() {
+  void pushPushPopPopPeekEmpty() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.push(2);
@@ -188,7 +188,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void pushPushPopAtPopAtEmpty() {
+  void pushPushPopAtPopAtEmpty() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.push(2);
@@ -197,7 +197,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void pushPushPopAtPeekAtEmpty() {
+  void pushPushPopAtPeekAtEmpty() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.push(2);
@@ -206,17 +206,7 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void pushPushPopAtPushPopAt() {
-    final SetOfStacks<Integer> stack = new SetOfStacks<>();
-    stack.push(1);
-    stack.push(2);
-    stack.popAt(0);
-    stack.push(3);
-    assertEquals(3, stack.popAt(0));
-  }
-
-  @Test
-  public void pushPushPopAtPushPeekAt() {
+  void pushPushPopAtPushPopAt() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>();
     stack.push(1);
     stack.push(2);
@@ -226,7 +216,17 @@ public class TestSetOfStacks {
   }
 
   @Test
-  public void increaseStackSize() {
+  void pushPushPopAtPushPeekAt() {
+    final SetOfStacks<Integer> stack = new SetOfStacks<>();
+    stack.push(1);
+    stack.push(2);
+    stack.popAt(0);
+    stack.push(3);
+    assertEquals(3, stack.popAt(0));
+  }
+
+  @Test
+  void increaseStackSize() {
     final SetOfStacks<Integer> stack = new SetOfStacks<>(3);
     stack.push(9);
     stack.push(8);

@@ -8,17 +8,17 @@ import java.util.List;
 import java.util.Set;
 import org.junit.jupiter.api.Test;
 
-public class TestBSTSequences {
+class TestBSTSequences {
 
   @Test
-  public void empty() {
+  void empty() {
     final Set<List<Integer>> expected = Set.of(List.of());
     final Set<LinkedList<Integer>> result = BSTSequences.getSequences(null);
     assertEquals(expected, result);
   }
 
   @Test
-  public void rootOnly() {
+  void rootOnly() {
     final Set<List<Integer>> expected = Set.of(List.of(1));
     final TreeNode<Integer> root = new TreeNode<>(1);
     final Set<LinkedList<Integer>> result = BSTSequences.getSequences(root);
@@ -26,7 +26,7 @@ public class TestBSTSequences {
   }
 
   @Test
-  public void duplicate() {
+  void duplicate() {
     final Set<List<Integer>> expected = Set.of(List.of(1, 1));
     final TreeNode<Integer> root = new TreeNode<>(List.of(1, 1));
     final Set<LinkedList<Integer>> result = BSTSequences.getSequences(root);
@@ -38,7 +38,7 @@ public class TestBSTSequences {
    *    1
    */
   @Test
-  public void left() {
+  void left() {
     final Set<List<Integer>> expected = Set.of(List.of(2, 1));
     final TreeNode<Integer> root = new TreeNode<>(List.of(2, 1));
     final Set<LinkedList<Integer>> result = BSTSequences.getSequences(root);
@@ -50,7 +50,7 @@ public class TestBSTSequences {
    *        3
    */
   @Test
-  public void right() {
+  void right() {
     final Set<List<Integer>> expected = Set.of(List.of(2, 3));
     final TreeNode<Integer> root = new TreeNode<>(List.of(2, 3));
     final Set<LinkedList<Integer>> result = BSTSequences.getSequences(root);
@@ -62,7 +62,7 @@ public class TestBSTSequences {
    *    1   3
    */
   @Test
-  public void book() {
+  void book() {
     final Set<List<Integer>> expected = Set.of(List.of(2, 1, 3), List.of(2, 3, 1));
     final TreeNode<Integer> root = new TreeNode<>(List.of(2, 1, 3));
     final Set<LinkedList<Integer>> result = BSTSequences.getSequences(root);
@@ -74,7 +74,7 @@ public class TestBSTSequences {
    *    2   3
    */
   @Test
-  public void bookDuplicate() {
+  void bookDuplicate() {
     final Set<List<Integer>> expected = Set.of(List.of(2, 2, 3), List.of(2, 3, 2));
     final TreeNode<Integer> root = new TreeNode<>(List.of(2, 2, 3));
     final Set<LinkedList<Integer>> result = BSTSequences.getSequences(root);
@@ -88,7 +88,7 @@ public class TestBSTSequences {
    *    1   3
    */
   @Test
-  public void four() {
+  void four() {
     final Set<List<Integer>> expected = Set.of(List.of(4, 2, 1, 3), List.of(4, 2, 3, 1));
     final TreeNode<Integer> root = new TreeNode<>(List.of(4, 2, 1, 3));
     final Set<LinkedList<Integer>> result = BSTSequences.getSequences(root);
@@ -102,7 +102,7 @@ public class TestBSTSequences {
    *    1   3
    */
   @Test
-  public void five() {
+  void five() {
     final Set<List<Integer>> expected =
         Set.of(
             List.of(4, 2, 1, 3, 6),
@@ -125,7 +125,7 @@ public class TestBSTSequences {
    *    1   3 5
    */
   @Test
-  public void six() {
+  void six() {
     final Set<List<Integer>> expected =
         Set.of(
             List.of(4, 2, 1, 3, 6, 5),
@@ -160,7 +160,7 @@ public class TestBSTSequences {
    *    1   3 5   7
    */
   @Test
-  public void seven() {
+  void seven() {
     final Set<List<Integer>> expected =
         Set.of(
             List.of(4, 2, 1, 3, 6, 5, 7),

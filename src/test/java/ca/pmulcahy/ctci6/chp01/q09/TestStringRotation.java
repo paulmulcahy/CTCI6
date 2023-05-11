@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class TestStringRotation {
+class TestStringRotation {
 
   @Test
-  public void duplicate() {
+  void duplicate() {
 
     final String s1 = "abcde";
     final String s2 = s1;
@@ -19,7 +19,7 @@ public class TestStringRotation {
   }
 
   @Test
-  public void substring() {
+  void substring() {
 
     final String s1 = "abcde";
     final String s2 = "abc";
@@ -31,7 +31,7 @@ public class TestStringRotation {
   }
 
   @Test
-  public void completelyDifferent() {
+  void completelyDifferent() {
 
     final String s1 = "abc";
     final String s2 = "xyz";
@@ -43,7 +43,7 @@ public class TestStringRotation {
   }
 
   @Test
-  public void substringDifferentCase() {
+  void substringDifferentCase() {
 
     final String s1 = "abc";
     final String s2 = "AB";
@@ -55,7 +55,7 @@ public class TestStringRotation {
   }
 
   @Test
-  public void superstring() {
+  void superstring() {
 
     final String s1 = "abcde";
     final String s2 = "abcdea";

@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import ca.pmulcahy.ctci6.chp02.SinglyLinkedList;
 import org.junit.jupiter.api.Test;
 
-public class TestDeleteMiddleNode {
+class TestDeleteMiddleNode {
 
   @Test
-  public void empty() {
+  void empty() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
 
     final SinglyLinkedList<Integer> actual = DeleteMiddleNode.deleteNode(sList, 0);
@@ -19,7 +19,7 @@ public class TestDeleteMiddleNode {
   }
 
   @Test
-  public void lengthOne() {
+  void lengthOne() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(1);
 
@@ -31,7 +31,7 @@ public class TestDeleteMiddleNode {
   }
 
   @Test
-  public void lengthTwoDeleteHead() {
+  void lengthTwoDeleteHead() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(1);
     sList.add(2);
@@ -46,7 +46,7 @@ public class TestDeleteMiddleNode {
   }
 
   @Test
-  public void lengthTwoDeleteTail() {
+  void lengthTwoDeleteTail() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(1);
     sList.add(2);
@@ -61,7 +61,7 @@ public class TestDeleteMiddleNode {
   }
 
   @Test
-  public void threeDuplicateElements() {
+  void threeDuplicateElements() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(1);
     sList.add(1);
@@ -81,7 +81,7 @@ public class TestDeleteMiddleNode {
   }
 
   @Test
-  public void fourElementsRemoveSecond() {
+  void fourElementsRemoveSecond() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(1);
     sList.add(2);
@@ -101,7 +101,7 @@ public class TestDeleteMiddleNode {
   }
 
   @Test
-  public void fourElementsRemoveNullThird() {
+  void fourElementsRemoveNullThird() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(1);
     sList.add(2);
@@ -121,7 +121,7 @@ public class TestDeleteMiddleNode {
   }
 
   @Test
-  public void fourElementsRemoveNonNullThird() {
+  void fourElementsRemoveNonNullThird() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(1);
     sList.add(2);

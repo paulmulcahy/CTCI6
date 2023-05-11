@@ -7,10 +7,10 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class TestPartition {
+class TestPartition {
 
   @Test
-  public void empty() {
+  void empty() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
 
     final SinglyLinkedList<Integer> actual = Partition.partition(sList, 0);
@@ -21,7 +21,7 @@ public class TestPartition {
   }
 
   @Test
-  public void lengthOne() {
+  void lengthOne() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(1);
 
@@ -33,7 +33,7 @@ public class TestPartition {
   }
 
   @Test
-  public void lengthTwoNonNullPartitionNonNull() {
+  void lengthTwoNonNullPartitionNonNull() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(2);
     sList.add(1);
@@ -53,7 +53,7 @@ public class TestPartition {
   }
 
   @Test
-  public void lengthTwoNullPartitionNonNull() {
+  void lengthTwoNullPartitionNonNull() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(1);
     sList.add(null);
@@ -73,7 +73,7 @@ public class TestPartition {
   }
 
   @Test
-  public void lengthTwoNonNullPartitionNull() {
+  void lengthTwoNonNullPartitionNull() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(2);
     sList.add(1);
@@ -89,7 +89,7 @@ public class TestPartition {
   }
 
   @Test
-  public void lengthTwoNullPartitionNull() {
+  void lengthTwoNullPartitionNull() {
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();
     sList.add(2);
     sList.add(null);
@@ -105,7 +105,7 @@ public class TestPartition {
   }
 
   @Test
-  public void bookExample() {
+  void bookExample() {
     final Integer[] inputArr = new Integer[] {3, 5, 8, 5, 10, 2, 1};
     final List<Integer> inputList = Arrays.asList(inputArr);
     final SinglyLinkedList<Integer> sList = new SinglyLinkedList<>();

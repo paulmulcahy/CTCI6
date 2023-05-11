@@ -5,24 +5,24 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.Test;
 
-public class TestSuccessor {
+class TestSuccessor {
 
   @Test
-  public void zeroNodes() {
+  void zeroNodes() {
     final TreeNodeParentLinked<Integer> rootNode = null;
     final TreeNodeParentLinked<Integer> rootNodeSuccessor = Successor.getSuccessor(rootNode);
     assertNull(rootNodeSuccessor);
   }
 
   @Test
-  public void oneNode() {
+  void oneNode() {
     final TreeNodeParentLinked<Integer> rootNode = new TreeNodeParentLinked<Integer>(1);
     final TreeNodeParentLinked<Integer> rootNodeSuccessor = Successor.getSuccessor(rootNode);
     assertNull(rootNodeSuccessor);
   }
 
   @Test
-  public void twoNodesLeftHeavy() {
+  void twoNodesLeftHeavy() {
     final TreeNodeParentLinked<Integer> rootNode = new TreeNodeParentLinked<Integer>(2);
     final TreeNodeParentLinked<Integer> leftNode = new TreeNodeParentLinked<Integer>(1);
     rootNode.setLeft(leftNode);
@@ -33,7 +33,7 @@ public class TestSuccessor {
   }
 
   @Test
-  public void twoNodesRightHeavy() {
+  void twoNodesRightHeavy() {
     final TreeNodeParentLinked<Integer> rootNode = new TreeNodeParentLinked<Integer>(1);
     final TreeNodeParentLinked<Integer> rightNode = new TreeNodeParentLinked<Integer>(2);
     rootNode.setRight(rightNode);
@@ -44,7 +44,7 @@ public class TestSuccessor {
   }
 
   @Test
-  public void threeNodesBalanced() {
+  void threeNodesBalanced() {
     final TreeNodeParentLinked<Integer> rootNode = new TreeNodeParentLinked<Integer>(2);
     final TreeNodeParentLinked<Integer> leftNode = new TreeNodeParentLinked<Integer>(1);
     rootNode.setLeft(leftNode);
@@ -60,7 +60,7 @@ public class TestSuccessor {
   }
 
   @Test
-  public void threeNodesLeftLeftHeavy() {
+  void threeNodesLeftLeftHeavy() {
     final TreeNodeParentLinked<Integer> rootNode = new TreeNodeParentLinked<Integer>(3);
     final TreeNodeParentLinked<Integer> leftNode = new TreeNodeParentLinked<Integer>(2);
     rootNode.setLeft(leftNode);
@@ -77,7 +77,7 @@ public class TestSuccessor {
   }
 
   @Test
-  public void threeNodesLeftRightHeavy() {
+  void threeNodesLeftRightHeavy() {
     final TreeNodeParentLinked<Integer> rootNode = new TreeNodeParentLinked<Integer>(3);
     final TreeNodeParentLinked<Integer> leftNode = new TreeNodeParentLinked<Integer>(1);
     rootNode.setLeft(leftNode);
@@ -94,7 +94,7 @@ public class TestSuccessor {
   }
 
   @Test
-  public void threeNodesRightLeftHeavy() {
+  void threeNodesRightLeftHeavy() {
     final TreeNodeParentLinked<Integer> rootNode = new TreeNodeParentLinked<Integer>(1);
     final TreeNodeParentLinked<Integer> rightNode = new TreeNodeParentLinked<Integer>(3);
     rootNode.setRight(rightNode);
@@ -111,7 +111,7 @@ public class TestSuccessor {
   }
 
   @Test
-  public void threeNodesRightRightHeavy() {
+  void threeNodesRightRightHeavy() {
     final TreeNodeParentLinked<Integer> rootNode = new TreeNodeParentLinked<Integer>(1);
     final TreeNodeParentLinked<Integer> rightNode = new TreeNodeParentLinked<Integer>(2);
     rootNode.setRight(rightNode);
@@ -128,7 +128,7 @@ public class TestSuccessor {
   }
 
   @Test
-  public void fourNodesLeftLeftHeavy() {
+  void fourNodesLeftLeftHeavy() {
     final TreeNodeParentLinked<Integer> rootNode = new TreeNodeParentLinked<Integer>(3);
     final TreeNodeParentLinked<Integer> leftNode = new TreeNodeParentLinked<Integer>(2);
     rootNode.setLeft(leftNode);
@@ -149,7 +149,7 @@ public class TestSuccessor {
   }
 
   @Test
-  public void fourNodesLeftHeavy() {
+  void fourNodesLeftHeavy() {
     final TreeNodeParentLinked<Integer> rootNode = new TreeNodeParentLinked<Integer>(4);
     final TreeNodeParentLinked<Integer> leftNode = new TreeNodeParentLinked<Integer>(2);
     rootNode.setLeft(leftNode);
