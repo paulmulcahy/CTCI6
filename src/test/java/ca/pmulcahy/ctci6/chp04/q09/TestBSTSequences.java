@@ -33,9 +33,9 @@ class TestBSTSequences {
     assertEquals(expected, result);
   }
 
-  /*		2
-   * 	   /
-   *    1
+  /*     2
+   *    /
+   *   1
    */
   @Test
   void left() {
@@ -45,9 +45,9 @@ class TestBSTSequences {
     assertEquals(expected, result);
   }
 
-  /*		2
-   * 	     \
-   *        3
+  /*   2
+   * 	\
+   *     3
    */
   @Test
   void right() {
@@ -57,9 +57,9 @@ class TestBSTSequences {
     assertEquals(expected, result);
   }
 
-  /*		2
-   * 	   / \
-   *    1   3
+  /*       2
+   *      / \
+   *     1   3
    */
   @Test
   void book() {
@@ -69,9 +69,9 @@ class TestBSTSequences {
     assertEquals(expected, result);
   }
 
-  /*		2
-   * 	   / \
-   *    2   3
+  /*       2
+   *      / \
+   *     2   3
    */
   @Test
   void bookDuplicate() {
@@ -81,10 +81,10 @@ class TestBSTSequences {
     assertEquals(expected, result);
   }
 
-  /*		  _4
+  /*        _4
    *       /
-   * 		2
-   * 	   / \
+   *      2
+   *     / \
    *    1   3
    */
   @Test
@@ -95,10 +95,10 @@ class TestBSTSequences {
     assertEquals(expected, result);
   }
 
-  /*		  _4_
+  /*        _4_
    *       /   \
-   * 		2     6
-   * 	   / \
+   *      2     6
+   *     / \
    *    1   3
    */
   @Test
@@ -118,10 +118,10 @@ class TestBSTSequences {
     assertEquals(expected, result);
   }
 
-  /*		  _4_
+  /*        _4_
    *       /   \
-   * 		2     6
-   * 	   / \   /
+   *      2     6
+   *     / \   /
    *    1   3 5
    */
   @Test
@@ -153,10 +153,10 @@ class TestBSTSequences {
     assertEquals(expected, result);
   }
 
-  /*		  _4_
+  /*        _4_
    *       /   \
-   * 		2     6
-   * 	   / \   / \
+   *      2     6
+   *     / \   / \
    *    1   3 5   7
    */
   @Test
